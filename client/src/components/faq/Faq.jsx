@@ -6,31 +6,33 @@ const Faq = ({ question, answer }) => {
   const [showAnswer, setShowAnswer] = useState(false)
 
   return (
-    <div
-      className={`border h-fit  border-white rounded-lg overflow-hidden transition duration-500 ease-out ${
-        showAnswer
-          ? 'bg-white text-black border  rounded border-black'
-          : 'bg-darkpurple text-white'
-      }`}
-    >
+    <div className="flex  bg-white flex-col border border-white rounded-lg overflow-hidden mb-4 w-full">
       <article
-        className="flex items-center justify-between p-4 cursor-pointer"
+        className={`flex  items-center justify-between p-4 cursor-pointer ${
+          showAnswer ? 'bg-white text-gray-500' : 'bg-darkpurple text-white '
+        }`}
         onClick={() => setShowAnswer(prev => !prev)}
       >
-        <h2 className="font-semibold">{question}</h2>
-        <button
+        <h2
           className={`${
-            showAnswer
-              ? 'border  rounded border-black'
-              : 'border border-white rounded '
+            showAnswer ? 'text-gray-700 pl-3 font-semibold' : 'font-semibold'
           }`}
         >
-          {showAnswer ? <BiMinus /> : <BsPlusLg />}
-        </button>
+          {question}
+        </h2>
+        {showAnswer ? (
+          <button className="border-2 border-black rounded">
+            {showAnswer ? <BiMinus /> : <BsPlusLg />}
+          </button>
+        ) : (
+          <button className="border-2 border-white  rounded">
+            {showAnswer ? <BiMinus /> : <BsPlusLg />}
+          </button>
+        )}
       </article>
       {showAnswer && (
-        <article className="border-t border-gray-400 p-4">
-          <p>{answer}</p>
+        <article className="border-t  ml-6 mr-6 text-left  text-gray-400  border-gray-400 p-4 ">
+          <p className=' '>{answer}</p>
         </article>
       )}
     </div>

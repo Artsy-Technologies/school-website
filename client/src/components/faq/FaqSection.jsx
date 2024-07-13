@@ -57,13 +57,23 @@ const faqData = [
 
 
 const FaqSection = () => {
+  // Calculate the midpoint to split FAQ items into two rows
+  const midpoint = Math.ceil(faqData.length / 2);
+
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {faqData.map((item, index) => (
-        <Faq key={index} question={item.question} answer={item.answer} />
-      ))}
+    <section className="flex gap-4 flex-col md:flex-row">
+      <div className="flex flex-col w-full md:w-1/2">
+        {faqData.slice(0, midpoint).map((item, index) => (
+          <Faq key={index} question={item.question} answer={item.answer} />
+        ))}
+      </div>
+      <div className="flex flex-col w-full md:w-1/2 ">
+        {faqData.slice(midpoint).map((item, index) => (
+          <Faq key={index} question={item.question} answer={item.answer} />
+        ))}
+      </div>
     </section>
   )
-}
+};
 
 export default FaqSection
