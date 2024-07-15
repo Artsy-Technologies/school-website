@@ -1,30 +1,30 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
+import PropTypes from 'prop-types'
+import { useState, useRef, useEffect, useCallback } from 'react'
 
 function Carousel({ images }) {
   const [current, setCurrent] = useState(0)
-  const [autoPlay, setAutoPlay] = useState(true)
-  let timeOut = null
+  const [autoPlay] = useState(true);
+  const timeOut = useRef(null);
+
+  const slideRight = useCallback(() => {
+    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  }, [images.length]);
+
+  const slideLeft = useCallback(() => {
+    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  }, [images.length]);
 
   useEffect(() => {
-    timeOut =
-      autoPlay &&
-      setTimeout(() => {
-        slideRight()
-      }, 2500)
-    return () => clearTimeout(timeOut)
-  }, [current, autoPlay])
-
-  const slideRight = () => {
-    setCurrent(current === images.length - 1 ? 0 : current + 1)
-  }
-
-  const slideLeft = () => {
-    setCurrent(current === 0 ? images.length - 1 : current - 1)
-  }
+    if (autoPlay) {
+      timeOut.current = setTimeout(() => {
+        slideRight();
+      }, 2500);
+    }
+    return () => clearTimeout(timeOut.current);
+  }, [current, autoPlay, slideRight]);
 
   return (
-    <div className="flex  h-96 w-full max-w-screen-md mx-auto">
+    <div className="flex  h-96 w-full max-w-screen-md mx-auto p-2">
       <div className="relative w-full h-full">
         {images.map((image, index) => (
           <div
@@ -74,5 +74,14 @@ function Carousel({ images }) {
     </div>
   )
 }
+
+Carousel.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default Carousel

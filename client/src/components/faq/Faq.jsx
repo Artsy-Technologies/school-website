@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { BiMinus } from 'react-icons/bi'
 import { BsPlusLg } from 'react-icons/bs'
 
+// eslint-disable-next-line react/prop-types
 const Faq = ({ question, answer }) => {
   const [showAnswer, setShowAnswer] = useState(false)
 
