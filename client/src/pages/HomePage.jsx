@@ -1,7 +1,7 @@
 import FaqSection from '../components/faq/FaqSection'
 import Carousel from '../components/Carousel/Carousel'
 import Data from '../components/Carousel/Data'
-function Home() {
+function HomePage() {
   return (
     <div>
       <Carousel images={Data}/>
@@ -10,4 +10,4 @@ function Home() {
   )
 }
 
-export default Home
+export default HomePage
