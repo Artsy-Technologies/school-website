@@ -77,13 +77,13 @@ const activity_headers = [
   { header: 'Additional Service', accessor: 'activity' },
   { header: 'fee', accessor: 'fee' },
 ]
-const Admission = () => {
+const AdmissionPage = () => {
   return (
-    <div className="h-screen w-full ">
-      <div className="h-5 w-full  p-10 ">
+    <div className="h-screen w-full">
+      <div className="p-10">
         <TuitionTable columns={fee_headers} data={fee_data} isAdmin={true} />
       </div>
-      <div className="">
+      <div className="p-10">
         <TuitionTable
           columns={activity_headers}
           data={activity_data}
@@ -94,4 +94,4 @@ const Admission = () => {
   )
 }
 
-export default Admission
+export default AdmissionPage

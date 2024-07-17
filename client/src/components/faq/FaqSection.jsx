@@ -1,6 +1,3 @@
-import React, { useState } from 'react'
-import { BiMinus } from 'react-icons/bi'
-import { BsPlusLg } from 'react-icons/bs'
 import Faq from './Faq'
 const faqData = [
   {
@@ -61,7 +58,7 @@ const FaqSection = () => {
   const midpoint = Math.ceil(faqData.length / 2);
 
   return (
-    <section className="flex gap-4 flex-col md:flex-row">
+    <section className="flex gap-4 flex-col md:flex-row p-2">
       <div className="flex flex-col w-full md:w-1/2">
         {faqData.slice(0, midpoint).map((item, index) => (
           <Faq key={index} question={item.question} answer={item.answer} />
