@@ -1,14 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html , body{
+
+html,
+body {
     height: 100%;
     width: 100%;
     background: #c2a6ff;
 }
 
+input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
