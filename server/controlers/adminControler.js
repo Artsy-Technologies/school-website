@@ -47,11 +47,7 @@ const signIn = async (req, res) => {
         if (password !== isAdmin.password) throw new Error('please fill the correct password');
 
 
-        const tokenData = {
-            adminId: isAdmin._id,
-            adminEmail: isAdmin.email,
-        }
-
+        const tokenData = {isAdmin};
         const token = jwt.sign(tokenData, process.env.JWT_SECRET, { expiresIn: '1d' });
 
         res.cookie('token', token, {

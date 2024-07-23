@@ -1,8 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 const adminRouter = require('./routes/adminRouter');
+const studentsRoutes = require('./routes/studentsRoutes')
 const connectDB = require('./libs/databaseConnection');
 
 
@@ -24,6 +25,7 @@ app.use(cors({
 
 
 app.use('', adminRouter)
+app.use('', studentsRoutes)
 
 
 app.listen(port, async () => {
