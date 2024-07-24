@@ -16,7 +16,6 @@
   * [Backend Installation](#backend-installation)
 * [🔄 Making a Pull Request](#-making-a-pull-request)
 * [🚀 Usage](#-usage)
-* [🤝 Contributing](#-contributing)
 * [📜 License](#-license)
 * [📞 Contact](#-contact)
 * [📂 Project Structure](#-project-structure)
@@ -46,46 +45,63 @@ The School Website project is a web application designed to provide students, te
 ### Frontend Installation
 
 1. Clone the repository:
-  
-      git clone https://github.com/Artsy-Technologies/school-website.git
+```bash
+      git clone https://github.com/<your-github-username>/school-website.git
+```
   
 2. Navigate to the `client` directory:
   
+     ```
       cd school-website/client
+     ```
   
-3. Install dependencies:
+4. Install dependencies:
   
+     ```
       npm install
+     ```
   
-4. Set up environment variables: Create a `.env` file in the `client` directory and add the following:
+6. Set up environment variables: Create a `.env` file in the `client` directory and add the following:
   
+      ```
       REACT_APP_API_URL=http://localhost:5000
+      ```
   
-5. Run the frontend application:
+7. Run the frontend application:
   
+      ```
       npm run dev
+      ```
   
-6. Access the frontend: Open your browser and go to `http://localhost:3000`
+8. Access the frontend: Open your browser and go to `http://localhost:3000`
   
 
 ### Backend Installation
 
 1. Navigate to the `server` directory:
   
+      ```
       cd school-website/server
+      ```
   
 2. Install dependencies:
   
+      ```
       npm install
+      ```
   
 3. Set up environment variables: Create a `.env` file in the `server` directory and add the following:
   
+      ```
       MONGODB_URI=your-mongodb-uri
       PORT=5000
+      ```
   
 4. Run the backend application:
   
+      ```
       npm start
+      ```
   
 
 ## 🔄 Making a Pull Request
@@ -94,19 +110,27 @@ The School Website project is a web application designed to provide students, te
   
 2. Clone your forked repository:
   
-      git clone https://github.com/<your-github-username>/school-website
+     ```
+     git clone https://github.com/<your-github-username>/school-website.git
+     ```
   
 3. Navigate to the project directory:
   
+      ```
       cd school-website
+      ```
   
 4. Set the upstream remote:
   
+     ```
       git remote add upstream https://github.com/Artsy-Technologies/school-website
+     ```
   
-5. Create a new branch:
+6. Create a new branch:
   
+      ```
       git checkout -b YourBranchName
+      ```
   
   or
   
@@ -115,19 +139,25 @@ The School Website project is a web application designed to provide students, te
   
 6. Sync your fork with the upstream repository:
   
+     ```
       git fetch upstream
       git merge upstream/main
+     ```
   
 7. Make your changes to the source code.
   
 8. Stage your changes and commit:
   
+      ```
       git add file/folder
       git commit -m "<your_commit_message>"
+      ```
   
 9. Push your changes to your forked repository:
   
+      ```
       git push origin YourBranchName
+      ```
   
 10. Create a pull request on GitHub.
   
