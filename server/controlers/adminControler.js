@@ -1,5 +1,6 @@
 const admin = require("../libs/models/adminModel");
 const jwt = require('jsonwebtoken');
+const fee = require("../libs/models/feeModel");
 const adminToken = 'admin0000';
 
 const signUp = async (req, res) => {
@@ -47,7 +48,7 @@ const signIn = async (req, res) => {
         if (password !== isAdmin.password) throw new Error('please fill the correct password');
 
 
-        const tokenData = {isAdmin};
+        const tokenData = { isAdmin };
         const token = jwt.sign(tokenData, process.env.JWT_SECRET, { expiresIn: '1d' });
 
         res.cookie('token', token, {
@@ -71,8 +72,31 @@ const signIn = async (req, res) => {
     }
 }
 
+const createFeeTable = async (req, res) => {
+    try {
+        if (req.isAdmin === false) throw new Error('not authenticated');
+        const { programName, ageGroup, annualFee, registrationFee, activityFee } = req.body;
+        if (programName || ageGroup || annualFee || registrationFee || activityFee) throw new Error('fields are missing please fill all the fields carefully');
+        const newprogram = await fee.create({
+            programName,
+            ageGroup,
+            annualFee,
+            registrationFee,
+            activityFee
+        })
+        return res.json({
+            message: "created new program successfully",
+            status: 200,
+        })
+    } catch (error) {
+        return res.json({
+            message: error.message,
+            status: 500,
+        })
+    }
+}
 
 
 
 
-module.exports = { signIn, signUp }
+module.exports = { signIn, signUp, createFeeTable }
