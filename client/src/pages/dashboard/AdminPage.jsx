@@ -1,8 +1,8 @@
-import Cookies from 'js-cookie';
-
+/* eslint-disable no-unused-vars */
+import { useEffect } from 'react';
+import { useAdmin } from '../../hooks/AdminContext';
 function AdminPage() {
-    const value = Cookies.get('username');
-    console.log(value, "from dashboard page");
+
     return (
         <section className="h-screen " >
 

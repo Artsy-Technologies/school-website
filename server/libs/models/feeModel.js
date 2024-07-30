@@ -6,7 +6,7 @@ const feeSchema = new mongoose.Schema({
         required: true
     },
     ageGroup: {
-        type: Number,
+        type: String,
         required: true
     },
     annualFee: {

@@ -1,9 +1,12 @@
+/* eslint-disable react/prop-types */
 import { Pagination } from 'antd'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const Table = ({ columns, data, isAdmin }) => {
   const [currentPage, setCurrentPage] = useState(1)
-  const pageSize = 3
+  const pageSize = 3;
+
+  console.log(isAdmin, "from the table component");
 
   const handlePageChange = page => {
     setCurrentPage(page)
@@ -41,6 +44,14 @@ const Table = ({ columns, data, isAdmin }) => {
                 Action
               </th>
             )} */}
+            {
+              isAdmin === true ? <th
+                className="px-4 py-2"
+                style={{ borderTopRightRadius: '0.5rem' }}
+              >
+                Action
+              </th> : <></>
+            }
           </tr>
         </thead>
         <tbody>
@@ -60,7 +71,7 @@ const Table = ({ columns, data, isAdmin }) => {
                   {row[col.accessor]}
                 </td>
               ))}
-              {/* {isAdmin && (
+              {isAdmin === true && (
                 <td className="border px-4 py-2 flex space-x-2">
                   <button className="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-700">
                     Edit
@@ -69,7 +80,7 @@ const Table = ({ columns, data, isAdmin }) => {
                     Delete
                   </button>
                 </td>
-              )} */}
+              )}
             </tr>
           ))}
         </tbody>

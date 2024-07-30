@@ -1,4 +1,5 @@
 import TuitionTable from '../components/table/Table'
+import { useAdmin } from '../hooks/AdminContext';
 
 const fee_data = [
   {
@@ -59,6 +60,7 @@ const fee_headers = [
   { header: 'Registration Fee', accessor: 'registrationFee' },
   { header: 'Activity Fee', accessor: 'activityFee' },
 ]
+
 const activity_data = [
   {
     activity: 'before and after core',
@@ -73,21 +75,24 @@ const activity_data = [
     fee: '$120/per month',
   },
 ]
+
 const activity_headers = [
   { header: 'Additional Service', accessor: 'activity' },
   { header: 'fee', accessor: 'fee' },
 ]
+
 const AdmissionPage = () => {
+  const { isAdmin } = useAdmin();
   return (
     <div className="h-screen w-full">
       <div className="p-10">
-        <TuitionTable columns={fee_headers} data={fee_data} isAdmin={true} />
+        <TuitionTable columns={fee_headers} data={fee_data} isAdmin={isAdmin} />
       </div>
       <div className="p-10">
         <TuitionTable
           columns={activity_headers}
           data={activity_data}
-          isAdmin={true}
+          isAdmin={isAdmin}
         />
       </div>
     </div>

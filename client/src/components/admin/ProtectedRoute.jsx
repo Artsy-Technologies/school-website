@@ -1,11 +1,14 @@
+/* eslint-disable react/prop-types */
 // ProtectedRoute.jsx
 /* eslint-disable no-unused-vars */
 
 import { checkPropTypes } from 'prop-types';
 import { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom';
+
 function ProtectedRoute({ children }) {
-    const [isAuthenticated, setIsAuthenticated] = useState(null);    
+    const [isAuthenticated, setIsAuthenticated] = useState(null);  
+
     useEffect(() => {
         const checkAuth = async () => {
             try {
@@ -13,7 +16,7 @@ function ProtectedRoute({ children }) {
                 credentials:"include"
                });
                if (res?.status === 200) {
-                setIsAuthenticated(true);                
+                setIsAuthenticated(true); 
                }else{
                 setIsAuthenticated(false);                
                }
