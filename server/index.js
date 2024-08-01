@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const adminRouter = require('./routes/adminRouter');
 const studentsRoutes = require('./routes/studentsRoutes')
+const imageRoutes = require('./routes/imageRoutes')
 const connectDB = require('./libs/databaseConnection');
 
 
@@ -23,7 +24,7 @@ app.use(cors({
     credentials: true // if your backend requires credentials
 }));
 
-
+app.use('/api', imageRoutes)
 app.use('', adminRouter)
 app.use('', studentsRoutes)
 
