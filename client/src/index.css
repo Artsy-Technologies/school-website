@@ -20,3 +20,15 @@ input{
     border: none;
     background-color: transparent;
 }
+
+.rectangle {
+    padding: 20px;
+    background: rgb(248, 247, 247);
+    display:table-row-group;
+    width:100%;
+    height: 300px;
+   
+}
+
+
+
