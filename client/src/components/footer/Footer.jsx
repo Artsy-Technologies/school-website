@@ -12,7 +12,11 @@ function Footer() {
      
     <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 p-20">
       <div className="flex flex-col gap-5 max-w-50%">
-           <h4 className="text-1xl text-orange-600 alignleft width-391px">{Logo}  SRI MURUGHA  RAJENDRASWAMY CBSE SCHOOL</h4>
+        <div className="flex gap-2">
+        <img src={Logo} alt="" width={25} height={25} className='ml-0.5' />
+        <h4 className="text-1xl text-orange-600 alignleft width-391px">  SRI MURUGHA  RAJENDRASWAMY CBSE SCHOOL</h4>
+        </div>
+          
            <p className="text-slate-900 font-Outfit ">We believe in the power of play to foster creativity,</p> 
             <p>problem-solving skills, and imagination.</p>
          
