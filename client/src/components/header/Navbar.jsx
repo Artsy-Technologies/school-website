@@ -1,48 +1,60 @@
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import {Menu} from 'lucide-react'
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   return (
-    <header className="bg-purple-500 text-white p-1 drop-shadow-md flex justify-between items-center text-xl">
-      <h1>SRI MURUGHA RAJENDRASWAMY CBSE SCHOOL</h1>
-      <div className="md:hidden">
-        <i className="bx bx-menu text-3xl cursor-pointer" onClick={toggleMenu}><Menu /></i>
-      </div>
+    <header className="flex justify-between items-center bg-purple-500 text-white p-4 drop-shadow-md z-50 relative">
+      <h1 className="text-xl">SRI MURUGHA RAJENDRASWAMY CBSE SCHOOL</h1>
 
-      {/* Sidebar */}
-      <nav className={`fixed top-0 right-0 w-64 h-full z-20 p-4 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:relative md:translate-x-0 md:flex md:items-center md:w-auto`}>
-        <div className="md:hidden flex justify-end">
-          <i className="bx bx-x text-3xl cursor-pointer" onClick={toggleMenu}></i>
-        </div>
-        <ul className="mt-10 md:mt-0 space-y-4 md:space-y-0 md:flex md:space-x-10">
-          <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
-            <Link to="/HomePage" onClick={toggleMenu} className="hover:underline">Home</Link>
-          </li>
-          <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
-            <Link to="/AboutPage" onClick={toggleMenu} className="hover:underline">About Us</Link>
-          </li>
-          <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
-            <Link to="/AcademicsPage" onClick={toggleMenu} className="hover:underline">Academics</Link>
-          </li>
-          <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
-            <Link to="/Admissionpage" onClick={toggleMenu} className="hover:underline">Admission</Link>
-          </li>
-          <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
-            <Link to="/StudentPage" onClick={toggleMenu} className="hover:underline">Student Life</Link>
-          </li>
-          <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
-            <Link to="/contact" onClick={toggleMenu} className="hover:underline">Contact</Link>
-          </li>
-        </ul>
+      <nav className="md:hidden fixed  right-0 z-50">
+        <button className="text-3xl focus:outline-none" onClick={toggleMenu}>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </nav>
-    </header>
-  );
-}
 
+      <ul
+        className={`${
+          isMenuOpen ? 'flex' : 'hidden'
+        } flex-col md:flex-row md:flex justify-between items-center space-y-2 md:space-y-0 md:space-x-10 absolute md:relative top-16 left-0 right-0 md:top-auto md:left-auto md:right-auto bg-purple-500 md:bg-transparent w-full md:w-auto p-4 md:p-0 z-40`}
+      >
+        <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+          <Link to="/" className="hover:underline">
+            Home
+          </Link>
+        </li>
+        <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+          <Link to="/about" className="hover:underline">
+            About Us
+          </Link>
+        </li>
+        <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+          <Link to="/academics" className="hover:underline">
+            Academics
+          </Link>
+        </li>
+        <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+          <Link to="/admission" className="hover:underline">
+            Admission
+          </Link>
+        </li>
+        <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+          <Link to="/students" className="hover:underline">
+            Student Life
+          </Link>
+        </li>
+        <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+          <Link to="/contact" className="hover:underline">
+            Contact
+          </Link>
+        </li>
+      </ul>
+    </header>
+  )
+}
