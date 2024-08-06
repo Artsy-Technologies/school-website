@@ -83,7 +83,9 @@ const activity_headers = [
 ]
 
 const AdmissionPage = () => {
+
   const { admissionPage } = useData()
+  const { isAdmin } = useAdmin();
 
   return (
     <div className="min-h-screen w-full">
@@ -99,7 +101,7 @@ const AdmissionPage = () => {
         <TuitionTable
           columns={activity_headers}
           data={activity_data}
-          isAdmin={true}
+          isAdmin={isAdmin}
         />
       </div>
     </div>

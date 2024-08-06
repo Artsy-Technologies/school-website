@@ -4,18 +4,20 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-
+import { useAdmin } from '../../../hooks/AdminContext';
 
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [login, setLogin] = useState(true);
     const navigate = useNavigate();
+    const { setIsAdmin } = useAdmin();
 
 
     const singUp = async (data) => {
         let res = await axios.post('/signUp', data);
         if (res?.data?.status === 200) {
-            toast.success(res?.data?.message)
+            toast.success(res?.data?.message);
+            
         } else {
             toast.error(res?.data?.message)
         }
@@ -26,6 +28,7 @@ const Login = () => {
         let res = await axios.post('/signIn', data);
         if (res?.data?.status === 200) {
             toast.success(res?.data?.message);
+            setIsAdmin(true);
             navigate('/dashboard')
         } else {
             toast.error(res?.data?.message);
