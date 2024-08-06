@@ -1,4 +1,6 @@
+import Banner from '../components/banner/Banner'
 import TuitionTable from '../components/table/Table'
+import { useData } from '../context/BannerContext'
 
 const fee_data = [
   {
@@ -59,6 +61,7 @@ const fee_headers = [
   { header: 'Registration Fee', accessor: 'registrationFee' },
   { header: 'Activity Fee', accessor: 'activityFee' },
 ]
+
 const activity_data = [
   {
     activity: 'before and after core',
@@ -73,17 +76,26 @@ const activity_data = [
     fee: '$120/per month',
   },
 ]
+
 const activity_headers = [
   { header: 'Additional Service', accessor: 'activity' },
   { header: 'fee', accessor: 'fee' },
 ]
+
 const AdmissionPage = () => {
+  const { admissionPage } = useData()
+
   return (
-    <div className="h-screen w-full">
-      <div className="p-10">
+    <div className="min-h-screen w-full">
+      <Banner
+        main={admissionPage.title}
+        content={admissionPage.content}
+        buttonText={admissionPage.buttonText}
+      />
+      <div className="p-10 mb-10">
         <TuitionTable columns={fee_headers} data={fee_data} isAdmin={true} />
       </div>
-      <div className="p-10">
+      <div className="p-10 mb-10">
         <TuitionTable
           columns={activity_headers}
           data={activity_data}
