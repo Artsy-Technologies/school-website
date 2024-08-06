@@ -18,6 +18,7 @@ const Table = ({ columns, data, isAdmin }) => {
   )
 
   return (
+
     <div className="p-5  bg-white border-black border-b-4 border-r-4 rounded shadow-md overflow-x-auto">
       <table className="min-w-full table-auto">
         <thead>
@@ -82,16 +83,30 @@ const Table = ({ columns, data, isAdmin }) => {
                 </td>
               )}
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <Pagination
-        current={currentPage}
-        pageSize={pageSize}
-        total={data.length}
-        onChange={handlePageChange}
-        className="mt-4 justify-start"
-      />
+          </thead>
+          <tbody>
+            {currentData.map((row, rowIndex) => (
+              <tr key={rowIndex} className="bg-white">
+                {columns.map((col, colIndex) => (
+                  <td
+                    key={colIndex}
+                    className="border border-black text-[1em] px-4 py-2"
+                  >
+                    {row[col.accessor]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <Pagination
+          current={currentPage}
+          pageSize={pageSize}
+          total={data.length}
+          onChange={handlePageChange}
+          className="mt-4"
+        />
+      </div>
     </div>
   )
 }

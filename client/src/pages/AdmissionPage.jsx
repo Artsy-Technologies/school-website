@@ -1,5 +1,6 @@
+import Banner from '../components/banner/Banner'
 import TuitionTable from '../components/table/Table'
-import { useAdmin } from '../hooks/AdminContext';
+import { useData } from '../context/BannerContext'
 
 const fee_data = [
   {
@@ -82,13 +83,21 @@ const activity_headers = [
 ]
 
 const AdmissionPage = () => {
+
+  const { admissionPage } = useData()
   const { isAdmin } = useAdmin();
+
   return (
-    <div className="h-screen w-full">
-      <div className="p-10">
-        <TuitionTable columns={fee_headers} data={fee_data} isAdmin={isAdmin} />
+    <div className="min-h-screen w-full">
+      <Banner
+        main={admissionPage.title}
+        content={admissionPage.content}
+        buttonText={admissionPage.buttonText}
+      />
+      <div className="p-10 mb-10">
+        <TuitionTable columns={fee_headers} data={fee_data} isAdmin={true} />
       </div>
-      <div className="p-10">
+      <div className="p-10 mb-10">
         <TuitionTable
           columns={activity_headers}
           data={activity_data}

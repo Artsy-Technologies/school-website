@@ -14,12 +14,14 @@ import ProtectedRoute from './components/admin/ProtectedRoute'
 
 axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.withCredentials = true;
-
+import { DataProvider } from './context/BannerContext';
 
 const App = () => {
   return (
     <Router>
       <Suspense fallback={<div> Loading...</div> } >
+        <DataProvider>
+
         <Routes>
           <Route path='/' element={<MainLayout />}  >
             <Route path="/" element={<HomePage />} />
@@ -37,8 +39,10 @@ const App = () => {
             <Route path='dashboard/auth' element={<AdminAuthPage />} />
           </Route>
         </Routes>
+          </DataProvider>
       </Suspense>
     </Router>
+
 
   )
 }
