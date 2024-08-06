@@ -4,9 +4,9 @@ import { useState } from 'react'
 
 const Table = ({ columns, data, isAdmin }) => {
   const [currentPage, setCurrentPage] = useState(1)
-  const pageSize = 3;
+  const pageSize = 3
 
-  console.log(isAdmin, "from the table component");
+  console.log(isAdmin, 'from the table component')
 
   const handlePageChange = page => {
     setCurrentPage(page)
@@ -18,7 +18,6 @@ const Table = ({ columns, data, isAdmin }) => {
   )
 
   return (
-
     <div className="p-5  bg-white border-black border-b-4 border-r-4 rounded shadow-md overflow-x-auto">
       <table className="min-w-full table-auto">
         <thead>
@@ -45,14 +44,16 @@ const Table = ({ columns, data, isAdmin }) => {
                 Action
               </th>
             )} */}
-            {
-              isAdmin === true ? <th
+            {isAdmin === true ? (
+              <th
                 className="px-4 py-2"
                 style={{ borderTopRightRadius: '0.5rem' }}
               >
                 Action
-              </th> : <></>
-            }
+              </th>
+            ) : (
+              <></>
+            )}
           </tr>
         </thead>
         <tbody>
@@ -68,7 +69,10 @@ const Table = ({ columns, data, isAdmin }) => {
           {currentData.map((row, rowIndex) => (
             <tr key={rowIndex} className="bg-white">
               {columns.map((col, colIndex) => (
-                <td key={colIndex} className="border border-black text-[1em] px-4 py-2">
+                <td
+                  key={colIndex}
+                  className="border border-black text-[1em] px-4 py-2"
+                >
                   {row[col.accessor]}
                 </td>
               ))}
@@ -83,30 +87,16 @@ const Table = ({ columns, data, isAdmin }) => {
                 </td>
               )}
             </tr>
-          </thead>
-          <tbody>
-            {currentData.map((row, rowIndex) => (
-              <tr key={rowIndex} className="bg-white">
-                {columns.map((col, colIndex) => (
-                  <td
-                    key={colIndex}
-                    className="border border-black text-[1em] px-4 py-2"
-                  >
-                    {row[col.accessor]}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <Pagination
-          current={currentPage}
-          pageSize={pageSize}
-          total={data.length}
-          onChange={handlePageChange}
-          className="mt-4"
-        />
-      </div>
+          ))}
+        </tbody>
+      </table>
+      <Pagination
+        current={currentPage}
+        pageSize={pageSize}
+        total={data.length}
+        onChange={handlePageChange}
+        className="mt-4 justify-start"
+      />
     </div>
   )
 }
