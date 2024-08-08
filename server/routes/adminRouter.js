@@ -16,9 +16,9 @@ router.get('/getAllFees', getAllFees)
 
 router.post('/createFeeTable', auth, isAdmin, createFeeTable);
 
-router.post('/updateFeeTable', auth, isAdmin, updateFeeTable);
+router.put('/updateFeeTable', auth, isAdmin, updateFeeTable);
 
-router.post('/deleteFeeTable', auth, isAdmin, deleteFeeTable);
+router.delete('/deleteFeeTable', auth, isAdmin, deleteFeeTable);
 
 
 module.exports = router;
