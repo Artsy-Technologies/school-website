@@ -3,33 +3,33 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 
 function Carousel({ images }) {
   const [current, setCurrent] = useState(0)
-  const [autoPlay] = useState(true);
-  const timeOut = useRef(null);
+  const [autoPlay] = useState(true)
+  const timeOut = useRef(null)
 
   const slideRight = useCallback(() => {
-    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  }, [images.length]);
+    setCurrent(prev => (prev === images.length - 1 ? 0 : prev + 1))
+  }, [images.length])
 
   const slideLeft = useCallback(() => {
-    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  }, [images.length]);
+    setCurrent(prev => (prev === 0 ? images.length - 1 : prev - 1))
+  }, [images.length])
 
   useEffect(() => {
     if (autoPlay) {
       timeOut.current = setTimeout(() => {
-        slideRight();
-      }, 2500);
+        slideRight()
+      }, 2500)
     }
-    return () => clearTimeout(timeOut.current);
-  }, [current, autoPlay, slideRight]);
+    return () => clearTimeout(timeOut.current)
+  }, [current, autoPlay, slideRight])
 
   return (
-    <div className="flex  h-96 w-full max-w-screen-md mx-auto p-2">
+    <div className="relative flex h-96 w-full max-w-screen-md mx-auto p-2 z-10">
       <div className="relative w-full h-full">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute flex flex-col items-center justify-center w-full h-full overflow-hidden rounded-lg  shadow-lg transition-opacity duration-500 ease-in-out ${
+            className={`absolute flex flex-col items-center justify-center w-full h-full overflow-hidden rounded-lg shadow-lg transition-opacity duration-500 ease-in-out ${
               index === current
                 ? 'opacity-100 pointer-events-auto'
                 : 'opacity-0 pointer-events-none'
@@ -82,6 +82,6 @@ Carousel.propTypes = {
       title: PropTypes.string.isRequired,
     })
   ).isRequired,
-};
+}
 
 export default Carousel
