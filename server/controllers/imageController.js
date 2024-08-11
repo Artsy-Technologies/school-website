@@ -1,8 +1,8 @@
-const Image = require('../libs/models/Image')
-const path = require('path')
+import Image from '../libs/models/Image.js'
+import path from 'path'
 
 // Add a new image
-exports.addImage = async (req, res) => {
+export const addImage = async (req, res) => {
   try {
     const image = new Image({
       image: req.file.path, // Ensure you're using multer to handle file uploads
@@ -16,7 +16,7 @@ exports.addImage = async (req, res) => {
 }
 
 // Get all images
-exports.getAllImages = async (req, res) => {
+export const getAllImages = async (req, res) => {
   try {
     const images = await Image.find()
     res.status(200).json(images)
@@ -26,7 +26,7 @@ exports.getAllImages = async (req, res) => {
 }
 
 // Update an existing image
-exports.updateImage = async (req, res) => {
+export const updateImage = async (req, res) => {
   try {
     const image = await Image.findById(req.params.id)
     if (!image) {
@@ -48,7 +48,7 @@ exports.updateImage = async (req, res) => {
 }
 
 // Delete an image
-exports.deleteImage = async (req, res) => {
+export const deleteImage = async (req, res) => {
   try {
     const image = await Image.findByIdAndDelete(req.params.id)
     if (!image) {

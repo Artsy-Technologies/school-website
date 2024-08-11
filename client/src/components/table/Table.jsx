@@ -6,7 +6,7 @@ const Table = ({ columns, data, isAdmin }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const pageSize = 3
 
-  console.log(isAdmin, 'from the table component')
+  // console.log(isAdmin, 'from the table component')
 
   const handlePageChange = page => {
     setCurrentPage(page)

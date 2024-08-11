@@ -1,7 +1,7 @@
 import Banner from '../components/banner/Banner'
 import TuitionTable from '../components/table/Table'
 import { useData } from '../context/BannerContext'
-
+import { useAdmin } from '../hooks/AdminContext'
 const fee_data = [
   {
     program: 'Preschool',
