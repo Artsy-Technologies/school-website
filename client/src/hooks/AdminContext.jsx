@@ -12,19 +12,17 @@ export const AdminProvider = ({ children }) => {
 
   useEffect(() => {
     const validateLogin = async () => {
-      try {
-        const res = await axios.get('/dashboard')
-        if (res?.data?.status === 200) {
-          setIsAdmin(true)
-        }
-      } catch (error) {
-        // Handle error (e.g., show a message to the user or log the error)
-        console.error('Error validating login:', error)
+      let res = await axios.get('/dashboard');
+      console.log(res);
+      if (res?.data?.status === 200) {
+        setIsAdmin(true);
       }
-    }
+    };
 
-    validateLogin()
-  }, []) // Add an empty dependency array to run only once
+    validateLogin();
+  })
+
+  console.log(isAdmin);// Add an empty dependency array to run only once
 
   return (
     <AdminContext.Provider value={{ isAdmin, setIsAdmin }}>

@@ -79,7 +79,7 @@
 }
 
 .hero__image--circle {
-  background-image: url("../../../public/assets/hero-section/kids-image.png");
+  background-image: url("../../assets/hero-section/kids-image.png");
   width: 28.125rem;
   height: 28.125rem;
   background-position: center;

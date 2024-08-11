@@ -51,15 +51,15 @@
 }
 
 .facebook {
-  background-image: url('../../../public/assets/contact-form/facebook.png');
+  background-image: url('../../assets/contact-form/facebook.png');
 }
 
 .twitter {
-  background-image: url('../../../public/assets/contact-form/twitter.png');
+  background-image: url('../../assets/contact-form/twitter.png');
 }
 
 .linkedin {
-  background-image: url('../../../public/assets/contact-form/linkedin.png');
+  background-image: url('../../assets/contact-form/linkedin.png');
 }
 
 form {
