@@ -1,29 +1,28 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
 
 const feeSchema = new mongoose.Schema({
-    programName: {
-        type: "String",
-        required: true
-    },
-    ageGroup: {
-        type: String,
-        required: true
-    },
-    annualFee: {
-        type: Number,
-        required: true
-    },
-    registrationFee: {
-        type: Number,
-        required: true
-    },
-    activityFee: {
-        type: Number,
-        required: true
-    }
-
+  programName: {
+    type: String, // Changed "String" to String
+    required: true,
+  },
+  ageGroup: {
+    type: String,
+    required: true,
+  },
+  annualFee: {
+    type: Number,
+    required: true,
+  },
+  registrationFee: {
+    type: Number,
+    required: true,
+  },
+  activityFee: {
+    type: Number,
+    required: true,
+  },
 })
 
-const fee = mongoose.model('fee', feeSchema);
+const Fee = mongoose.model('Fee', feeSchema)
 
-module.exports = fee;
+export default Fee
