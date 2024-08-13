@@ -1,15 +1,14 @@
 /* eslint-disable react/prop-types */
 // AdminContext.js
-import axios from 'axios';
-import { createContext, useState, useContext, useEffect } from 'react';
+import axios from 'axios'
+import { createContext, useState, useContext, useEffect } from 'react'
 
 // Create the context
-const AdminContext = createContext();
+const AdminContext = createContext()
 
 // Create a provider component
 export const AdminProvider = ({ children }) => {
-  const [isAdmin, setIsAdmin] = useState(false);
-
+  const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
     const validateLogin = async () => {
@@ -23,14 +22,14 @@ export const AdminProvider = ({ children }) => {
     validateLogin();
   })
 
-  console.log(isAdmin);
+  console.log(isAdmin);// Add an empty dependency array to run only once
 
   return (
     <AdminContext.Provider value={{ isAdmin, setIsAdmin }}>
       {children}
     </AdminContext.Provider>
-  );
-};
+  )
+}
 
 // Create a custom hook for easier usage of the context
-export const useAdmin = () => useContext(AdminContext);
+export const useAdmin = () => useContext(AdminContext)
