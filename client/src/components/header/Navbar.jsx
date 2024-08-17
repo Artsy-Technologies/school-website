@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Use local state or global context
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   // Toggle menu visibility
@@ -23,24 +23,6 @@ export default function Navbar() {
       navigate("/dashboard/auth");
     }
   };
-
-  // Example useEffect to simulate login state persistence (replace with actual auth logic)
-  useEffect(() => {
-    // Replace with actual logic to check if the user is logged in
-    const checkLoginStatus = () => {
-      // Simulate fetching login status
-      const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-      setIsLoggedIn(loggedIn);
-    };
-
-    checkLoginStatus();
-  }, []);
-
-  // Update localStorage or other storage on login status change
-  useEffect(() => {
-    localStorage.setItem('isLoggedIn', isLoggedIn ? 'true' : 'false');
-  }, [isLoggedIn]);
-
   return (
     <header className="flex justify-between items-center bg-purple-500 text-white p-4 drop-shadow-md z-50 relative">
       <h1 className="text-xl">SRI MURUGHA RAJENDRASWAMY CBSE SCHOOL</h1>
