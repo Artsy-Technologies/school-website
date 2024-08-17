@@ -1,21 +1,23 @@
-// /* eslint-disable no-unused-vars */
-// import { useEffect } from 'react';
-// import { useAdmin } from '../../hooks/AdminContext';
-// function AdminPage() {
+/* eslint-disable no-unused-vars */
+import { useEffect } from 'react';
+import { useAdmin } from '../../hooks/AdminContext';
+import Sidebar from '../../components/admin/Sidebar';
+function AdminPage() {
 
-//     return (
-//         <section className="h-screen " >
+    return (
+        <section className="h-screen  " >
+            <Sidebar />
+        </section>
+    )
+}
 
-//         </section>
-//     )
-// }
+export default AdminPage
 
-// export default AdminPage
 
+/*
 const AdminDashboard = () => {
   return (
     <div className="min-h-screen flex">
-      {/* Sidebar */}
       <aside className="w-64 bg-gray-800 text-white">
         <div className="p-6">
           <h2 className="text-2xl font-bold">Admin Dashboard</h2>
@@ -44,10 +46,7 @@ const AdminDashboard = () => {
           </a>
         </nav>
       </aside>
-
-      {/* Main Content */}
       <div className="flex-1 p-10 text-gray-800">
-        {/* Header */}
         <header className="flex justify-between items-center pb-6">
           <h1 className="text-3xl font-semibold">Welcome, Admin</h1>
           <div className="flex items-center">
@@ -66,8 +65,6 @@ const AdminDashboard = () => {
             </div>
           </div>
         </header>
-
-        {/* Dashboard Sections */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-lg font-semibold">Image Gallery</h2>
@@ -85,10 +82,5 @@ const AdminDashboard = () => {
             <h2 className="text-lg font-semibold">Fee Structure</h2>
             <p>Update and manage the fee structure details.</p>
           </div>
-        </section>
-      </div>
-    </div>
-  );
-};
+*/
 
-export default AdminDashboard;
