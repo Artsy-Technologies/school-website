@@ -1,10 +1,11 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useAdmin } from '../../hooks/AdminContext';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isAdmin, logout } = useAdmin();
   const navigate = useNavigate();
 
   // Toggle menu visibility
@@ -12,17 +13,17 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Handle login/logout
-  const handleClick = () => {
-    if (isLoggedIn) {
-      // Handle logout
-      setIsLoggedIn(false);
-      navigate("/");
-    } else {
-      // Handle login
-      navigate("/dashboard/auth");
-    }
+  // Handle login
+  const handleLogin = () => {
+    navigate("/dashboard/auth");
   };
+
+  // Handle logout
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
   return (
     <header className="flex justify-between items-center bg-purple-500 text-white p-4 drop-shadow-md z-50 relative">
       <h1 className="text-xl">SRI MURUGHA RAJENDRASWAMY CBSE SCHOOL</h1>
@@ -69,9 +70,15 @@ export default function Navbar() {
           </Link>
         </li>
         <li className="p-3 hover:bg-purple-600 rounded-md transition-all cursor-pointer border border-white">
-          <button onClick={handleClick}>
-            {isLoggedIn ? 'Logout' : 'Admin Login'}
-          </button>
+          {!isAdmin ? (
+            <button onClick={handleLogin}>
+              Admin Login
+            </button>
+          ) : (
+            <button onClick={handleLogout}>
+              Logout
+            </button>
+          )}
         </li>
       </ul>
     </header>
