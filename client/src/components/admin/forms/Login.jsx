@@ -26,6 +26,8 @@ const Login = () => {
 
     const signIn = async (data) => {
         let res = await axios.post('/api/admin/signIn', data);
+        console.log(res);
+        
         if (res?.data?.status === 200) {
             toast.success(res?.data?.message);
             setIsAdmin(true);
