@@ -12,7 +12,7 @@ export const AdminProvider = ({ children }) => {
 
   useEffect(() => {
     const validateLogin = async () => {
-      let res = await axios.get('/dashboard');
+      let res = await axios.get('/api/admin/dashboard');
       console.log(res);
       if (res?.data?.status === 200) {
         setIsAdmin(true);
