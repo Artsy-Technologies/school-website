@@ -1,6 +1,6 @@
 import Banner from '../components/banner/Banner'
-// import PdfViewer from '../components/pdfViewer/PdfViewer'
 import TuitionTable from '../components/table/Table'
+import AdmissionForm from '../components/admission-form/admission-form';
 import { useData } from '../context/BannerContext'
 import { useAdmin } from '../hooks/AdminContext'
 const fee_data = [
@@ -90,6 +90,7 @@ const AdmissionPage = () => {
 
   return (
     <div className="min-h-screen w-full dark:bg-darkmode">
+    <div className="min-h-screen w-full">
       <Banner
         main={admissionPage.title}
         content={admissionPage.content}
@@ -104,9 +105,11 @@ const AdmissionPage = () => {
           data={activity_data}
           isAdmin={isAdmin}
         />
-        {/* <PdfViewer/> */}
+        </div>
       </div>
+      <AdmissionForm/>
     </div>
+   
   )
 }
 
