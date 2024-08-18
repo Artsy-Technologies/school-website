@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import  { useState } from "react";
 
 // ICONS //
@@ -22,7 +23,7 @@ const Sidebar = () => {
     { id: 6, path: "/work", name: "Work Plan", icon: LuCalendar },
   ];
   return (
-    <div className="w-16 md:w-56 fixed left-0 top-0 z-10 h-screen boder-r pt-8 px-4 bg-white">
+    <div className="w-[20%] fixed left-0 top-0 z-10 h-screen boder-r pt-8 px-4 bg-white">
       {/* logo */}
       <div className="mb-8">
         <img src="/logo.svg" alt="logo" className="w-28 hidden md:flex" />
