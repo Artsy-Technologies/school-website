@@ -8,6 +8,7 @@ export default {
         darkpurple: '#8f5bff',
         lightpurple: '#c2a6ff',
         darkmode:'#1F2937',
+        darkModeCard:'#374151'
         // Add more colors as needed
       },
     },

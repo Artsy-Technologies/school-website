@@ -1,4 +1,5 @@
 import Banner from '../components/banner/Banner'
+import PdfViewer from '../components/pdfViewer/PdfViewer'
 import TuitionTable from '../components/table/Table'
 import { useData } from '../context/BannerContext'
 import { useAdmin } from '../hooks/AdminContext'
@@ -103,6 +104,7 @@ const AdmissionPage = () => {
           data={activity_data}
           isAdmin={isAdmin}
         />
+        {/* <PdfViewer/> */}
       </div>
     </div>
   )
