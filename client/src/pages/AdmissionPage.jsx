@@ -1,5 +1,6 @@
 import Banner from '../components/banner/Banner'
 import TuitionTable from '../components/table/Table'
+import AdmissionForm from '../components/admission-form/admission-form';
 import { useData } from '../context/BannerContext'
 import { useAdmin } from '../hooks/AdminContext'
 const fee_data = [
@@ -103,8 +104,11 @@ const AdmissionPage = () => {
           data={activity_data}
           isAdmin={isAdmin}
         />
+         <AdmissionForm/>
       </div>
+      {/* <AdmissionForm/> */}
     </div>
+   
   )
 }
 

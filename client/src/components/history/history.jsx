@@ -1,4 +1,4 @@
-import sqr from '../../assets/sqr.png';
+import sqr from "../../assets/sqr.png";
 
 export const History = () => {
   return (
@@ -23,7 +23,6 @@ export const History = () => {
             </p>
           </div>
         </div>
-
         <div class="flex items-start mb-10">
           <div>
             <h3 class="text-lg font-semibold text-purple-700">
@@ -62,7 +61,6 @@ export const History = () => {
             </p>
           </div>
         </div>
-
         <div class="flex items-start mb-10">
           <div>
             <h3 class="text-lg font-semibold text-purple-700">
