@@ -19,9 +19,5 @@ function AboutPage() {
   );
 }
 
-<<<<<<< HEAD
 
-export default AboutPage
-=======
 export default AboutPage;
->>>>>>> 1fe29ea94989f24fb08de6ed6c59ca820b776309
