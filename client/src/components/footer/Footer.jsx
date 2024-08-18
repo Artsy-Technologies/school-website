@@ -1,8 +1,12 @@
 import { Mail, Phone, MapPin, Copyright } from 'lucide-react'
 import Logo from '/assets/logo.png'
+import { useLocation } from 'react-router-dom';
 
 function Footer() {
-  return (
+  const location = useLocation();
+  console.log(location.pathname);
+
+  return location.pathname === "/dashboard" ? <></> :
     <footer className="bg-gray-100 dark:border-t-white border dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-10">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-10">
@@ -95,7 +99,6 @@ function Footer() {
         </div>
       </div>
     </footer>
-  )
 }
 
 export default Footer
