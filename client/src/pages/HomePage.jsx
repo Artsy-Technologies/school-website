@@ -5,7 +5,7 @@ import Data from '../components/Carousel/Data'
 import HeroSection from '../components/hero-section/hero-section'
 function HomePage() {
   return (
-    <div className='flex flex-col gap-12'>
+    <div className='dark:bg-darkmode '>
       <HeroSection />
       <CounterUpCard />
       {/* Our Benefits */}

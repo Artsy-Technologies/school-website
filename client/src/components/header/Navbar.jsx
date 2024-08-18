@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useAdmin } from '../../hooks/AdminContext';
-
+import DarkModeToggle from '../darkmode/DarkModeToggle';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isAdmin, logout } = useAdmin();
@@ -69,6 +69,8 @@ export default function Navbar() {
             Contact
           </Link>
         </li>
+        <DarkModeToggle/>
+
         <li className="p-3 hover:bg-purple-600 rounded-md transition-all cursor-pointer border border-white">
           {!isAdmin ? (
             <button onClick={handleLogin}>

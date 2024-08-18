@@ -6,7 +6,7 @@ function AboutPage() {
   const { aboutPage } = useData();
 
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-12 dark:bg-darkmode">
       <Banner
         main={aboutPage.title}
         content={aboutPage.content}

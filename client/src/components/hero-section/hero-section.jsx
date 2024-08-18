@@ -5,13 +5,13 @@ const HeroSection = () => {
 const navigate = useNavigate();
 
   return (
-    <div className="container mx-auto p-8 h-92 mb-15">
+    <div className="container mx-auto p-8 h-92 mb-15 ">
         <div className="p-6 rounded-lg shadow-lg flex flex-col gap-4 lg:flex-row items-center justify-between h-auto">
             <div className="lg:w-4/5 text-center lg:text-left">
                 <h1 className="text-white text-xl font-semibold">Welcome to <span className="text-orange-500 text-3xl">Sri Murugha Rajendraswamy CBSE School</span></h1>
                 <hr className="my-4 border-white" />
-                <p className="text-white text-2xl font-medium mt-2">Where Young Minds Blossom and <span className="text-purple-700 text-3xl">Dreams Take Flight.</span></p>
-                <p className="text-purple-700 text-xl mt-4">Our kindergarten school provides a nurturing and stimulating environment, fostering a love for learning that lasts a lifetime. Join us as we embark on an exciting educational journey together!</p>
+                <p className="text-white text-2xl font-medium mt-2">Where Young Minds Blossom and <span className="dark:text-white text-purple-700 text-3xl">Dreams Take Flight.</span></p>
+                <p className="dark:text-white text-purple-700 text-xl mt-4">Our kindergarten school provides a nurturing and stimulating environment, fostering a love for learning that lasts a lifetime. Join us as we embark on an exciting educational journey together!</p>
                 <button className="mt-6 bg-orange-500 text-white px-6 py-3 border border- 2 rounded-lg font-semibold hover:bg-orange-600 transition duration-300"
                 onClick={() => navigate("/contact")}>
                     Admission is Open, Grab your seat now

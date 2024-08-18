@@ -19,7 +19,7 @@ const Table = ({ columns, data }) => {
   );
 
   return (
-    <div className="p-5 bg-white border-black border-b-4 border-r-4 rounded shadow-md overflow-x-auto">
+    <div className="p-5 dark:bg-darkModeCard bg-white border-black border-b-4 border-r-4 rounded shadow-md overflow-x-auto">
       <table className="min-w-full table-auto">
         <thead>
           <tr className="bg-darkpurple font-normal text-[1rem] text-white text-left">
@@ -48,17 +48,17 @@ const Table = ({ columns, data }) => {
         </thead>
         <tbody>
           {currentData.map((row, rowIndex) => (
-            <tr key={rowIndex} className="bg-white">
+            <tr key={rowIndex} className="bg-white dark:bg-darkModeCard">
               {columns.map((col, colIndex) => (
                 <td
                   key={colIndex}
-                  className="border border-black text-[1em] px-4 py-2"
+                  className="border dark:border-white dark:text-white border-black text-[1em] px-4 py-2"
                 >
                   {row[col.accessor]}
                 </td>
               ))}
               {isAdmin && (
-                <td className="border px-4 py-2 flex space-x-2">
+                <td className="border  px-4 py-2 flex space-x-2">
                   <button className="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-700">
                     Edit
                   </button>
@@ -77,7 +77,7 @@ const Table = ({ columns, data }) => {
         // eslint-disable-next-line react/prop-types
         total={data.length}
         onChange={handlePageChange}
-        className="mt-4 justify-start"
+        className="mt-4 justify-start dark:text-white"
       />
     </div>
   );

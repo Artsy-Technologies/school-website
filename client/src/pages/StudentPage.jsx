@@ -5,7 +5,7 @@ function StudentPage() {
     const { studentLifePage } = useData()
 
   return (
-    <div>
+    <div className='dark:bg-darkmode'>
       <Banner
         main={studentLifePage.title}
         content={studentLifePage.content}
