@@ -9,7 +9,7 @@ function AcademicHeader({ main, buttonText }) {
           {main}
         </h1>
         <div className="">
-          <button className="self-center   md:self-start px-4 py-2 text-base font-medium leading-6 text-center whitespace-nowrap rounded-md border-2 border-solid border-neutral-800 text-white mt-10 bg-darkpurple ">
+          <button className="self-center md:self-start px-4 py-2 text-base font-medium leading-6 text-center whitespace-nowrap rounded-md border-2 border-solid border-neutral-800 text-white mt-10 bg-darkpurple ">
             {buttonText}
           </button>
         </div>
