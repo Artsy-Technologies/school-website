@@ -4,9 +4,8 @@ import  { useState } from "react";
 // ICONS //
 import { LuBox, LuUser, LuMessageSquare, LuCalendar } from "react-icons/lu";
 import { FaSuitcase } from "react-icons/fa";
-import { TbUsers } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import { IoImages } from "react-icons/io5";
+import { IoImages, IoDocumentTextOutline, IoDocumentAttachOutline } from "react-icons/io5";
 // ICONS //
 
 const Sidebar = () => {
@@ -14,16 +13,18 @@ const Sidebar = () => {
   const handleLinkClick = (index) => {
     setActiveLink(index);
   };
-  const SIDEBAR_LINKS = [
-    { id: 1, path: "/", name: "Dashboard", icon: LuBox },
-    { id: 2, path: "/image-galary", name: "Image-Galary", icon: IoImages },
-    { id: 3, path: "/messages", name: "Messages", icon: LuMessageSquare },
-    { id: 4, path: "/projects", name: "Projects", icon: FaSuitcase },
-    { id: 5, path: "/clients", name: "Clients", icon: LuUser },
-    { id: 6, path: "/work", name: "Work Plan", icon: LuCalendar },
-  ];
+const SIDEBAR_LINKS = [
+  { id: 1, path: "/dashboard", name: "Dashboard", icon: LuBox },
+  { id: 2, path: "/dashboard/image-gallery", name: "Image-Gallery", icon: IoImages },
+  { id: 3, path: "/dashboard/admission-forms", name: "Admission Forms", icon: IoDocumentAttachOutline },
+  { id: 4, path: "/dashboard/contact-forms", name: "Contact Forms", icon: IoDocumentTextOutline },
+  { id: 5, path: "/dashboard/messages", name: "Messages", icon: LuMessageSquare },
+  { id: 6, path: "/dashboard/projects", name: "Projects", icon: FaSuitcase },
+  { id: 7, path: "/dashboard/clients", name: "Clients", icon: LuUser },
+  { id: 8, path: "/dashboard/work", name: "Work Plan", icon: LuCalendar },
+];
   return (
-    <div className="w-[20%] fixed left-0 top-0 z-10 h-screen boder-r pt-8 px-4 bg-white">
+    <div className="w-[20%] fixed left-0 top-0 z-10 h-screen border-r pt-8 px-4 bg-white">
       {/* logo */}
       <div className="mb-8">
         <img src="/logo.svg" alt="logo" className="w-28 hidden md:flex" />
