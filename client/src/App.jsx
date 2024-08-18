@@ -14,6 +14,7 @@ import ProtectedRoute from './components/admin/ProtectedRoute'
 
 axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.withCredentials = true;
+
 import { DataProvider } from './context/BannerContext';
 
 const App = () => {

@@ -21,7 +21,7 @@ const DarkModeToggle = () => {
   };
 
   return (
-    <button onClick={handleToggle} className="p-2">
+    <button onClick={handleToggle} className="p-2  border border-white rounded">
       {darkMode ? <IoSunny /> : <IoMoon />}
     </button>
   );

@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer'
+import Student from '../libs/models/studentModel.js'
 
 const adminEmail = 'rahul956vishwakarma@gmail.com'
 
@@ -24,7 +25,14 @@ export const contacts = async (req, res) => {
     ) {
       throw new Error('fields are missing')
     }
-    const isSendEmails = await sendmails(adminEmail, email, studentName)
+
+    const studentData = {
+      parentName, phoneNumber, email, studentName, studentAge, programIntrest, message
+    }
+    
+    const newStudent = await Student.create(studentData) 
+
+    const isSendEmails = sendmails(adminEmail, email, studentName)
     if (!isSendEmails || isSendEmails === false) {
       throw new Error('something went wrong in email sending')
     }
@@ -88,4 +96,16 @@ const sendmails = (adminEmail, userEmail, userName) => {
   }
 }
 
-// https://meet.google.com/cfw-rrom-qgd
+export const getContactStudentsData = async (req,res) =>{
+  try {
+    const allContactData = await Student.find();
+    console.log(allContactData);
+    return res.json({
+      message:"all data is fetched",
+      status:200,
+      allContactData
+    })
+  } catch (error) {
+    console.log(error.message);
+  }
+}

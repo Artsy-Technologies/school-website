@@ -8,6 +8,7 @@ const CounterUpCard = () => {
   })
 
   return (
+    <div className='w-3/5 mx-auto'>
     <div
       ref={ref}
       className="relative py-6 px-4 md:px-8 rounded-lg shadow-lg flex flex-wrap justify-center items-center space-y-6 md:space-y-0 md:space-x-10 border border-black"
@@ -31,6 +32,7 @@ const CounterUpCard = () => {
         </h2>
         <p className="text-lg text-white">Experience Educators</p>
       </div>
+    </div>
     </div>
   )
 }
