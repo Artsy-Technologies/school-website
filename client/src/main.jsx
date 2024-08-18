@@ -7,12 +7,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AdminProvider } from './hooks/AdminContext.jsx';
 
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    
     <AdminProvider>
       <ToastContainer />
       <App />
     </AdminProvider>
+    
   </React.StrictMode>
 )

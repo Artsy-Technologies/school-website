@@ -2,7 +2,7 @@ import './hero-section.css';
 
 const HeroSection = () => {
   return (
-    <div className="herosection__container">
+    <div className=" herosection__container">
       <div className="herosection__content">
         <div className="content__heading">
           <h1 className="content__heading--main">
