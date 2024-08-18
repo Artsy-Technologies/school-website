@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types'
 import { useState, useRef, useEffect, useCallback } from 'react'
+import { useAdmin } from '../../hooks/AdminContext'
 
 function Carousel({ images }) {
   const [current, setCurrent] = useState(0)
   const [autoPlay] = useState(true)
   const timeOut = useRef(null)
+  const {isAdmin} = useAdmin();
 
   const slideRight = useCallback(() => {
     setCurrent(prev => (prev === images.length - 1 ? 0 : prev + 1))
@@ -70,6 +72,19 @@ function Carousel({ images }) {
             ></div>
           ))}
         </div>
+        {isAdmin && (
+          <div className="absolute top-4 right-4 flex space-x-2">
+            <button className="px-4 py-1 bg-green-500 text-white rounded hover:bg-green-700">
+              Add
+            </button>
+            <button className="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-700">
+              Update
+            </button>
+            <button className="px-4 py-1 bg-red-500 text-white rounded hover:bg-red-700">
+              Delete
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )

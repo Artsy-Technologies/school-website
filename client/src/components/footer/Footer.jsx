@@ -1,9 +1,13 @@
 import { Mail, Phone, MapPin, Copyright } from 'lucide-react'
 import Logo from '/assets/logo.png'
+import { useLocation } from 'react-router-dom';
 
 function Footer() {
-  return (
-    <footer className="bg-gray-100 p-10">
+  const location = useLocation();
+  console.log(location.pathname);
+
+  return location.pathname === "/dashboard" ? <></> :
+    <footer className="bg-gray-100 dark:border-t-white border dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-10">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-10">
           <div className="flex flex-col gap-5 max-w-full">
@@ -15,24 +19,24 @@ function Footer() {
                 height={25}
                 className="ml-0.5"
               />
-              <h4 className="text-1xl text-orange-600">
+              <h4 className="text-1xl text-orange-600 dark:text-orange-400">
                 SRI MURUGHA RAJENDRASWAMY CBSE SCHOOL
               </h4>
             </div>
-            <p className="text-slate-900 font-Outfit">
+            <p className="font-Outfit">
               We believe in the power of play to foster creativity,
               problem-solving skills, and imagination.
             </p>
             <div className="flex items-center gap-1">
-              <Mail />
+              <Mail className="text-gray-600 dark:text-gray-300" />
               <p>example.com</p>
             </div>
             <div className="flex items-center gap-1">
-              <Phone />
+              <Phone className="text-gray-600 dark:text-gray-300" />
               <p>+91 123456789</p>
             </div>
             <div className="flex items-center gap-1">
-              <MapPin />
+              <MapPin className="text-gray-600 dark:text-gray-300" />
               <p>Somewhere in the World</p>
             </div>
           </div>
@@ -40,7 +44,7 @@ function Footer() {
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-10">
             <div className="flex flex-col gap-5">
               <ul>
-                <li className="text-22px list-none font-semibold text-orange-600">
+                <li className="text-22px list-none font-semibold text-orange-600 dark:text-orange-400">
                   Home
                 </li>
                 <li className="my-4 list-none">Features</li>
@@ -51,7 +55,7 @@ function Footer() {
 
             <div className="flex flex-col gap-5">
               <ul>
-                <li className="text-22px list-none font-semibold text-orange-600">
+                <li className="text-22px list-none font-semibold text-orange-600 dark:text-orange-400">
                   About Us
                 </li>
                 <li className="my-4 list-none">Our Mission</li>
@@ -64,7 +68,7 @@ function Footer() {
 
             <div className="flex flex-col gap-5">
               <ul>
-                <li className="text-22px list-none font-semibold text-orange-600">
+                <li className="text-22px list-none font-semibold text-orange-600 dark:text-orange-400">
                   Academics
                 </li>
                 <li className="my-4 list-none">Special Features</li>
@@ -74,7 +78,7 @@ function Footer() {
 
             <div className="flex flex-col gap-5">
               <ul>
-                <li className="text-22px list-none font-semibold text-orange-600">
+                <li className="text-22px list-none font-semibold text-orange-600 dark:text-orange-400">
                   Contact Us
                 </li>
                 <li className="my-4 list-none">Information</li>
@@ -84,18 +88,17 @@ function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-black mt-10 pt-5">
+        <div className="border-t border-black dark:border-gray-700 mt-10 pt-5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-5 text-center md:text-left">
             <p>Terms of Service | Privacy Policy | Cookie Policy</p>
-            <p className="text-slate-900 font-Outfit flex items-center gap-2">
-              <Copyright /> {new Date().getFullYear()} SRI MURUGHA RAJENDRASWAMY
+            <p className="font-Outfit flex items-center gap-2">
+              <Copyright className="text-gray-600 dark:text-gray-300" /> {new Date().getFullYear()} SRI MURUGHA RAJENDRASWAMY
               CBSE SCHOOL. All rights reserved.
             </p>
           </div>
         </div>
       </div>
     </footer>
-  )
 }
 
 export default Footer

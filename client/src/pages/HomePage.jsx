@@ -5,10 +5,12 @@ import Data from '../components/Carousel/Data'
 import HeroSection from '../components/hero-section/hero-section'
 function HomePage() {
   return (
-    <div>
+    <div className='dark:bg-darkmode '>
       <HeroSection />
-      <Carousel images={Data} />
       <CounterUpCard />
+      {/* Our Benefits */}
+      <Carousel images={Data} />
+      {/* Testimonials */}
       <FaqSection />
     </div>
   )

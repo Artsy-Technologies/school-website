@@ -4,7 +4,7 @@ import { useData } from '../context/BannerContext'
 function ContactPage() {
   const {contactPage}=useData();
   return (
-    <div>
+    <div className='dark:bg-darkmode'>
       <Banner
         main={contactPage.title}
         content={contactPage.content}

@@ -2,13 +2,13 @@
 
 const ContactForm = () => {
   return (
-    <div class="bg-purple-300 flex justify-center items-center min-h-screen">
+    <div class="bg-purple-300  dark:bg-darkmode flex justify-center items-center min-h-screen">
     <div
-      class="bg-white rounded-lg shadow-lg p-8 w-full max-w-4xl  "
+      class="bg-white dark:bg-darkModeCard dark:border-white border rounded-lg shadow-lg p-8 w-full max-w-4xl  "
     >
       <div class="flex justify-center mb-4 space-x-2">
         <button
-          class="bg-orange-500 p-2  border border-red-500 focus:border-purple-500"
+          class="bg-orange-500 p-2  border border-red-500  focus:border-purple-500"
         >
           <img
             src="https://img.icons8.com/material-outlined/24/ffffff/facebook-new.png"
@@ -31,24 +31,24 @@ const ContactForm = () => {
       </div>
 
       <form action="#">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div class="grid grid-cols-1  md:grid-cols-2 gap-4 mb-4">
           <div>
             <label
               for="studentName"
-              class="block text-lg font-medium text-purple-900"
+              class="block text-lg font-medium dark:text-white text-purple-900"
               >Student Name</label
             >
             <input
               type="text"
               id="studentName"
               placeholder="Enter Student Name"
-              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+              class="mt-1 block w-full dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
             />
           </div>
           <div>
             <label
               for="parentName"
-              class="block text-lg font-medium text-purple-900"
+              class="block text-lg font-medium dark:text-white text-purple-900"
             >
               Parent Name</label
             >
@@ -56,13 +56,13 @@ const ContactForm = () => {
               type="text"
               id="parentName"
               placeholder="Enter Parent Name"
-              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+              class="mt-1 block w-full dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
             />
           </div>
           <div>
             <label
               for="email"
-              class="block text-lg font-medium text-purple-900"
+              class="block text-lg font-medium dark:text-white text-purple-900"
             >
               Email Address</label
             >
@@ -70,25 +70,25 @@ const ContactForm = () => {
               type="email"
               id="email"
               placeholder="Enter Email Address"
-              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+              class="mt-1 block w-full dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
             />
           </div>
           <div>
             <label
               for="phoneNumber"
-              class="block text-lg font-medium text-purple-900"
+              class="block text-lg font-medium dark:text-white text-purple-900"
               >Phone Number</label>
             <input
               type="tel"
               id="phoneNumber"
               placeholder="Enter Phone Number"
-              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+              class="mt-1 block w-full dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
             />
           </div>
           <div>
             <label
               for="studentAge"
-              class="block text-lg font-medium text-purple-900"
+              class="block text-lg font-medium dark:text-white text-purple-900"
             >
               Student Age</label
             >
@@ -96,19 +96,19 @@ const ContactForm = () => {
               type="number"
               id="studentAge"
               placeholder="Enter Student Age"
-              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+              class="mt-1 block w-full dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
             />
           </div>
           <div>
             <label
               for="programInterest"
-              class="block text-lg font-medium text-purple-900"
+              class="block text-lg font-medium dark:text-white text-purple-900"
             >
               Program of Interest</label
             >
             <select
               id="programInterest"
-              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
+              class="mt-1 block w-full dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
             >
               <option>Select Program</option>
               <option>Program 1</option>
@@ -118,7 +118,7 @@ const ContactForm = () => {
           </div>
         </div>
         <div class="mb-4">
-          <label for="message" class="block text-lg font-medium text-purple-900"
+          <label for="message" class="block text-lg font-medium dark:text-white text-purple-900"
             >Message</label
           >
           <textarea
