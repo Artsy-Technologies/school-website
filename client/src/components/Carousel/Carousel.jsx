@@ -1,27 +1,51 @@
-import PropTypes from 'prop-types'
-import { useState, useRef, useEffect, useCallback } from 'react'
+import PropTypes from 'prop-types';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import axios from 'axios';
 
-function Carousel({ images }) {
-  const [current, setCurrent] = useState(0)
-  const [autoPlay] = useState(true)
-  const timeOut = useRef(null)
+function Carousel() {
+  const [images, setImages] = useState([]);
+  const [current, setCurrent] = useState(0);
+  const [autoPlay] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const timeOut = useRef(null);
+
+  // Fetch images from API
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await axios.get('/api/images');
+        setImages(response.data);
+      } catch (err) {
+        setError('Failed to fetch images');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   const slideRight = useCallback(() => {
-    setCurrent(prev => (prev === images.length - 1 ? 0 : prev + 1))
-  }, [images.length])
+    setCurrent(prev => (prev === images.length - 1 ? 0 : prev + 1));
+  }, [images.length]);
 
   const slideLeft = useCallback(() => {
-    setCurrent(prev => (prev === 0 ? images.length - 1 : prev - 1))
-  }, [images.length])
+    setCurrent(prev => (prev === 0 ? images.length - 1 : prev - 1));
+  }, [images.length]);
 
   useEffect(() => {
-    if (autoPlay) {
+    if (autoPlay && !loading) {
       timeOut.current = setTimeout(() => {
-        slideRight()
-      }, 2500)
+        slideRight();
+      }, 2500);
     }
-    return () => clearTimeout(timeOut.current)
-  }, [current, autoPlay, slideRight])
+    return () => clearTimeout(timeOut.current);
+  }, [current, autoPlay, slideRight, loading]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <div className="relative flex h-96 w-full max-w-screen-md mx-auto p-2 z-10">
@@ -37,7 +61,7 @@ function Carousel({ images }) {
           >
             <img
               className="object-cover w-full h-full"
-              src={image.image}
+              src={`http://localhost:8000/${image.image}`}
               alt={image.title}
             />
             <div className="absolute inset-0 flex items-end p-10 bg-black bg-opacity-50">
@@ -70,9 +94,22 @@ function Carousel({ images }) {
             ></div>
           ))}
         </div>
+        {/* {isAdmin && (
+          <div className="absolute top-4 right-4 flex space-x-2">
+            <button className="px-4 py-1 bg-green-500 text-white rounded hover:bg-green-700">
+              Add
+            </button>
+            <button className="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-700">
+              Update
+            </button>
+            <button className="px-4 py-1 bg-red-500 text-white rounded hover:bg-red-700">
+              Delete
+            </button>
+          </div>
+        )} */}
       </div>
     </div>
-  )
+  );
 }
 
 Carousel.propTypes = {
@@ -82,6 +119,7 @@ Carousel.propTypes = {
       title: PropTypes.string.isRequired,
     })
   ).isRequired,
-}
+};
 
-export default Carousel
+export default Carousel;
+

@@ -1,8 +1,9 @@
 import Banner from '../components/banner/Banner'
+import TuitionTable from '../components/table/Table'
+import AdmissionForm from '../components/admission-form/admission-form';
 import { useData } from '../context/BannerContext'
 
 import { useAdmin } from '../hooks/AdminContext'
-import TuitionTable from '../components/table/Table'
 import PdfDownloader from '../components/pdfViewer/PdfDownloader'
 const pdfUrl = new URL('../assets/pdf/SudarshanCV.pdf', import.meta.url).href;
 const fee_data = [
@@ -92,6 +93,7 @@ const AdmissionPage = () => {
 
   return (
     <div className="min-h-screen w-full dark:bg-darkmode">
+    <div className="min-h-screen w-full">
       <Banner
         main={admissionPage.title}
         content={admissionPage.content}
@@ -106,10 +108,10 @@ const AdmissionPage = () => {
           data={activity_data}
           isAdmin={isAdmin}
         />
-
     <PdfDownloader/>
       </div>
-
+        </div>
+      <AdmissionForm/>
     </div>
   )
 }
