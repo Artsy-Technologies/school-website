@@ -30,7 +30,7 @@ export const contacts = async (req, res) => {
       parentName, phoneNumber, email, studentName, studentAge, programIntrest, message
     }
     
-    const newStudent = await Student.create(studentData) 
+    const newStudent = await Student.create(studentData)
 
     const isSendEmails = sendmails(adminEmail, email, studentName)
     if (!isSendEmails || isSendEmails === false) {

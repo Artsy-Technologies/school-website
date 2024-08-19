@@ -6,6 +6,8 @@ import adminRouter from './routes/adminRouter.js'
 import studentsRoutes from './routes/studentsRoutes.js'
 import imageRoutes from './routes/imageRoutes.js'
 import connectDB from './libs/databaseConnection.js'
+import path from 'path';
+import url from 'url';
 
 dotenv.config()
 
@@ -24,9 +26,18 @@ app.use(
   })
 )
 
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
+
 app.use('/api', imageRoutes)
 app.use('/api/admin', adminRouter)
 app.use('/api/students', studentsRoutes)
+
+app.get('/', (req, res) => {
+  res.send('<html><body><img src="/uploads/file_1724089808470.jpg" alt="Test Image"></body></html>');
+});
 
 app.listen(port, async () => {
   await connectDB()
