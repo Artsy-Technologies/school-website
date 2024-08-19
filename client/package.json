@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/zoom": "^3.12.0",
     "antd": "^5.19.2",
     "axios": "^1.7.2",
     "framer-motion": "^11.3.8",
