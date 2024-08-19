@@ -1,7 +1,7 @@
 import FaqSection from '../components/faq/FaqSection'
 import CounterUpCard from '../components/counterUpCard/CounterUpCard'
 import Carousel from '../components/Carousel/Carousel'
-import Data from '../components/Carousel/Data'
+import Data from '../components/Carousel/ImageGalleryData'
 import HeroSection from '../components/hero-section/hero-section'
 function HomePage() {
   return (
