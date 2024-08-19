@@ -1,8 +1,10 @@
 import Banner from '../components/banner/Banner'
-import PdfViewer from '../components/pdfViewer/PdfViewer'
-import TuitionTable from '../components/table/Table'
 import { useData } from '../context/BannerContext'
+
 import { useAdmin } from '../hooks/AdminContext'
+import TuitionTable from '../components/table/Table'
+import PdfDownloader from '../components/pdfViewer/PdfDownloader'
+const pdfUrl = new URL('../assets/pdf/SudarshanCV.pdf', import.meta.url).href;
 const fee_data = [
   {
     program: 'Preschool',
@@ -104,8 +106,10 @@ const AdmissionPage = () => {
           data={activity_data}
           isAdmin={isAdmin}
         />
-        {/* <PdfViewer/> */}
+
+    <PdfDownloader/>
       </div>
+
     </div>
   )
 }
