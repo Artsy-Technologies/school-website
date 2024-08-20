@@ -1,6 +1,7 @@
 import Banner from '../components/banner/Banner'
 import { useData } from '../context/BannerContext'
 // import RoomGalleryCard from "../components/roomGallery/RoomGalleryCard"
+import WhatStudentLearnCard from '../components/whatStudentLearn/WhatStudentLearnCard'
 
 function AcademicsPage() {
     const { academicsPage } = useData()
@@ -13,6 +14,8 @@ function AcademicsPage() {
         buttonText={academicsPage.buttonText}
     />
     <div className='w-[90%] flex flex-col justify-center items-center'>
+      {/* What Students Learn */}
+      < WhatStudentLearnCard/>
       {/* <RoomGalleryCard/> */}
     </div>
     </div>

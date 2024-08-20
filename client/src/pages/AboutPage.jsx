@@ -1,6 +1,7 @@
 import Banner from "../components/banner/Banner";
 import { History } from "../components/history/history";
 import { useData } from "../context/BannerContext";
+import VisionMissionCard from "../components/vision-mission/VisionMissionCard";
 function AboutPage() {
   const { aboutPage } = useData();
 
@@ -12,6 +13,7 @@ function AboutPage() {
         buttonText={aboutPage.buttonText}
       />
       {/* Our Mission & Visions */}
+      <VisionMissionCard/>
       {/* Our Awards and Recognitions */}
       <History />
     </div>
