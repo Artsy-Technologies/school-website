@@ -66,12 +66,11 @@ export const getContactStudentsData = async (req, res) => {
 
 export const admission = async (req, res) => {
   try {
-    const { fname, lname, dob, gender, email, phoneNumber, address, prevSchool, grade, comments } = req.body;
-    console.log(req.body);
+    const { firstName, lastName, dob, gender, email, phoneNumber, address, previousSchool, grade, comments } = req.body;
+    
+    if (!firstName || !lastName || !dob || !gender || !email || !phoneNumber || !address || !previousSchool || !grade || !comments) throw new Error("fields are missing");
 
-    if (!fname || !lname || !dob || !gender || !email || !phoneNumber || !address || !prevSchool || !grade || !comments) throw new Error("fields are missing");
-
-    const studentName = fname + lname;
+    const studentName = firstName + lastName;
 
     const isSendEmails = sendmails(adminEmail, email, studentName)
 
@@ -80,14 +79,14 @@ export const admission = async (req, res) => {
     }
 
     const admissionData = {
-      fname,
-      lname,
+      fname:firstName,
+      lname:lastName,
       dob,
       gender,
       email,
       phoneNumber,
       address,
-      prevSchool,
+      prevSchool:previousSchool,
       grade,
       comments
     }
@@ -102,6 +101,8 @@ export const admission = async (req, res) => {
     })
 
   } catch (error) {
+    console.log(error.message);
+    
     return res.json({
       message: error.message,
       status: 500

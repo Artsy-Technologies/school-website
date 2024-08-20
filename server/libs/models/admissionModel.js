@@ -22,27 +22,27 @@ const admissionSchema = new mongoose.Schema({
         required: true
     },
     phoneNumber: {
-        type: String,
+        type: Number,
         required: true,
     },
     address: {
-        type: "String",
+        type: String,
         required: true
     },
     prevSchool: {
-        type: "String",
+        type: String,
         required: true
     },
     grade: {
-        type: "String",
+        type: String,
         required: true
     },
     comments: {
-        type: "String",
+        type: String,
         required: true
     }
 })
 
-const Admission = mongoose.model('Admission',admissionSchema);
+const Admission = mongoose.model('Admission', admissionSchema);
 
 export default Admission;
