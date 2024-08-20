@@ -3,12 +3,13 @@ import CounterUpCard from '../components/counterUpCard/CounterUpCard'
 import Carousel from '../components/Carousel/Carousel'
 import Data from '../components/Carousel/ImageGalleryData'
 import HeroSection from '../components/hero-section/hero-section'
+import Benefits from '../components/CardPages/Benifits'
 function HomePage() {
   return (
-    <div className='dark:bg-darkmode '>
+    <div className='dark:bg-darkmode p-2 flex flex-col gap-10'>
       <HeroSection />
       <CounterUpCard />
-      {/* Our Benefits */}
+      <Benefits/>
       <Carousel images={Data} />
       {/* Testimonials */}
       <FaqSection />
