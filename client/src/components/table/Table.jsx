@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { Pagination } from 'antd';
 import { useAdmin } from '../../hooks/AdminContext';
 
-const Table = ({ columns, data }) => {
+const Table = ({ columns, data  }) => {
+  console.log(data);
+  
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 3;
 
@@ -17,6 +19,9 @@ const Table = ({ columns, data }) => {
     (currentPage - 1) * pageSize,
     currentPage * pageSize
   );
+
+  console.log(currentData,"current data");
+  
 
   return (
     <div className="p-5 dark:bg-darkModeCard bg-white border-black border-b-4 border-r-4 rounded shadow-md overflow-x-auto">
@@ -46,6 +51,7 @@ const Table = ({ columns, data }) => {
             )}
           </tr>
         </thead>
+        
         <tbody>
           {currentData.map((row, rowIndex) => (
             <tr key={rowIndex} className="bg-white dark:bg-darkModeCard">
@@ -57,6 +63,9 @@ const Table = ({ columns, data }) => {
                   {row[col.accessor]}
                 </td>
               ))}
+              
+              
+              
               {isAdmin && (
                 <td className="border  px-4 py-2 flex space-x-2">
                   <button className="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-700">
@@ -67,9 +76,12 @@ const Table = ({ columns, data }) => {
                   </button>
                 </td>
               )}
+
+              
             </tr>
           ))}
         </tbody>
+
       </table>
       <Pagination
         current={currentPage}

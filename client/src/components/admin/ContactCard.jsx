@@ -14,7 +14,7 @@ function ContactCard({ contactData }) {
   return (
     <div
       style={{ boxShadow: "0 1px 1px #7135F1" }}
-      className="p-5 bg-white rounded-md w-[95%] lg:w-[45%] m-2"
+      className="p-5 bg-white rounded-md w-[100%] lg:w-[45%] m-2"
     >
       <div>
         <div className="mt-3 flex">

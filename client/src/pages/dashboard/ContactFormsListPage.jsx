@@ -19,7 +19,7 @@ function ContactFormsListPage() {
   }, []);
 
   return (
-    <div className="w-[80%] h-full">
+    <div className="w-[100%] h-full">
       <div className="">
         {contactData.map((contactData, i) => (
           <ContactCard key={i} contactData={contactData} />

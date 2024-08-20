@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer'
 import Student from '../libs/models/studentModel.js'
+import Admission from '../libs/models/admissionModel.js'
 
 const adminEmail = 'rahul956vishwakarma@gmail.com'
 
@@ -29,7 +30,7 @@ export const contacts = async (req, res) => {
     const studentData = {
       parentName, phoneNumber, email, studentName, studentAge, programIntrest, message
     }
-    
+
     const newStudent = await Student.create(studentData)
 
     const isSendEmails = sendmails(adminEmail, email, studentName)
@@ -48,6 +49,83 @@ export const contacts = async (req, res) => {
     })
   }
 }
+
+export const getContactStudentsData = async (req, res) => {
+  try {
+    const allContactData = await Student.find();
+    console.log(allContactData);
+    return res.json({
+      message: "all data is fetched",
+      status: 200,
+      allContactData
+    })
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+export const admission = async (req, res) => {
+  try {
+    const { fname, lname, dob, gender, email, phoneNumber, address, prevSchool, grade, comments } = req.body;
+    console.log(req.body);
+
+    if (!fname || !lname || !dob || !gender || !email || !phoneNumber || !address || !prevSchool || !grade || !comments) throw new Error("fields are missing");
+
+    const studentName = fname + lname;
+
+    const isSendEmails = sendmails(adminEmail, email, studentName)
+
+    if (!isSendEmails || isSendEmails === false) {
+      throw new Error('something went wrong in email sending')
+    }
+
+    const admissionData = {
+      fname,
+      lname,
+      dob,
+      gender,
+      email,
+      phoneNumber,
+      address,
+      prevSchool,
+      grade,
+      comments
+    }
+
+    const newAdmission = await Admission.create(admissionData)
+
+
+    return res.json({
+      message: 'successfull',
+      status: 200,
+      data: newAdmission
+    })
+
+  } catch (error) {
+    return res.json({
+      message: error.message,
+      status: 500
+    })
+  }
+}
+
+export const getAdmission = async (req, res) => {
+  try {
+    const allAdmissionData = await Admission.find();
+    return res.json({
+      message: "all data is fetched",
+      status: 200,
+      allAdmissionData
+    })
+  } catch (error) {
+    return res.json({
+      message: error.message,
+      status: 500
+    })
+  }
+
+}
+
 
 const sendmails = (adminEmail, userEmail, userName) => {
   try {
@@ -96,16 +174,3 @@ const sendmails = (adminEmail, userEmail, userName) => {
   }
 }
 
-export const getContactStudentsData = async (req,res) =>{
-  try {
-    const allContactData = await Student.find();
-    console.log(allContactData);
-    return res.json({
-      message:"all data is fetched",
-      status:200,
-      allContactData
-    })
-  } catch (error) {
-    console.log(error.message);
-  }
-}
