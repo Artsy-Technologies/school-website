@@ -1,7 +1,7 @@
 import Banner from "../components/banner/Banner";
 import { History } from "../components/history/history";
 import { useData } from "../context/BannerContext";
-import VisionMissionCard from "../components/vision-mission/VisionMissionCard";
+import VisionMissionCard from "../components/CardPages/MissionVission";
 import AwardsAndRecognition from "../components/CardPages/AwardsAndRecognition";
 function AboutPage() {
   const { aboutPage } = useData();
