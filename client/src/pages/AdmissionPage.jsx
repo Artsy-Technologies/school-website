@@ -5,7 +5,8 @@ import { useData } from '../context/BannerContext'
 
 import { useAdmin } from '../hooks/AdminContext'
 import PdfDownloader from '../components/pdfViewer/PdfDownloader'
-const pdfUrl = new URL('../assets/pdf/SudarshanCV.pdf', import.meta.url).href;
+// const pdfUrl = new URL('../assets/pdf/SudarshanCV.pdf', import.meta.url).href;
+import AdmissionProcess from '../components/CardPages/AdmissionProcess';
 const fee_data = [
   {
     program: 'Preschool',
@@ -99,6 +100,7 @@ const AdmissionPage = () => {
         content={admissionPage.content}
         buttonText={admissionPage.buttonText}
       />
+      <AdmissionProcess/>
       <div className="p-10 mb-10">
         <TuitionTable columns={fee_headers} data={fee_data} isAdmin={true} />
       </div>
@@ -108,7 +110,7 @@ const AdmissionPage = () => {
           data={activity_data}
           isAdmin={isAdmin}
         />
-    <PdfDownloader/>
+      <PdfDownloader/>
       </div>
         </div>
       <AdmissionForm/>

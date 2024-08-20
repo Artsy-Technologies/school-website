@@ -2,7 +2,7 @@ import sqr from "../../assets/sqr.png";
 
 export const History = () => {
   return (
-    <div className="bg-purple-300 flex flex-col items-center justify-center min-h-screen p-4">
+    <div className=" flex flex-col items-center justify-center min-h-screen p-4">
       <div className="flex flex-col items-center justify-center p-4 mb-6">
         <button className="px-4 py-2 font-medium leading-6 whitespace-nowrap rounded-md border-2 border-solid border-neutral-800 text-white mt-10 bg-purple-700">
           Our Progressive Journey
@@ -16,7 +16,7 @@ export const History = () => {
         </p>
       </div>
 
-      <div className="max-w-4xl bg-white p-6 rounded-lg shadow-lg">
+      <div className="max-w-4xl bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
         <div className="flex flex-col md:flex-row items-start mb-10">
           <div className="flex items-center mb-4 md:mb-0 md:mr-4">
             <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center">
