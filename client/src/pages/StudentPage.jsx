@@ -1,5 +1,6 @@
 import Banner from '../components/banner/Banner'
 import { useData } from '../context/BannerContext'
+import EventAndCelebrations from '../components/events-celebrations/EventAndCelebrations'
 
 function StudentPage() {
     const { studentLifePage } = useData()
@@ -11,6 +12,10 @@ function StudentPage() {
         content={studentLifePage.content}
         buttonText={studentLifePage.buttonText}
       />
+      {/* Extracurricular Activities */}
+      {/* Events & Celebrations */}
+      <EventAndCelebrations/>
+
     </div>
   )
 }
