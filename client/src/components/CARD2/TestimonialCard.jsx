@@ -2,7 +2,7 @@ import React from 'react';
 
 const TestimonialCard = ({ name, text, imageSrc }) => {
     return (
-        <div className="bg-white rounded-lg p-6 shadow-lg relative hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+        <div className="bg-white dark: rounded-lg p-6 shadow-lg relative hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
             <img
                 className="w-16 h-16 rounded-full mx-auto"
                 src={imageSrc}
