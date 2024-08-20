@@ -36,18 +36,16 @@ export default function Navbar() {
 
   return (
     <header className="flex justify-between items-center bg-purple-500 text-white p-4 drop-shadow-md z-50 relative">
-      {/* Conditionally hide the title on the dashboard */}
       {!isDashboard && (
         <h1 className="text-xl">
           SRI MURUGHA RAJENDRASWAMY CBSE SCHOOL
         </h1>
       )}
 
-      {/* Ensure the menu is aligned to the end on the dashboard */}
       <ul
         className={`flex items-center space-x-6 ${
           isDashboard ? 'ml-auto' : ''
-        }`}
+        } hidden md:flex`}
       >
         <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
           <Link to="/" className="hover:underline">
@@ -98,11 +96,63 @@ export default function Navbar() {
         )}
       </ul>
 
-      <nav className="md:hidden fixed right-0 z-50">
+      {/* Hamburger Menu for Small Devices */}
+      <div className="md:hidden">
         <button className="text-3xl focus:outline-none" onClick={toggleMenu}>
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
-      </nav>
+        {isMenuOpen && (
+          <ul className="absolute right-0 top-16 bg-purple-500 w-full flex flex-col items-center space-y-4 p-4">
+            <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+              <Link to="/" onClick={toggleMenu}>
+                Home
+              </Link>
+            </li>
+            <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+              <Link to="/about" onClick={toggleMenu}>
+                About Us
+              </Link>
+            </li>
+            <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+              <Link to="/academics" onClick={toggleMenu}>
+                Academics
+              </Link>
+            </li>
+            <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+              <Link to="/admission" onClick={toggleMenu}>
+                Admission
+              </Link>
+            </li>
+            <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+              <Link to="/students" onClick={toggleMenu}>
+                Student Life
+              </Link>
+            </li>
+            <li className="p-3 hover:bg-purple-400 rounded-md transition-all cursor-pointer">
+              <Link to="/contact" onClick={toggleMenu}>
+                Contact
+              </Link>
+            </li>
+            <DarkModeToggle />
+            {!isAdmin ? (
+              <li className="p-3 hover:bg-purple-600 rounded-md transition-all cursor-pointer border border-white">
+                <button onClick={handleLogin}>Admin Login</button>
+              </li>
+            ) : (
+              <>
+                <li className="p-1 hover:bg-purple-600 rounded-md transition-all cursor-pointer border border-white">
+                  <button onClick={handleDash}>
+                    <User />
+                  </button>
+                </li>
+                <li className="p-2 hover:bg-purple-600 rounded-md transition-all cursor-pointer border border-white">
+                  <button onClick={handleLogout}>Logout</button>
+                </li>
+              </>
+            )}
+          </ul>
+        )}
+      </div>
     </header>
   );
 }

@@ -9,8 +9,10 @@ import PdfDownloader from '../components/pdfViewer/PdfDownloader'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 const pdfUrl = new URL('../assets/pdf/SudarshanCV.pdf', import.meta.url).href;
+import AdmissionProcess from '../components/CardPages/AdmissionProcess';
 
 // body data of 1st table
+
 const fee_data = [
   {
     program: 'Preschool',

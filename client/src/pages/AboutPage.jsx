@@ -1,7 +1,8 @@
 import Banner from "../components/banner/Banner";
 import { History } from "../components/history/history";
 import { useData } from "../context/BannerContext";
-import VisionMissionCard from "../components/vision-mission/VisionMissionCard";
+import VisionMissionCard from "../components/CardPages/MissionVission";
+import AwardsAndRecognition from "../components/CardPages/AwardsAndRecognition";
 function AboutPage() {
   const { aboutPage } = useData();
 
@@ -12,13 +13,11 @@ function AboutPage() {
         content={aboutPage.content}
         buttonText={aboutPage.buttonText}
       />
-      {/* Our Mission & Visions */}
-      <VisionMissionCard/>
-      {/* Our Awards and Recognitions */}
+      <VisionMissionCard />
+      <AwardsAndRecognition/>
       <History />
     </div>
   );
 }
-
 
 export default AboutPage;
