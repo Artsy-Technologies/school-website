@@ -1,6 +1,6 @@
 import Banner from '../components/banner/Banner'
 import { useData } from '../context/BannerContext'
-// import RoomGalleryCard from "../components/roomGallery/RoomGalleryCard"
+import RoomGalleryCard from "../components/roomGallery/RoomGalleryCard"
 import WhatStudentLearnCard from '../components/whatStudentLearn/WhatStudentLearnCard'
 import Features from '../components/CardPages/Features'
 
@@ -18,7 +18,7 @@ function AcademicsPage() {
       <Features/>
       {/* What Students Learn */}
       < WhatStudentLearnCard/>
-      {/* <RoomGalleryCard/> */}
+      <RoomGalleryCard/>
     </div>
     </div>
   )
