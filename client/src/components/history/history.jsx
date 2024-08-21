@@ -2,13 +2,13 @@ import sqr from "../../assets/sqr.png";
 
 export const History = () => {
   return (
-    <div className=" flex flex-col items-center justify-center min-h-screen p-4">
+    <div className=" flex flex-col items-center justify-center min-h-screen p-4 mb-10">
       <div className="flex flex-col items-center justify-center p-4 mb-6">
         <button className="px-4 py-2 font-medium leading-6 whitespace-nowrap rounded-md border-2 border-solid border-neutral-800 text-white mt-10 bg-purple-700">
           Our Progressive Journey
         </button>
-        <h2 className="text-3xl text-orange-500 font-bold mt-6">Our History</h2>
-        <p className="text-xl text-white mt-4 max-w-3xl w-11/12 text-center">
+        <h2 className="text-3xl text-white font-bold mt-6">Our History</h2>
+        <p className="text-xl text-white mt-4 max-w-3xl text-center">
           Founded with a passion for early education in 2005, our kindergarten
           school boasts a rich history of empowering young learners to reach
           their potential through innovative teaching methods and a supportive
@@ -27,10 +27,10 @@ export const History = () => {
             </div>
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-semibold text-purple-700">
+            <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300">
               Resilience and Future Horizons
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-200">
               Adapting to new challenges, we remained committed to our mission
               of providing an exceptional early education...
             </p>
@@ -47,10 +47,10 @@ export const History = () => {
             </div>
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-semibold text-purple-700">
+            <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300">
               Innovation and Technology
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-200">
               Adapting to new challenges, we remained committed to our mission
               of providing an exceptional early education...
             </p>
@@ -67,10 +67,10 @@ export const History = () => {
             </div>
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-semibold text-purple-700">
+            <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300">
               Expansion and Recognition
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-200">
               Adapting to new challenges, we remained committed to our mission
               of providing an exceptional early education...
             </p>
@@ -87,10 +87,10 @@ export const History = () => {
             </div>
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-semibold text-purple-700">
+            <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300">
               Inception and Growth
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-200">
               Adapting to new challenges, we remained committed to our mission
               of providing an exceptional early education...
             </p>
