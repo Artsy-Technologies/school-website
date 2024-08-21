@@ -1,80 +1,52 @@
-import { useState } from 'react';
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    studentName: '',
-    parentName: '',
-    email: '',
-    phoneNumber: '',
-    studentAge: '',
-    programInterest: '',
-    message: ''
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm();
 
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [id]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError(null);
-    setSuccess(false);
-
+  const onSubmit = async (data) => {
+    setIsSubmitted(true);
     try {
-      const response = await fetch('http://localhost:8000/contacts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      // If successful
-      setSuccess(true);
-      setFormData({
-        studentName: '',
-        parentName: '',
-        email: '',
-        phoneNumber: '',
-        studentAge: '',
-        programInterest: '',
-        message: ''
-      });
+      const response = await axios.post("/api/students/contacts", data);
+      toast.success(`Contact Form Submitted! ${response?.data?.message}`);
+      reset();
     } catch (error) {
-      setError(error.message);
+      console.error("Error", error);
+      toast.error("Submission FAILED!");
+    } finally {
+      setIsSubmitted(false);
     }
   };
 
   return (
-    <div className="flex justify-center items-center p-6">
-      <div className="bg-white dark:bg-darkModeCard dark:border-white border rounded-lg shadow-lg p-8 w-full max-w-4xl">
-        {/* Social Media Buttons */}
-        <div className="flex justify-center mb-4 space-x-2">
-          <button className="bg-orange-500 p-2 border border-red-500 focus:border-purple-500">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/facebook-new.png" />
-          </button>
-          <button className="bg-orange-500 p-2 border border-red-500 focus:border-purple-500">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/twitter.png" />
-          </button>
-          <button className="bg-orange-500 p-2 border border-red-500 focus:border-purple-500">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/linkedin.png" />
-          </button>
-        </div>
+<div className="flex justify-center items-center p-6 mt-6">
+  <div className="bg-white dark:bg-darkModeCard dark:border-white border rounded-lg shadow-lg p-8 w-full max-w-4xl relative">
+    {/* Social Media Buttons */}
+    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 mb-8 flex space-x-2 -mt-4">
+      <button className="bg-orange-500 p-2 border rounded-lg border-red-500 focus:border-purple-500">
+        <img src="https://img.icons8.com/material-outlined/24/ffffff/facebook-new.png" alt="Facebook" />
+      </button>
+      <button className="bg-orange-500 p-2 border rounded-lg border-red-500 focus:border-purple-500">
+        <img src="https://img.icons8.com/material-outlined/24/ffffff/twitter.png" alt="Twitter" />
+      </button>
+      <button className="bg-orange-500 p-2 border rounded-lg border-red-500 focus:border-purple-500">
+        <img src="https://img.icons8.com/material-outlined/24/ffffff/linkedin.png" alt="LinkedIn" />
+      </button>
+    </div>
+
 
         {/* Form */}
-        <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 mt-4">
             <div>
               <label
                 htmlFor="studentName"
@@ -85,11 +57,13 @@ const ContactForm = () => {
               <input
                 type="text"
                 id="studentName"
-                value={formData.studentName}
-                onChange={handleChange}
+                {...register("studentName", { required: "Student name is required" })}
                 placeholder="Enter Student Name"
                 className="mt-1 block w-full p-2 bg-gray-100 dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
               />
+              {errors.studentName && (
+              <p className="text-red-500">{errors.studentName.message}</p>
+            )}
             </div>
             <div>
               <label
@@ -101,11 +75,13 @@ const ContactForm = () => {
               <input
                 type="text"
                 id="parentName"
-                value={formData.parentName}
-                onChange={handleChange}
+                {...register("parentName",{required:"Parent name is required"})}
                 placeholder="Enter Parent Name"
                 className="mt-1 block w-full p-2 bg-gray-100 dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
               />
+            {errors.parentName && (
+              <p className="text-red-500">{errors.parentName.message}</p>
+            )}
             </div>
             <div>
               <label
@@ -117,11 +93,13 @@ const ContactForm = () => {
               <input
                 type="email"
                 id="email"
-                value={formData.email}
-                onChange={handleChange}
+                {...register("email", { required: "Email is required" })}
                 placeholder="Enter Email Address"
                 className="mt-1 block w-full p-2 bg-gray-100 dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
               />
+            {errors.email && (
+              <p className="text-red-500">{errors.email.message}</p>
+            )}
             </div>
             <div>
               <label
@@ -133,11 +111,19 @@ const ContactForm = () => {
               <input
                 type="tel"
                 id="phoneNumber"
-                value={formData.phoneNumber}
-                onChange={handleChange}
+                {...register("phoneNumber", {
+                  required: "Phone number is required",
+                  pattern: {
+                    value: /^[0-9]{10}$/,
+                    message: "Phone number must be 10 digits",
+                  },
+                })}
                 placeholder="Enter Phone Number"
                 className="mt-1 block w-full p-2 bg-gray-100 dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
               />
+              {errors.phoneNumber && (
+              <p className="text-red-500">{errors.phoneNumber.message}</p>
+            )}
             </div>
             <div>
               <label
@@ -149,11 +135,13 @@ const ContactForm = () => {
               <input
                 type="number"
                 id="studentAge"
-                value={formData.studentAge}
-                onChange={handleChange}
+                {...register("studentAge", { required: "Student Age is required" })}
                 placeholder="Enter Student Age"
                 className="mt-1 block w-full p-2 bg-gray-100 dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
               />
+              {errors.studentAge && (
+                <p className="text-red-500">{errors.studentAge.message}</p>
+              )}
             </div>
             <div>
               <label
@@ -164,15 +152,17 @@ const ContactForm = () => {
               </label>
               <select
                 id="programInterest"
-                value={formData.programInterest}
-                onChange={handleChange}
+                {...register("programInterest", { required: "Program interest is required" })}
                 className="mt-1 block w-full p-2 bg-gray-100 dark:bg-white border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
               >
-                <option>Select Program</option>
+                <option value="">Select Program</option>
                 <option>Program 1</option>
                 <option>Program 2</option>
                 <option>Program 3</option>
               </select>
+              {errors.programInterest && (
+                <p className="text-red-500">{errors.programInterest.message}</p>
+              )}
             </div>
           </div>
           <div className="mb-4">
@@ -185,28 +175,21 @@ const ContactForm = () => {
             <textarea
               id="message"
               rows="4"
-              value={formData.message}
-              onChange={handleChange}
+              {...register("message", { required: "Message is required" })}
               placeholder="Enter your Message"
               className="mt-1 block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
             ></textarea>
+            {errors.message && (
+              <p className="text-red-500">{errors.message.message}</p>
+            )}
           </div>
-          {error && (
-            <div className="text-red-500 mb-4">
-              <p>{error}</p>
-            </div>
-          )}
-          {success && (
-            <div className="text-green-500 mb-4">
-              <p>Form submitted successfully!</p>
-            </div>
-          )}
           <div className="text-center">
             <button
               type="submit"
-              className="bg-orange-500 text-white w-48 py-2 px-4 rounded-md shadow-sm hover:bg-orange-600 transition duration-150 ease-in-out"
+              className={`bg-orange-500 text-white w-48 py-2 px-4 rounded-md shadow-sm hover:bg-orange-600 transition duration-150 ease-in-out ${isSubmitting || isSubmitted ? "opacity-50 cursor-not-allowed" : ""}`}
+              disabled={isSubmitting || isSubmitted}
             >
-              Submit
+              {isSubmitting || isSubmitted ? "Submitting..." : "Submit"}
             </button>
           </div>
         </form>

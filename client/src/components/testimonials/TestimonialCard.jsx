@@ -1,5 +1,4 @@
-import React from 'react';
-
+// eslint-disable-next-line react/prop-types
 const TestimonialCard = ({ name, text, imageSrc }) => {
     return (
         <div className="bg-white dark: rounded-lg p-6 shadow-lg relative hover:shadow-xl transition duration-300 transform hover:-translate-y-1">

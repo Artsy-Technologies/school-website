@@ -35,9 +35,6 @@ app.use('/api', imageRoutes)
 app.use('/api/admin', adminRouter)
 app.use('/api/students', studentsRoutes)
 
-app.get('/', (req, res) => {
-  res.send('<html><body><img src="/uploads/file_1724089808470.jpg" alt="Test Image"></body></html>');
-});
 
 app.listen(port, async () => {
   await connectDB()
