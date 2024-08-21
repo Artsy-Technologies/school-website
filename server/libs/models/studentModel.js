@@ -21,12 +21,12 @@ const studentSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    programIntrest: {
-        type: "String",
+    programInterest: {
+        type: String,
         required: true
     },
     message: {
-        type: "String",
+        type:String,
         required: true
     }
 })
