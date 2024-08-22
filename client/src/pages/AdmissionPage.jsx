@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 const pdfUrl = new URL('../assets/pdf/SudarshanCV.pdf', import.meta.url).href;
 import AdmissionProcess from '../components/CardPages/AdmissionProcess';
+import FeeTableModel from '../components/customModels/FeeTableModel';
 
 // body data of 1st table
 
@@ -104,18 +105,25 @@ const AdmissionPage = () => {
   const { isAdmin } = useAdmin();
   const [contactData, setContactData] = useState([]);
   const [headers, setHeaders] = useState([]);
+  const [isTrue, setTrue] = useState(true);
+
 
   const getFeeData = async () => {
+
     try {
       let response = await axios.get(`/api/admin/getAllFees`);
 
       if (response?.data?.status === 200) setContactData(response?.data?.data)
       const fee_headers = response?.data?.data?.map(data => ({ header: data?.programName }));
       setHeaders(fee_headers)
-
+      console
     } catch (error) {
       console.log(error);
     }
+  }
+
+  const showModel = () => {
+    setTrue(!isTrue)
   }
 
 
@@ -123,34 +131,43 @@ const AdmissionPage = () => {
     getFeeData()
   }, [])
 
-  console.log(contactData, "use state data");
 
 
   return (
     <div className="min-h-screen w-full dark:bg-darkmode">
-      <div className="min-h-screen w-full">
 
-        <Banner
-          main={admissionPage.title}
-          content={admissionPage.content}
-          buttonText={admissionPage.buttonText}
-        />
+      {
+        isTrue ?
+          <>
+            <div className="min-h-screen w-full">
 
-        <div className="p-10 mb-10">
-          <TuitionTable columns={fee_headers} data={fee_data}  isAdmin={true} />
-        </div>
+              <Banner
+                main={admissionPage.title}
+                content={admissionPage.content}
+                buttonText={admissionPage.buttonText}
+              />
 
-        <div className="p-10 mb-10">
-          <TuitionTable
-            columns={activity_headers}
-            data={activity_data}
-            isAdmin={isAdmin}
-          />
-          <PdfDownloader />
-        </div>
+              <div className="p-10 mb-10">
+                <TuitionTable columns={fee_headers} data={contactData} getFeeData={getFeeData} showModel={showModel} isAdmin={true} />
+              </div>
 
-      </div>
-      <AdmissionForm />
+              <div className="p-10 mb-10">
+                <TuitionTable
+                  columns={activity_headers}
+                  data={contactData}
+                  isAdmin={isAdmin}
+                />
+                <PdfDownloader />
+              </div>
+
+            </div>
+            <AdmissionForm />
+          </>
+          :
+          <FeeTableModel showModel={showModel} />
+      }
+
+
     </div>
   )
 }
