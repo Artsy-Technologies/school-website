@@ -170,14 +170,15 @@ const updateFeeTable = async (req, res) => {
 
 const deleteFeeTable = async (req, res) => {
   try {
+    
     if (req.isAdmin === false) throw new Error('Not authenticated')
+ 
+    const {_id} = req.body;
 
-    const { programName } = req.params
-
-    if (!programName) throw new Error('Program name is required')
+    if (!_id) throw new Error('Program name is not found')
 
     // ************************************** Find the program by programName and delete it *************************************
-    const deletedProgram = await fee.findOneAndDelete({ programName })
+    const deletedProgram = await fee.findByIdAndDelete(_id)
 
     if (!deletedProgram) throw new Error('Program not found')
 

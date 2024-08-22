@@ -4,8 +4,9 @@ import { admission, contacts, getAdmission, getContactStudentsData } from '../co
 const router = express.Router()
 
 router.post('/contacts', contacts)
-router.get('/getAdmission',getAdmission);
 router.post('/admission', admission);
+
+router.get('/getAdmission',getAdmission);
 router.get('/getContactStudentsData',getContactStudentsData)
 
 export default router
