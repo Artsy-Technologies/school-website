@@ -11,116 +11,92 @@ function FeeTableModel({ showModel }) {
         try {
             const response = await axios.post('/api/admin/createFeeTable', data);
             console.log(response);
+            if (response?.data?.status === 200) {
+                showModel();
+            }
+
         } catch (error) {
             console.log(error);
         }
     }
 
     return (
-        <section className="h-screen flex justify-center mt-2 backdrop:[3px]  " >
-            <div className="bg-[rgba(255,255,255,0.2)] bg-white w-[80%] h-min p-8   " >
+        <section className="h-full flex justify-center items-center absolute top-0 w-screen bg-[#00000038]   " >
+            <div className="bg-[white] w-[95%] h-[90%] lg:w-[50%] lg:h-[40%] p-2 rounded-md shadow-lg " >
                 <RxCross2 onClick={() => showModel()} className="cursor-pointer " />
-                <form onSubmit={handleSubmit(createFee)} >
+                <form className="mt-4" >
 
-                    <section>
-                        <div className="p-2 " >
-                            <label htmlFor="username" className='line-clamp-1 ml-.5 font-semibold text-[0.9rem] text-[#000000e8]0e8] mb-1 ' > Program Name </label>
-                            <div style={{ border: "1px solid #4d26d7" }} className='flex justify-around items-centertext-[gray] font-[500]   '>
-                                <input type="programName" placeholder='Eg.kinder gertan' className='bg-transparent text-[gray] p-2  w-[100%] '
-                                    {
-                                    ...register('programName', {
-                                        required: "Please Fill The programName"
-                                    })
-                                    }
+                    <div>
+                        <div className=" lg:flex  justify-around text-sm " >
+
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Program name"
+                                    className={`border-2 p-1 my-2 w-full rounded-md ${errors.programName ? 'border-red-500' : 'border-gray-300'}`}
+                                    {...register('programName', { required: 'Program name is required' })}
                                 />
+                                {errors.programName && <p className="text-red-500">{errors.programName.message}</p>}
                             </div>
-                        </div>
-                        {errors.programName && (
-                            <p className="text-[.8rem] pl-2 font-semibold   " style={{ color: "red" }}  >{errors.programName.message}</p>
-                        )}
 
-                    </section>
-
-                    <section>
-                        <div className='p-2' >
-                            <label htmlFor="ageGroup" className='line-clamp-1 ml-.5 font-semibold text-[0.9rem] text-[#000000e8] mb-1 ' >ageGroup</label>
-                            <div style={{ border: "1px solid #4d26d7" }} className='flex justify-around items-center text-[gray] font-[500]   '>
-                                <input type="text" placeholder='Eg.1-2' className='bg-transparent  text-[gray]  p-2 w-[100%] '
-                                    {
-                                    ...register('ageGroup', {
-                                        required: "Please Fill The ageGroup"
-                                    })
-                                    }
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="ageGroup"
+                                    className={`border-2 p-1 w-full my-2 rounded-md ${errors.ageGroup ? 'border-red-500' : 'border-gray-300'}`}
+                                    {...register('ageGroup', { required: 'Age Group is required' })}
                                 />
+                                {errors.ageGroup && <p className="text-red-500">{errors.ageGroup.message}</p>}
                             </div>
-                        </div>
-                        {errors.ageGroup && (
-                            <p className="text-[.8rem] pl-2 font-semibold   " style={{ color: "red" }}  >{errors.ageGroup.message}</p>
-                        )}
 
-                    </section>
-
-                    <section>
-                        <div className='p-2' >
-                            <label htmlFor="annualFee" className='line-clamp-1 ml-.5 font-semibold text-[0.9rem] text-[#000000e8] mb-1 ' >annualFee</label>
-                            <div style={{ border: "1px solid #4d26d7" }} className='flex justify-around items-center text-[gray] font-[500]   '>
-                                <input type="number" placeholder='Eg.2000' className='bg-transparent  text-[gray]  p-2 w-[100%] '
-                                    {
-                                    ...register('annualFee', {
-                                        required: "Please Fill The annualFee"
-                                    })
-                                    }
+                            <div>
+                                <input
+                                    type="number"
+                                    placeholder="Annual fee"
+                                    className={`border-2 p-1 w-full my-2 rounded-md ${errors.annualFee ? 'border-red-500' : 'border-gray-300'}`}
+                                    {...register('annualFee', { required: 'Age Group is required' })}
                                 />
+                                {errors.annualFee && <p className="text-red-500">{errors.annualFee.message}</p>}
                             </div>
+
                         </div>
-                        {errors.annualFee && (
-                            <p className="text-[.8rem] pl-2 font-semibold   " style={{ color: "red" }}  >{errors.annualFee.message}</p>
-                        )}
 
-                    </section>
+                        <div className=" lg:flex justify-around lg:mt-4 text-sm " >
 
-                    <section>
-                        <div className='p-2' >
-                            <label htmlFor="registrationFee" className='line-clamp-1 ml-.5 font-semibold text-[0.9rem] text-[#000000e8] mb-1 ' >registrationFee</label>
-                            <div style={{ border: "1px solid #4d26d7" }} className='flex justify-around items-center text-[gray] font-[500]   '>
-                                <input type="number" placeholder='Eg.1000' className='bg-transparent  text-[gray]  p-2 w-[100%] '
-                                    {
-                                    ...register('registrationFee', {
-                                        required: "Please Fill The registrationFee"
-                                    })
-                                    }
+                            <div>
+                                <input
+                                    type="number"
+                                    placeholder="Registration fee"
+                                    className={`border-2 p-1 w-full my-2 rounded-md ${errors.registrationFee ? 'border-red-500' : 'border-gray-300'}`}
+                                    {...register('registrationFee', { required: 'Age Group is required' })}
                                 />
+                                {errors.registrationFee && <p className="text-red-500">{errors.registrationFee.message}</p>}
                             </div>
-                        </div>
-                        {errors.registrationFee && (
-                            <p className="text-[.8rem] pl-2 font-semibold   " style={{ color: "red" }}  >{errors.registrationFee.message}</p>
-                        )}
 
-                    </section>
-
-                    <section>
-                        <div className='p-2' >
-                            <label htmlFor="activityFee" className='line-clamp-1 ml-.5 font-semibold text-[0.9rem] text-[#000000e8] mb-1 ' >activityFee</label>
-                            <div style={{ border: "1px solid #4d26d7" }} className='flex justify-around items-center text-[gray] font-[500]   '>
-                                <input type="number" placeholder='Eg.500' className='bg-transparent  text-[gray]  p-2 w-[100%] '
-                                    {
-                                    ...register('activityFee', {
-                                        required: "Please Fill The activityFee"
-                                    })
-                                    }
+                            <div>
+                                <input
+                                    type="number"
+                                    placeholder="activityFee"
+                                    className={`border-2 p-1 w-full my-2 rounded-md ${errors.activityFee ? 'border-red-500' : 'border-gray-300'}`}
+                                    {...register('activityFee', { required: 'Age Group is required' })}
                                 />
+                                {errors.activityFee && <p className="text-red-500">{errors.activityFee.message}</p>}
                             </div>
+
+
                         </div>
-                        {errors.activityFee && (
-                            <p className="text-[.8rem] pl-2 font-semibold   " style={{ color: "red" }}  >{errors.activityFee.message}</p>
-                        )}
+                    </div>
 
-                    </section>
+                    <div className="mt-[2rem] flex justify-center " >
+                        <button onClick={handleSubmit(createFee)} className="w-[30%] block py-2 bg-[#8F5BFF] hover:bg-[#391b7a] mr-2 text-center rounded-md text-white text-sm " >
+                            Create
+                        </button>
 
+                        <button className="w-[30%] block py-2 bg-[#8F5BFF] hover:bg-[#391b7a] ml-2 text-center rounded-md text-white text-sm " >
+                            Update
+                        </button>
+                    </div>
 
-                    <button type="submit" className="border-2 w-[98%] py-2 bg-purple-600 text-white mr-auto ml-auto block mt-2 hover:bg-[#330033] " >
-                       Submit
-                    </button>
 
 
                 </form>
@@ -130,3 +106,4 @@ function FeeTableModel({ showModel }) {
 }
 
 export default FeeTableModel
+

@@ -12,6 +12,8 @@ const Table = ({ getFeeData, data, showModel }) => {
   const { isAdmin } = useAdmin(); // Access the isAdmin state from context
   const [res, setResponse] = useState();
 
+  
+
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -30,7 +32,7 @@ const Table = ({ getFeeData, data, showModel }) => {
       if (response?.data === 200) {
         setResponse(response?.data);
         toast.success(res.message);
-        getFeeData();
+        window.location.href =  "/admission";
       }
     } catch (error) {
       toast.success(res?.message)

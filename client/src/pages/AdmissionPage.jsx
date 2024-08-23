@@ -105,7 +105,7 @@ const AdmissionPage = () => {
   const { isAdmin } = useAdmin();
   const [contactData, setContactData] = useState([]);
   const [headers, setHeaders] = useState([]);
-  const [isTrue, setTrue] = useState(true);
+  const [isTrue, setTrue] = useState(false);
 
 
   const getFeeData = async () => {
@@ -129,46 +129,48 @@ const AdmissionPage = () => {
 
   useEffect(() => {
     getFeeData()
-  }, [])
+  }, [showModel])
 
 
 
   return (
-    <div className="min-h-screen w-full dark:bg-darkmode">
+    <>
+      <div className="min-h-screen w-full dark:bg-darkmode  ">
 
-      {
-        isTrue ?
-          <>
-            <div className="min-h-screen w-full">
+        <>
+          <div className="min-h-screen w-full">
 
-              <Banner
-                main={admissionPage.title}
-                content={admissionPage.content}
-                buttonText={admissionPage.buttonText}
-              />
+            <Banner
+              main={admissionPage.title}
+              content={admissionPage.content}
+              buttonText={admissionPage.buttonText}
+            />
 
-              <div className="p-10 mb-10">
-                <TuitionTable columns={fee_headers} data={contactData} getFeeData={getFeeData} showModel={showModel} isAdmin={true} />
-              </div>
-
-              <div className="p-10 mb-10">
-                <TuitionTable
-                  columns={activity_headers}
-                  data={contactData}
-                  isAdmin={isAdmin}
-                />
-                <PdfDownloader />
-              </div>
-
+            <div className="p-10 mb-10">
+              <TuitionTable columns={fee_headers} data={contactData} getFeeData={getFeeData} showModel={showModel} isAdmin={true} />
             </div>
-            <AdmissionForm />
-          </>
-          :
-          <FeeTableModel showModel={showModel} />
+
+            <div className="p-10 mb-10">
+              <TuitionTable
+                columns={activity_headers}
+                data={contactData}
+                isAdmin={isAdmin}
+              />
+              <PdfDownloader />
+            </div>
+
+          </div>
+          <AdmissionForm />
+
+        </>
+
+      </div>
+      {
+        isTrue &&
+        <FeeTableModel showModel={showModel} />
       }
 
-
-    </div>
+    </>
   )
 }
 

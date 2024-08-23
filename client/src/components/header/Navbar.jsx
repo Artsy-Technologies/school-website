@@ -35,7 +35,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="flex justify-between items-center bg-purple-500 text-white p-4 drop-shadow-md z-50 relative">
+    <header className="flex justify-between items-center bg-purple-500 text-white p-4 drop-shadow-md   ">
       {!isDashboard && (
         <h1 className="text-xl">
           SRI MURUGHA RAJENDRASWAMY CBSE SCHOOL
