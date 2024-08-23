@@ -12,7 +12,7 @@ function HomePage() {
       <CounterUpCard />
       <Benefits/>
       <Carousel images={Data} />
-       <Testimonials />
+      <Testimonials />
       <FaqSection />
     </div>
   )

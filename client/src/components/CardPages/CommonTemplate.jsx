@@ -44,7 +44,7 @@ const Container = ({
     <div className="w-full flex flex-col items-center justify-center gap-16 px-4 mt-20 mb-20">
       <section className="text-center max-w-3xl">
         <a href={buttonLink}>
-          <button className="border-2 border-purple-700 bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500">
+          <button className="border-2 border-purple-700 bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-500">
             {buttonText}
           </button>
         </a>

@@ -1,13 +1,13 @@
 // eslint-disable-next-line react/prop-types
 const TestimonialCard = ({ name, text, imageSrc }) => {
     return (
-        <div className="bg-white dark: rounded-lg p-6 shadow-lg relative hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+        <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg relative hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
             <img
                 className="w-16 h-16 rounded-full mx-auto"
                 src={imageSrc}
                 alt={`${name}'s picture`}
             />
-            <h3 className="text-center text-xl font-semibold mt-4">{name}</h3>
+            <h3 className="text-center text-xl font-semibold mt-4 dark:text-white">{name}</h3>
             <div className="flex justify-center mt-2">
                 <span className="text-yellow-400">
                     {[...Array(5)].map((_, i) => (
@@ -17,7 +17,7 @@ const TestimonialCard = ({ name, text, imageSrc }) => {
                     ))}
                 </span>
             </div>
-            <p className="text-gray-600 text-center mt-4">{text}</p>
+            <p className="text-gray-600 dark:text-gray-300 text-center mt-4">{text}</p>
             <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-black h-4 w-full rounded-b-lg"></div>
         </div>
     );

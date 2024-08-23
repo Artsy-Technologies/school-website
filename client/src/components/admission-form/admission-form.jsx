@@ -21,7 +21,7 @@ const AdmissionForm = () => {
 
   return (
     <div className="bg-white dark:bg-darkModeCard dark:border-white dark:text-white rounded-lg shadow-lg p-8 mb-6 w-full max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold text-center text-orange-600 mb-8">
+      <h1 className="text-4xl font-bold text-center text-orange-600 dark:text-orange-300 mb-8">
         Admission Form
       </h1>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -42,7 +42,7 @@ const AdmissionForm = () => {
               className="p-2 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.firstName && (
-              <p className="text-red-500">{errors.firstName.message}</p>
+              <p className="text-red-500 dark:text-orange-300">{errors.firstName.message}</p>
             )}
           </div>
           <div>
@@ -60,7 +60,7 @@ const AdmissionForm = () => {
               className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.lastName && (
-              <p className="text-red-500">{errors.lastName.message}</p>
+              <p className="text-red-500 dark:text-orange-300">{errors.lastName.message}</p>
             )}
           </div>
           <div>
@@ -76,7 +76,7 @@ const AdmissionForm = () => {
               {...register("dob", { required: "Date of birth is required" })}
               className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
-            {errors.dob && <p className="text-red-500">{errors.dob.message}</p>}
+            {errors.dob && <p className="text-red-500 dark:text-orange-300">{errors.dob.message}</p>}
           </div>
           <div>
             <label
@@ -97,12 +97,12 @@ const AdmissionForm = () => {
               <option value="Prefer not to say">Prefer not to say</option>
             </select>
             {errors.gender && (
-              <p className="text-red-500">{errors.gender.message}</p>
+              <p className="text-red-500 dark:text-orange-300">{errors.gender.message}</p>
             )}
           </div>
           {/* Other fields */}
           <div className="col-span-2 mt-6">
-            <h2 className="text-orange-600 text-2xl font-semibold mb-4">
+            <h2 className="text-orange-600 dark:text-orange-300 text-2xl font-semibold mb-4">
               Contact Details
             </h2>
           </div>
@@ -121,7 +121,7 @@ const AdmissionForm = () => {
               className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.email && (
-              <p className="text-red-500">{errors.email.message}</p>
+              <p className="text-red-500 dark:text-orange-300">{errors.email.message}</p>
             )}
           </div>
           <div>
@@ -145,7 +145,7 @@ const AdmissionForm = () => {
               className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.phoneNumber && (
-              <p className="text-red-500">{errors.phoneNumber.message}</p>
+              <p className="text-red-500 dark:text-orange-300">{errors.phoneNumber.message}</p>
             )}
           </div>
           <div className="mb-4 col-span-2">
@@ -163,11 +163,11 @@ const AdmissionForm = () => {
               className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             ></textarea>
             {errors.address && (
-              <p className="text-red-500">{errors.address.message}</p>
+              <p className="text-red-500 dark:text-orange-300">{errors.address.message}</p>
             )}
           </div>
           <div className="col-span-2 mt-6">
-            <h2 className="text-orange-600 text-2xl font-semibold mb-4">
+            <h2 className="text-orange-600 dark:text-orange-300 text-2xl font-semibold mb-4">
               Academic Information
             </h2>
           </div>
@@ -188,7 +188,7 @@ const AdmissionForm = () => {
               className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             ></textarea>
             {errors.previousSchool && (
-              <p className="text-red-500">{errors.previousSchool.message}</p>
+              <p className="text-red-500 dark:text-orange-300">{errors.previousSchool.message}</p>
             )}
           </div>
           <div>
@@ -213,7 +213,7 @@ const AdmissionForm = () => {
             />
 
             {errors.grade && (
-              <p className="text-red-500">{errors.grade.message}</p>
+              <p className="text-red-500 dark:text-orange-300">{errors.grade.message}</p>
             )}
           </div>
           <div className="mb-4 col-span-2">

@@ -39,10 +39,10 @@ const Table = ({ getFeeData, data, showModel }) => {
 
 
   return (
-    <div style={{boxShadow:"2px 2px 2px 1px #676060"}} className='bg-white p-4 rounded ' >
+    <div style={{boxShadow:"2px 2px 2px 1px #676060"}} className='bg-white dark:bg-gray-700 p-4 rounded ' >
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         
-        <thead className='text-white ' >
+        <thead className='text-white' >
           <tr>
             <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Program Name</th>
             <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Age Group</th>
@@ -53,7 +53,7 @@ const Table = ({ getFeeData, data, showModel }) => {
           </tr>
         </thead>
 
-        <tbody className='mt-2 ' >
+        <tbody className='mt-2 dark:text-white' >
           {currentData.map((item) => (
             <tr key={item._id}  >
               <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>{item.programName}</td>
