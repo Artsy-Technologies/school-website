@@ -9,7 +9,7 @@ function ContactPage() {
   const [showContactForm, setShowContactForm] = useState(true);
 
   return (
-    <div className='dark:bg-darkmode'>
+    <div className='dark:bg-darkmode flex flex-col'>
       <Banner
         main={contactPage.title}
         content={contactPage.content}

@@ -5,7 +5,7 @@ function AcademicHeader({ main, buttonText }) {
   return (
     <header className="relative   justify-center items-center text-center  flex flex-col w-full md:w-6/12 mb-5 md:mb-0">
       <div className="flex  flex-col w-full md:w-4/5 md:pl-[15%] pt-28 md:pt-10">
-        <h1 className="text-3xl  md:text-3xl text-center  lg:text-3xl  font-bold text-darkpurple">
+        <h1 className="text-3xl  md:text-3xl text-center  lg:text-3xl  font-bold text-darkpurple dark:text-purple-300">
           {main}
         </h1>
         <div className="">

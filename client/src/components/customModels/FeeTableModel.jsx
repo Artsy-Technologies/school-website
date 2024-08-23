@@ -11,7 +11,6 @@ function FeeTableModel({ showModel }) {
         try {
             const response = await axios.post('/api/admin/createFeeTable', data);
             console.log(response);
-
         } catch (error) {
             console.log(error);
         }
@@ -19,7 +18,7 @@ function FeeTableModel({ showModel }) {
 
     return (
         <section className="h-screen flex justify-center mt-2 backdrop:[3px]  " >
-            <div className="bg-[rgba(255,255,255,0.2)] w-[80%] h-min p-8   " >
+            <div className="bg-[rgba(255,255,255,0.2)] bg-white w-[80%] h-min p-8   " >
                 <RxCross2 onClick={() => showModel()} className="cursor-pointer " />
                 <form onSubmit={handleSubmit(createFee)} >
 
@@ -119,8 +118,8 @@ function FeeTableModel({ showModel }) {
                     </section>
 
 
-                    <button type="submit" className="border-2 w-[98%] py-2 bg-purple-600 mr-auto ml-auto block mt-2 hover:bg-[#330033] " >
-                        Enter
+                    <button type="submit" className="border-2 w-[98%] py-2 bg-purple-600 text-white mr-auto ml-auto block mt-2 hover:bg-[#330033] " >
+                       Submit
                     </button>
 
 
