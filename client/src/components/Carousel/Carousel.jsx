@@ -48,6 +48,15 @@ function Carousel() {
   if (error) return <div>{error}</div>;
 
   return (
+    <div>
+    <h2 className="text-center text-3xl font-bold text-white mb-4">
+      <span className="text-purple-600 dark:text-purple-200">
+      Campus Tour
+      </span>
+    </h2>
+    <p className="text-center text-white max-w-xl mx-auto mb-12">
+    Check out our eye appealing green campus with gives joy.
+    </p>
     <div className="relative flex h-96 w-full max-w-screen-md mx-auto p-2 z-10">
       <div className="relative w-full h-full">
         {images.map((image, index) => (
@@ -109,6 +118,8 @@ function Carousel() {
         )} */}
       </div>
     </div>
+    </div>
+   
   );
 }
 

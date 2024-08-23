@@ -1,6 +1,6 @@
 import Banner from '../components/banner/Banner'
 import { useData } from '../context/BannerContext'
-import EventAndCelebrations from '../components/events-celebrations/EventAndCelebrations'
+import EventAndCelebrations from '../components/CardPages/EventsAndCelebration'
 import ExtracurricularActivities from '../components/CardPages/extracurricularActivities'
 
 function StudentPage() {

@@ -33,7 +33,7 @@ function FeeTableModel({ showModel }) {
                                 <input
                                     type="text"
                                     placeholder="Program name"
-                                    className={`border-2 p-1 w-full my-2 w-full rounded-md ${errors.programName ? 'border-red-500' : 'border-gray-300'}`}
+                                    className={`border-2 p-1 my-2 w-full rounded-md ${errors.programName ? 'border-red-500' : 'border-gray-300'}`}
                                     {...register('programName', { required: 'Program name is required' })}
                                 />
                                 {errors.programName && <p className="text-red-500">{errors.programName.message}</p>}
@@ -92,10 +92,11 @@ function FeeTableModel({ showModel }) {
                             Create
                         </button>
 
-                        <btn className="w-[30%] block py-2 bg-[#8F5BFF] hover:bg-[#391b7a] ml-2 text-center rounded-md text-white text-sm " >
+                        <button className="w-[30%] block py-2 bg-[#8F5BFF] hover:bg-[#391b7a] ml-2 text-center rounded-md text-white text-sm " >
                             Update
-                        </btn>
+                        </button>
                     </div>
+
 
 
                 </form>
@@ -106,9 +107,3 @@ function FeeTableModel({ showModel }) {
 
 export default FeeTableModel
 
-
-// programName,
-//       ageGroup,
-//       annualFee,
-//       registrationFee,
-//       activityFee,

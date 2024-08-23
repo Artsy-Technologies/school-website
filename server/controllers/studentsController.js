@@ -1,8 +1,8 @@
-import nodemailer from 'nodemailer'
-import Student from '../libs/models/studentModel.js'
-import Admission from '../libs/models/admissionModel.js'
+import nodemailer from "nodemailer";
+import Student from "../libs/models/studentModel.js";
+import Admission from "../libs/models/admissionModel.js";
 
-const adminEmail = 'rahul956vishwakarma@gmail.com'
+const adminEmail = "rahul956vishwakarma@gmail.com";
 
 export const contacts = async (req, res) => {
   try {
@@ -12,43 +12,49 @@ export const contacts = async (req, res) => {
       email,
       studentName,
       studentAge,
-      programIntrest,
+      programInterest,
       message,
-    } = req.body
+    } = req.body;
     if (
       !parentName ||
       !phoneNumber ||
       !email ||
       !studentName ||
       !studentAge ||
-      !programIntrest ||
+      !programInterest ||
       !message
     ) {
-      throw new Error('fields are missing')
+      throw new Error("fields are missing");
     }
 
     const studentData = {
-      parentName, phoneNumber, email, studentName, studentAge, programIntrest, message
-    }
+      parentName,
+      phoneNumber,
+      email,
+      studentName,
+      studentAge,
+      programInterest,
+      message,
+    };
 
-    const newStudent = await Student.create(studentData)
+    const newStudent = await Student.create(studentData);
 
-    const isSendEmails = sendmails(adminEmail, email, studentName)
+    const isSendEmails = sendmails(adminEmail, email, studentName);
     if (!isSendEmails || isSendEmails === false) {
-      throw new Error('something went wrong in email sending')
+      throw new Error("something went wrong in email sending");
     }
 
     return res.json({
-      message: 'email sent successfully',
+      message: "email sent successfully",
       status: 200,
-    })
+    });
   } catch (error) {
     return res.json({
       message: error.message,
       status: 500,
-    })
+    });
   }
-}
+};
 
 export const getContactStudentsData = async (req, res) => {
   try {
@@ -57,58 +63,78 @@ export const getContactStudentsData = async (req, res) => {
     return res.json({
       message: "all data is fetched",
       status: 200,
-      allContactData
-    })
+      allContactData,
+    });
   } catch (error) {
     console.log(error.message);
   }
-}
+};
 
 export const admission = async (req, res) => {
   try {
-    const { firstName, lastName, dob, gender, email, phoneNumber, address, previousSchool, grade, comments } = req.body;
-    
-    if (!firstName || !lastName || !dob || !gender || !email || !phoneNumber || !address || !previousSchool || !grade || !comments) throw new Error("fields are missing");
-
-    const studentName = firstName + lastName;
-
-    const isSendEmails = sendmails(adminEmail, email, studentName)
-
-    if (!isSendEmails || isSendEmails === false) {
-      throw new Error('something went wrong in email sending')
-    }
-
-    const admissionData = {
-      fname:firstName,
-      lname:lastName,
+    const {
+      firstName,
+      lastName,
       dob,
       gender,
       email,
       phoneNumber,
       address,
-      prevSchool:previousSchool,
+      previousSchool,
       grade,
-      comments
+      comments,
+    } = req.body;
+
+    if (
+      !firstName ||
+      !lastName ||
+      !dob ||
+      !gender ||
+      !email ||
+      !phoneNumber ||
+      !address ||
+      !previousSchool ||
+      !grade ||
+      !comments
+    )
+      throw new Error("fields are missing");
+
+    const studentName = firstName + lastName;
+
+    const isSendEmails = sendmails(adminEmail, email, studentName);
+
+    if (!isSendEmails || isSendEmails === false) {
+      throw new Error("something went wrong in email sending");
     }
 
-    const newAdmission = await Admission.create(admissionData)
+    const admissionData = {
+      fname: firstName,
+      lname: lastName,
+      dob,
+      gender,
+      email,
+      phoneNumber,
+      address,
+      prevSchool: previousSchool,
+      grade,
+      comments,
+    };
 
+    const newAdmission = await Admission.create(admissionData);
 
     return res.json({
-      message: 'successfull',
+      message: "successfull",
       status: 200,
-      data: newAdmission
-    })
-
+      data: newAdmission,
+    });
   } catch (error) {
     console.log(error.message);
-    
     return res.json({
       message: error.message,
-      status: 500
-    })
+      status: 500,
+    });
   }
-}
+};
 
 export const getAdmission = async (req, res) => {
   try {
@@ -116,62 +142,59 @@ export const getAdmission = async (req, res) => {
     return res.json({
       message: "all data is fetched",
       status: 200,
-      allAdmissionData
-    })
+      allAdmissionData,
+    });
   } catch (error) {
     return res.json({
       message: error.message,
-      status: 500
-    })
+      status: 500,
+    });
   }
-
-}
-
+};
 
 const sendmails = (adminEmail, userEmail, userName) => {
   try {
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: "gmail",
       secure: true,
       auth: {
-        user: 'rahul930vishwakarma@gmail.com',
-        pass: 'bitp xdmz wxsq bgul',
+        user: "rahul930vishwakarma@gmail.com",
+        pass: "bitp xdmz wxsq bgul",
       },
-    })
+    });
 
     // Mail options for the admin
     const adminMailOptions = {
-      from: 'rahul930vishwakarma@gmail.com',
+      from: "rahul930vishwakarma@gmail.com",
       to: adminEmail,
-      subject: 'New Form Submission',
+      subject: "New Form Submission",
       text: `A new form has been submitted by ${userName}.`,
-    }
+    };
 
     // Mail options for the user
     const userMailOptions = {
       from: adminEmail,
       to: userEmail,
-      subject: 'Form Submission Confirmation',
+      subject: "Form Submission Confirmation",
       text: `Hello ${userName},\n\nThank you for submitting the form. We have received your submission.`,
-    }
+    };
 
     // Send email to admin first
     transporter.sendMail(adminMailOptions, (error, info) => {
       if (error) {
-        console.log(error)
+        console.log(error);
       } else {
         transporter.sendMail(userMailOptions, (error, info) => {
           if (error) {
-            console.log(error)
+            console.log(error);
           }
-        })
+        });
       }
-    })
+    });
 
-    return true
+    return true;
   } catch (error) {
-    console.log(error.message)
-    return false
+    console.log(error.message);
+    return false;
   }
-}
-
+};

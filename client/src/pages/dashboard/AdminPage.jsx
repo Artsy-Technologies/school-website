@@ -9,7 +9,7 @@ function AdminPage() {
   const isDashboardRoute = location.pathname === "/dashboard";
 
   return (
-    <section className="overflow-y-hidden flex">
+    <section className="overflow-y-hidden flex dark:bg-gray-800">
       <div className="w-[20%] h-full">
         <Sidebar />
       </div>

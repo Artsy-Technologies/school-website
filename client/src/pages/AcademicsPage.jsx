@@ -1,8 +1,8 @@
 import Banner from '../components/banner/Banner'
 import { useData } from '../context/BannerContext'
-// import RoomGalleryCard from "../components/roomGallery/RoomGalleryCard"
-import WhatStudentLearnCard from '../components/whatStudentLearn/WhatStudentLearnCard'
+import RoomGalleryCard from "../components/roomGallery/RoomGalleryCard"
 import Features from '../components/CardPages/Features'
+import WhatStudentsLearn from '../components/CardPages/WhatStudentLearn'
 
 function AcademicsPage() {
     const { academicsPage } = useData()
@@ -14,11 +14,10 @@ function AcademicsPage() {
         content={academicsPage.content}
         buttonText={academicsPage.buttonText}
     />
-    <div className='w-[100%] flex flex-col justify-center items-center gap-20'>
+    <div className='w-[100%] flex flex-col justify-center items-center gap-2'>
       <Features/>
-      {/* What Students Learn */}
-      < WhatStudentLearnCard/>
-      {/* <RoomGalleryCard/> */}
+      <WhatStudentsLearn/>
+      <RoomGalleryCard/>
     </div>
     </div>
   )
