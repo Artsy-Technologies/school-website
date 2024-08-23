@@ -1,83 +1,85 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { Pagination } from 'antd';
 import { useAdmin } from '../../hooks/AdminContext';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
-const Table = ({ columns, data }) => {
+const Table = ({ getFeeData, data, showModel }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 3;
-
+  const pageSize = 3; // Number of items per page
   const { isAdmin } = useAdmin(); // Access the isAdmin state from context
+  const [res, setResponse] = useState();
 
-  const handlePageChange = page => {
+  const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
+  // Calculate the data to display for the current page
   const currentData = data.slice(
     (currentPage - 1) * pageSize,
     currentPage * pageSize
   );
 
+
+  // ---------------------------------- delete function ----------------------------
+  const handleDelete = async (data) => {
+    try {
+      const response = await axios.post('/api/admin/deleteFeeTable', data);
+      if (response?.data === 200) {
+        setResponse(response?.data);
+        toast.success(res.message);
+        getFeeData();
+      }
+    } catch (error) {
+      toast.success(res?.message)
+    }
+  }
+
+
   return (
-    <div className="p-5 dark:bg-darkModeCard bg-white border-black border-b-4 border-r-4 rounded shadow-md overflow-x-auto">
-      <table className="min-w-full table-auto">
-        <thead>
-          <tr className="bg-darkpurple font-normal text-[1rem] text-white text-left">
-            {columns.map((col, index) => (
-              <th
-                key={index}
-                className="px-4 py-2 border border-white"
-                style={{
-                  borderTopLeftRadius: index === 0 ? '0.5rem' : '0',
-                  borderTopRightRadius: index === columns.length - 1 ? '0.5rem' : '0',
-                  fontFamily: 'sans-serif',
-                }}
-              >
-                {col.header}
-              </th>
-            ))}
-            {isAdmin && (
-              <th
-                className="px-4 py-2"
-                style={{ borderTopRightRadius: '0.5rem' }}
-              >
-                Action
-              </th>
-            )}
+    <div style={{boxShadow:"2px 2px 2px 1px #676060"}} className='bg-white p-4 rounded ' >
+      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        
+        <thead className='text-white ' >
+          <tr>
+            <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Program Name</th>
+            <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Age Group</th>
+            <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Activity Fee</th>
+            <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Annual Fee</th>
+            <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Registration Fee</th>
+            {isAdmin && <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF' }}>Actions</th>}
           </tr>
         </thead>
-        <tbody>
-          {currentData.map((row, rowIndex) => (
-            <tr key={rowIndex} className="bg-white dark:bg-darkModeCard">
-              {columns.map((col, colIndex) => (
-                <td
-                  key={colIndex}
-                  className="border dark:border-white dark:text-white border-black text-[1em] px-4 py-2"
-                >
-                  {row[col.accessor]}
-                </td>
-              ))}
+
+        <tbody className='mt-2 ' >
+          {currentData.map((item) => (
+            <tr key={item._id}  >
+              <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>{item.programName}</td>
+              <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>{item.ageGroup}</td>
+              <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>{item.activityFee}</td>
+              <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>{item.annualFee}</td>
+              <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>{item.registrationFee}</td>
               {isAdmin && (
-                <td className="border  px-4 py-2 flex space-x-2">
-                  <button className="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-700">
-                    Edit
-                  </button>
-                  <button className="px-4 py-1 bg-red-500 text-white rounded hover:bg-red-700">
-                    Delete
-                  </button>
+                <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>
+                  <button onClick={() => showModel()} className="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-700 mx-2 ">Edit</button>
+                  <button onClick={() => handleDelete(item)}
+                    className="px-4 py-1 bg-red-500 text-white rounded hover:bg-red-700">Delete</button>
                 </td>
               )}
             </tr>
           ))}
         </tbody>
       </table>
+
+      {/* Pagination Component */}
       <Pagination
         current={currentPage}
         pageSize={pageSize}
-        // eslint-disable-next-line react/prop-types
         total={data.length}
         onChange={handlePageChange}
-        className="mt-4 justify-start dark:text-white"
+        style={{ marginTop: '16px', textAlign: 'center' }}
       />
     </div>
   );
