@@ -41,49 +41,63 @@ const Table = ({ getFeeData, data, showModel }) => {
 
 
   return (
-    <div style={{boxShadow:"2px 2px 2px 1px #676060"}} className='bg-white dark:bg-gray-700 p-4 rounded ' >
-      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-        
-        <thead className='text-white' >
-          <tr>
-            <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Program Name</th>
-            <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Age Group</th>
-            <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Activity Fee</th>
-            <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Annual Fee</th>
-            <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF ' }}>Registration Fee</th>
-            {isAdmin && <th style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left', backgroundColor: '#8F5BFF' }}>Actions</th>}
-          </tr>
-        </thead>
+<div
+  style={{ boxShadow: "2px 2px 2px 1px #676060" }}
+  className="bg-white dark:bg-gray-700 p-4 rounded overflow-x-auto" // Added overflow-x-auto for horizontal scrolling
+>
+  <table className="min-w-full border-collapse">
+    {/* Changed inline styles to Tailwind classes */}
+    <thead className="bg-[#8F5BFF] text-white">
+      <tr>
+        <th className="p-2 border border-[#ddd] text-left">Program Name</th>
+        <th className="p-2 border border-[#ddd] text-left">Age Group</th>
+        <th className="p-2 border border-[#ddd] text-left">Activity Fee</th>
+        <th className="p-2 border border-[#ddd] text-left">Annual Fee</th>
+        <th className="p-2 border border-[#ddd] text-left">Registration Fee</th>
+        {isAdmin && <th className="p-2 border border-[#ddd] text-left">Actions</th>}
+      </tr>
+    </thead>
 
-        <tbody className='mt-2 dark:text-white' >
-          {currentData.map((item) => (
-            <tr key={item._id}  >
-              <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>{item.programName}</td>
-              <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>{item.ageGroup}</td>
-              <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>{item.activityFee}</td>
-              <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>{item.annualFee}</td>
-              <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>{item.registrationFee}</td>
-              {isAdmin && (
-                <td style={{ padding: '8px 12px', border: '1px solid #ddd', textAlign: 'left' }}>
-                  <button onClick={() => showModel()} className="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-700 mx-2 ">Edit</button>
-                  <button onClick={() => handleDelete(item)}
-                    className="px-4 py-1 bg-red-500 text-white rounded hover:bg-red-700">Delete</button>
-                </td>
-              )}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <tbody className="mt-2 dark:text-white">
+      {currentData.map((item) => (
+        <tr key={item._id} className="border-t border-[#ddd]">
+          <td className="p-2 border border-[#ddd] text-center">{item.programName}</td>
+          <td className="p-2 border border-[#ddd] text-center">{item.ageGroup}</td>
+          <td className="p-2 border border-[#ddd] text-center">{item.activityFee}</td>
+          <td className="p-2 border border-[#ddd] text-center">{item.annualFee}</td>
+          <td className="p-2 border border-[#ddd] text-center">{item.registrationFee}</td>
+          {isAdmin && (
+            <td className="p-2 border border-[#ddd] text-center">
+              <button
+                onClick={() => showModel()}
+                className="px-[1.6rem] mb-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-700 "
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => handleDelete(item)}
+                className="px-4 py-1 bg-red-500 text-white rounded hover:bg-red-700 lg:ml-1 "
+              >
+                Delete
+              </button>
+            </td>
+          )}
+        </tr>
+      ))}
+    </tbody>
+  </table>
 
-      {/* Pagination Component */}
-      <Pagination
-        current={currentPage}
-        pageSize={pageSize}
-        total={data.length}
-        onChange={handlePageChange}
-        style={{ marginTop: '16px', textAlign: 'center' }}
-      />
-    </div>
+  {/* Pagination Component */}
+  <div className="mt-4 text-center">
+    <Pagination
+      current={currentPage}
+      pageSize={pageSize}
+      total={data.length}
+      onChange={handlePageChange}
+    />
+  </div>
+</div>
+
   );
 };
 
