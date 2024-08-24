@@ -28,7 +28,6 @@ const signUp = async (req, res) => {
       newAdmin,
     })
   } catch (error) {
-    console.log(error.message)
     return res.json({
       status: 500,
       message: error.message,

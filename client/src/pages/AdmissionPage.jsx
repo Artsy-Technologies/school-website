@@ -129,48 +129,50 @@ const AdmissionPage = () => {
 
   useEffect(() => {
     getFeeData()
-  }, [showModel])
+  }, [isTrue])
 
 
 
   return (
-    <>
-      <div className="min-h-screen w-full dark:bg-darkmode  ">
 
-        <>
-          <div className="min-h-screen w-full">
+    <div className="min-h-screen w-full dark:bg-darkmode  ">
 
-            <Banner
-              main={admissionPage.title}
-              content={admissionPage.content}
-              buttonText={admissionPage.buttonText}
-            />
+      <>
+        <div className="min-h-screen w-full">
 
-            <div className="p-10 mb-10">
-              <TuitionTable columns={fee_headers} data={contactData} getFeeData={getFeeData} showModel={showModel} isAdmin={true} />
-            </div>
+          <Banner
+            main={admissionPage.title}
+            content={admissionPage.content}
+            buttonText={admissionPage.buttonText}
+          />
 
-            <div className="p-10 mb-10">
-              <TuitionTable
-                columns={activity_headers}
-                data={contactData}
-                isAdmin={isAdmin}
-              />
-              <PdfDownloader />
-            </div>
-
+          <div className="p-10 mb-10">
+            <TuitionTable columns={fee_headers} data={contactData} getFeeData={getFeeData} showModel={showModel} isAdmin={true} />
           </div>
-          <AdmissionForm />
 
-        </>
+          <div className="p-10 mb-10">
+            <TuitionTable
+              columns={activity_headers}
+              data={contactData}
+              isAdmin={isAdmin}
+            />
+            <PdfDownloader />
+          </div>
 
-      </div>
-      {
-        isTrue &&
-        <FeeTableModel showModel={showModel} />
-      }
+        </div>
+        <AdmissionForm />
 
-    </>
+
+        {
+          isTrue &&
+          <FeeTableModel showModel={showModel} />
+        }
+      </>
+
+
+    </div>
+
+
   )
 }
 

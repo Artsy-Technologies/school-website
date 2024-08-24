@@ -10,7 +10,6 @@ function FeeTableModel({ showModel }) {
     const createFee = async (data) => {
         try {
             const response = await axios.post('/api/admin/createFeeTable', data);
-            console.log(response);
             if (response?.data?.status === 200) {
                 showModel();
             }
@@ -20,8 +19,19 @@ function FeeTableModel({ showModel }) {
         }
     }
 
+    const updateFee = async (data) =>{
+       try {
+        const response = await axios.post('/api/admin/updateFeeTable', data);
+        if (response?.data?.status === 200) {
+            showModel();
+        }
+       } catch (error) {
+        alert(error.message)
+       }
+    }
+
     return (
-        <section className="h-full flex justify-center items-center absolute top-0 w-screen bg-[#00000038]   " >
+        <section className="h-full flex justify-center items-center fixed top-0 w-screen bg-[#00000038]   " >
             <div className="bg-[white] w-[95%] h-[90%] lg:w-[50%] lg:h-[40%] p-2 rounded-md shadow-lg " >
                 <RxCross2 onClick={() => showModel()} className="cursor-pointer " />
                 <form className="mt-4" >
@@ -92,7 +102,7 @@ function FeeTableModel({ showModel }) {
                             Create
                         </button>
 
-                        <button className="w-[30%] block py-2 bg-[#8F5BFF] hover:bg-[#391b7a] ml-2 text-center rounded-md text-white text-sm " >
+                        <button onClick={handleSubmit(updateFee)} className="w-[30%] block py-2 bg-[#8F5BFF] hover:bg-[#391b7a] ml-2 text-center rounded-md text-white text-sm " >
                             Update
                         </button>
                     </div>
