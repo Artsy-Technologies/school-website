@@ -8,7 +8,7 @@
 
 ## Live Demo
 
-Check out the [Live Demo](https://school-website-frontend.vercel.app/) of the project.
+Check out the [Live Demo](https://school-website-etuj.onrender.com/) of the project.
 
 ## Table of Contents
 
