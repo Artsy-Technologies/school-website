@@ -1,9 +1,8 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Image from './leftImage.png'; 
+import Image from './leftImage.png';
 const TestimonialForm = () => {
   const {
     register,
@@ -17,7 +16,7 @@ const TestimonialForm = () => {
     formData.append('name', data.name);
     formData.append('text', data.text);
     formData.append('rating', data.rating);
-    formData.append('image', data.image[0]); 
+    formData.append('image', data.image[0]);
 
     try {
       const response = await axios.post('/api/testimonials', formData, {
@@ -37,7 +36,9 @@ const TestimonialForm = () => {
     <div className="flex flex-col md:flex-row bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white rounded-lg shadow-xl p-8 mb-6 w-full max-w-4xl mx-auto border border-gray-200">
       
          
-      <div className="md:w-1/2 flex items-center justify-center">
+      <div className="md:w-1/2 flex flex-col items-center justify-center gap-6">
+        <h2 className='text-3xl text-purple-700 dark:text-purple-300 font-bold'>Give us your feedback</h2>
+        <p className='text-xl text-purple-700 dark:text-purple-300'>through this testimonials form</p>
         <img src={Image} alt="Testimonial" className="w-full h-auto object-cover rounded-lg shadow-lg" />
       </div>
       <div className="flex flex-col w-full md:w-1/2 p-6">

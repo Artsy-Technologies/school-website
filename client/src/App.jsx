@@ -14,6 +14,7 @@ import AdminPage from "./pages/dashboard/AdminPage";
 import ContactFormsListPage from "./pages/dashboard/ContactFormsListPage";
 import AdmissionListPage from "./pages/dashboard/AdmissionListPage"
 import ImageGalleryListPage from "./pages/dashboard/ImageGalleryListPage"
+import NotFound from "./pages/PageNotFound"
 
 
 // axios.defaults.baseURL = "http://localhost:8000";
@@ -48,6 +49,10 @@ const App = () => {
               </Route>
 
               <Route path="dashboard/auth" element={<AdminAuthPage />} />
+
+              <Route path="*" element={<NotFound/>}/>
+
+
           </Routes>
         </DataProvider>
       </Suspense>
