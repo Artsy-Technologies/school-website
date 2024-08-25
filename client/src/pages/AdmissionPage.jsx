@@ -3,8 +3,7 @@ import Banner from '../components/banner/Banner'
 import TuitionTable from '../components/table/Table'
 import AdmissionForm from '../components/admission-form/admission-form';
 import { useData } from '../context/BannerContext'
-
-import { useAdmin } from '../hooks/AdminContext'
+import {useAdmin} from '../hooks/AdminContext'
 import PdfDownloader from '../components/pdfViewer/PdfDownloader'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
