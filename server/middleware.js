@@ -1,28 +1,32 @@
-const jwt = require('jsonwebtoken');
-const JWT_SECRET = process.env.JWT_SECRET;
+import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv';
+dotenv.config();
 
-const auth = (req, res, next) => {
+const JWT_SECRET = process.env.JWT_SECRET
 
-    const token = req.headers['authorization'] || req?.cookies?.token;
 
-    if (!token) {
-        return res.status(401).json({ message: 'Unauthorized' });
-    }
 
-    try {
-        const decoded = jwt.verify(token, JWT_SECRET);
-        req.user = decoded;
-        next();
-    } catch (error) {
-        res.status(401).json({ message: 'Invalid token' });
-    }
-};
+export const auth = (req, res, next) => {
+  const token = req.headers['authorization'] || req?.cookies?.token
+  
 
-const isAdmin = (req, res, next) => {
-    if (!req.user.isAdmin) {
-        return res.status(403).json({ message: 'Forbidden' });
-    }
-    next();
-};
+  if (!token) {
+    return res.status(401).json({ message: 'Unauthorized' })
+  }
 
-module.exports = { auth, isAdmin };
+  try {    
+    const decoded = jwt.verify(token, JWT_SECRET)
+    req.user = decoded
+    next()
+  } catch (error) {
+    console.log(error.message);
+    res.status(401).json({ message: 'Invalid token' })
+  }
+}
+
+export const isAdmin = (req, res, next) => {
+  if (!req.user.isAdmin) {
+    return res.status(403).json({ message: 'Forbidden' })
+  }
+  next()
+}

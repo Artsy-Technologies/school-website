@@ -4,10 +4,12 @@ import Navbar from '../header/Navbar'
 import Footer from '../footer/Footer'
 function MainLayout() {
     return (
-        <main>
+        <main className='dark:bg-darkmode  '>
             <Navbar />
-            <Outlet />
-            <Footer/>
+            <div className='pt-[5rem] ' >
+                <Outlet />
+            </div>
+            <Footer />
         </main>
     )
 }

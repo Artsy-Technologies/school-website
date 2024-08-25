@@ -6,6 +6,10 @@
 
 <p align="center">  <a href="https://github.com/Artsy-Technologies/school-website"><img src="https://img.shields.io/github/stars/Artsy-Technologies/school-website" alt="GitHub stars"></a>  <a href="https://github.com/Artsy-Technologies/school-website"><img src="https://img.shields.io/github/forks/Artsy-Technologies/school-website" alt="GitHub forks"></a>  <a href="https://github.com/Artsy-Technologies/school-website"><img src="https://img.shields.io/github/issues/Artsy-Technologies/school-website" alt="GitHub issues"></a>  <a href="https://github.com/Artsy-Technologies/school-website"><img src="https://img.shields.io/github/license/Artsy-Technologies/school-website" alt="GitHub license"></a></p>
 
+## Live Demo
+
+Check out the [Live Demo](https://school-website-frontend.vercel.app/) of the project.
+
 ## Table of Contents
 
 * [📖 Introduction](#-introduction)

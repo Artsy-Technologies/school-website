@@ -1,23 +1,28 @@
-const express = require('express')
-const router = express.Router()
-const multerMiddleware = require('../middlewares/multer')
-const {
+import express from 'express'
+import multerMiddleware from '../middlewares/multer.js'
+import {
   addImage,
   getAllImages,
+  getImageByID,
   updateImage,
   deleteImage,
-} = require('../controlers/imageController')
+} from '../controllers/imageController.js'
+
+const router = express.Router()
 
 // Add a new image
-router.post('/images', multerMiddleware.single('image'), addImage)
+router.post('/images', multerMiddleware.single('file'), addImage)
 
 // Get all images
 router.get('/images', getAllImages)
 
+// Get image by ID
+router.get('/images/:id', getImageByID)
+
 // Update an existing image
-router.put('/images/:id', multerMiddleware.single('image'), updateImage)
+router.put('/images/:id', multerMiddleware.single('file'), updateImage)
 
 // Delete an image
 router.delete('/images/:id', deleteImage)
 
-module.exports = router
+export default router
