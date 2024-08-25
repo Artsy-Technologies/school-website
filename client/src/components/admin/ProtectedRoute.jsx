@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import AdminPage from "../../pages/dashboard/AdminPage";
+import axios from "axios";
 
 function ProtectedRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -13,9 +14,7 @@ function ProtectedRoute({ children }) {
 
     const checkAuth = async () => {
       try {
-        let res = await fetch("http://localhost:8000/api/admin/dashboard", {
-          credentials: "include",
-        });
+        let res = await axios.get("/api/admin/dashboard",);
         console.log(res);
 
         if (res?.status === 200) {
