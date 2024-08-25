@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -10,7 +10,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="flex justify-between items-center bg-purple-500 text-white p-4 drop-shadow-md z-50 relative">
+    <header className="flex justify-between items-center bg-purple-500 text-white p-4 drop-shadow-md z-[1000] relative">
       <h1 className="text-xl">SRI MURUGHA RAJENDRASWAMY CBSE SCHOOL</h1>
 
       <nav className="md:hidden fixed  right-0 z-50">

@@ -12,7 +12,7 @@ import AdminPage from './pages/dashboard/AdminPage';
 import AdminAuthPage from './pages/dashboard/AdminAuthPage';
 import ProtectedRoute from './components/admin/ProtectedRoute'
 
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'https://school-website-backend-qeg6.onrender.com';
 axios.defaults.withCredentials = true;
 import { DataProvider } from './context/BannerContext';
 

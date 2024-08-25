@@ -12,7 +12,7 @@ function ProtectedRoute({ children }) {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-               let res = await fetch('http://localhost:8000/dashboard',{
+               let res = await fetch('https://school-website-backend-qeg6.onrender.com/dashboard',{
                 credentials:"include"
                });
                if (res?.status === 200) {
