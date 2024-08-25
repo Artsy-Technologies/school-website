@@ -10,13 +10,9 @@ function ProtectedRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   useEffect(() => {
-    console.log("yes protect route works");
-
     const checkAuth = async () => {
       try {
         let res = await axios.get("/api/admin/dashboard",);
-        console.log(res);
-
         if (res?.status === 200) {
           setIsAuthenticated(true);
         } else {
