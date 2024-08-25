@@ -32,6 +32,7 @@ const SubContainer = () => {
         { src: Image2, alt: "Classroom Image 2" },
         { src: Image3, alt: "Classroom Image 3" },
         { src: Image4, alt: "Classroom Image 4" },
+        { src: Image1, alt: "Classroom Image 1" },
       ],
       heading: "Classrooms",
       paragraph:
@@ -44,6 +45,7 @@ const SubContainer = () => {
         { src: Image6, alt: "Library Image 2" },
         { src: Image7, alt: "Library Image 3" },
         { src: Image8, alt: "Library Image 4" },
+        { src: Image5, alt: "Library Image 1" },
       ],
       heading: "Library",
       paragraph:
@@ -56,6 +58,7 @@ const SubContainer = () => {
         { src: Image10, alt: "Science Lab Image 2" },
         { src: Image11, alt: "Science Lab Image 3" },
         { src: Image12, alt: "Science Lab Image 4" },
+        { src: Image9, alt: "Science Lab Image 1" },
       ],
       heading: "Science Lab",
       paragraph:
@@ -68,6 +71,7 @@ const SubContainer = () => {
         { src: Image14, alt: "Science Lab Image 2" },
         { src: Image15, alt: "Science Lab Image 3" },
         { src: Image16, alt: "Science Lab Image 4" },
+        { src: Image13, alt: "Science Lab Image 1" },
       ],
       heading: "Computer Lab",
       paragraph:
@@ -80,6 +84,7 @@ const SubContainer = () => {
         { src: Image18, alt: "Garden Image 2" },
         { src: Image19, alt: "Garden Image 3" },
         { src: Image20, alt: "Garden Image 4" },
+        { src: Image17, alt: "Garden Image 1" },
       ],
       heading: "Garden and Nature Area",
       paragraph:
