@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 // Card Component
 const Card = ({ icon, heading, paragraph, cardHeight }) => {
   return (
-    <div className={`relative p-4 w-[450px] ${cardHeight}`}>
+    <div className={`relative p-6 w-[450px] ${cardHeight}`}>
       {/* Icon Container */}
       <div
         className="absolute -top-6 left-8 rounded-xl z-30 p-4 flex items-center justify-center shadow-lg"
