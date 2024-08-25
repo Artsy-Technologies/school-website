@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 const Card = ({ images, heading, paragraph }) => {
   return (
-    <div className="bg-white dark:bg-gray-700 p-6 pt-2 rounded-lg shadow-lg w-[90%] h-auto">  {/* Set width to 90% */}
-      <div className="flex p-4 space-x-4">
+    <div className="bg-white dark:bg-gray-700 p-6 pt-2 rounded-lg shadow-lg w-[90%] mx-auto">  {/* Set width to 90% */}
+      <div className="flex p-4 space-x-4 overflow-x-auto">
         {images.map((image, index) => (
-          <div key={index} className="w-1/4">
+          <div key={index} className="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 p-2">
             <img
               src={image.src}
               alt={image.alt}
-              className="rounded-lg relative -top-16"
+              className="w-full h-auto rounded-lg"
             />
           </div>
         ))}
