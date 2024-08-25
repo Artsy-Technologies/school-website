@@ -6,36 +6,63 @@ import { Navigate } from "react-router-dom";
 import AdminPage from "../../pages/dashboard/AdminPage";
 
 function ProtectedRoute({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(null);
+    const [isAuthenticated, setIsAuthenticated] = useState(null);  
 
-  useEffect(() => {
-    console.log("yes protect route works");
+    useEffect(() => {
+        const checkAuth = async () => {
+            try {
+               let res = await fetch('https://school-website-backend-qeg6.onrender.com/dashboard',{
+                credentials:"include"
+               });
+               if (res?.status === 200) {
+                setIsAuthenticated(true); 
+               }else{
+                setIsAuthenticated(false);                
+               }
+            } catch {
+                setIsAuthenticated(false);
+            }
+        };
 
-    const checkAuth = async () => {
-      try {
-        let res = await fetch("http://localhost:8000/api/admin/dashboard", {
-          credentials: "include",
-        });
-        console.log(res);
+        checkAuth();
+    }, []);
 
-        if (res?.status === 200) {
-          setIsAuthenticated(true);
-        } else {
-          setIsAuthenticated(false);
-        }
-      } catch {
-        setIsAuthenticated(false);
-      }
-    };
+    if (isAuthenticated === null) {
+        return <div>Loading...</div>;
+    }
 
-    checkAuth();
-  }, []);
+    return isAuthenticated ? children : <Navigate to="/" /> ;
+    
+//   const [isAuthenticated, setIsAuthenticated] = useState(null);
 
-  if (isAuthenticated === null) {
-    return <div>Loading...</div>;
-  }
+//   useEffect(() => {
+//     console.log("yes protect route works");
 
-  return isAuthenticated ? <AdminPage /> : <Navigate to="/" />;
+//     const checkAuth = async () => {
+//       try {
+//         let res = await fetch("http://localhost:8000/api/admin/dashboard", {
+//           credentials: "include",
+//         });
+//         console.log(res);
+
+//         if (res?.status === 200) {
+//           setIsAuthenticated(true);
+//         } else {
+//           setIsAuthenticated(false);
+//         }
+//       } catch {
+//         setIsAuthenticated(false);
+//       }
+//     };
+
+//     checkAuth();
+//   }, []);
+
+//   if (isAuthenticated === null) {
+//     return <div>Loading...</div>;
+//   }
+
+//   return isAuthenticated ? <AdminPage /> : <Navigate to="/" />;
 }
 
 export default ProtectedRoute;

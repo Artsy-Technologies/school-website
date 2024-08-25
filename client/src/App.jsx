@@ -15,8 +15,10 @@ import ContactFormsListPage from "./pages/dashboard/ContactFormsListPage";
 import AdmissionListPage from "./pages/dashboard/AdmissionListPage"
 import ImageGalleryListPage from "./pages/dashboard/ImageGalleryListPage"
 
+axios.defaults.baseURL = 'https://school-website-backend-qeg6.onrender.com';
 
-axios.defaults.baseURL = "http://localhost:8000";
+// axios.defaults.baseURL = "http://localhost:8000";
+
 axios.defaults.withCredentials = true;
 
 import { DataProvider } from "./context/BannerContext";

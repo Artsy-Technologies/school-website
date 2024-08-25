@@ -21,10 +21,12 @@ router.get('/dashboard', auth, isAdmin, (req, res) => {
 
 router.get('/getAllFees', getAllFees)
 
-router.post('/createFeeTable', auth, isAdmin, createFeeTable)
 
-router.post('/updateFeeTable', auth, isAdmin, updateFeeTable)
+router.post('/createFeeTable', auth, isAdmin, createFeeTable);
 
-router.post('/deleteFeeTable', auth, isAdmin, deleteFeeTable)
+router.put('/updateFeeTable', auth, isAdmin, updateFeeTable);
+
+router.delete('/deleteFeeTable', auth, isAdmin, deleteFeeTable);
+
 
 export default router
