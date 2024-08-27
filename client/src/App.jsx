@@ -17,8 +17,8 @@ import ImageGalleryListPage from "./pages/dashboard/ImageGalleryListPage"
 import NotFound from "./pages/PageNotFound"
 
 
-// axios.defaults.baseURL = "http://localhost:8000";
-axios.defaults.baseURL = "https://school-website-backend-qeg6.onrender.com";
+axios.defaults.baseURL = "http://localhost:8000";
+// axios.defaults.baseURL = "https://school-website-backend-qeg6.onrender.com";
 axios.defaults.withCredentials = true;
 
 import { DataProvider } from "./context/BannerContext";
