@@ -8,7 +8,7 @@ const navigate = useNavigate();
     <div className="container mx-auto p-8 h-92 mb-15 ">
         <div className="p-6 rounded-lg shadow-lg flex flex-col gap-4 lg:flex-row items-center justify-between h-auto">
             <div className="lg:w-4/5 text-center lg:text-left">
-                <h1 className="text-white text-xl font-semibold">Welcome to <span className="text-orange-500 text-3xl">Sri Murugha Rajendraswamy CBSE School</span></h1>
+                <h1 className="text-white text-xl font-semibold">Welcome to <span className="text-orange-500 text-3xl"> J K Memorial Central(CBSE) School</span></h1>
                 <hr className="my-4 border-white" />
                 <p className="text-white text-2xl font-medium mt-2">Where Young Minds Blossom and <span className="dark:text-white text-purple-700 text-3xl">Dreams Take Flight.</span></p>
                 <p className="dark:text-white text-purple-700 text-xl mt-4">Our kindergarten school provides a nurturing and stimulating environment, fostering a love for learning that lasts a lifetime. Join us as we embark on an exciting educational journey together!</p>
