@@ -22,6 +22,7 @@ axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
 
 import { DataProvider } from "./context/BannerContext";
+import ProfilePage from "./pages/profilePage/ProfilePage";
 
 const App = () => {
   return (
@@ -36,21 +37,23 @@ const App = () => {
               <Route path="academics" element={<AcademicsPage />} />
               <Route path="admission" element={<AdmissionPage />} />
               <Route path="students" element={<StudentLifePage />} />
-              </Route>
+              <Route path="profile" element={<ProfilePage />} />
+            </Route >
 
-              <Route
-                path="dashboard"
-                element={<ProtectedRoute element={<AdminPage/>} />}
-              >
-                <Route path="contact-forms" element={<ContactFormsListPage />} />
-                <Route path="admission-forms" element={<AdmissionListPage />} />
-                <Route path="image-gallery" element={<ImageGalleryListPage />} />
-                {/* Add other admin-specific routes here */}
-              </Route>
 
-              <Route path="dashboard/auth" element={<AdminAuthPage />} />
 
-              <Route path="*" element={<NotFound/>}/>
+            <Route
+              path="dashboard"
+              element={<ProtectedRoute element={<AdminPage />} />}
+            >
+              <Route path="contact-forms" element={<ContactFormsListPage />} />
+              <Route path="admission-forms" element={<AdmissionListPage />} />
+              <Route path="image-gallery" element={<ImageGalleryListPage />} />
+            </Route>
+
+            <Route path="dashboard/auth" element={<AdminAuthPage />} />
+
+            <Route path="*" element={<NotFound />} />
 
 
           </Routes>
