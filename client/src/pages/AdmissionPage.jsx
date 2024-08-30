@@ -3,7 +3,7 @@ import Banner from '../components/banner/Banner'
 import TuitionTable from '../components/table/Table'
 import AdmissionForm from '../components/admission-form/admission-form';
 import { useData } from '../context/BannerContext'
-import {useAdmin} from '../hooks/AdminContext'
+import { useAdmin } from '../hooks/AdminContext'
 import PdfDownloader from '../components/pdfViewer/PdfDownloader'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -156,6 +156,7 @@ const AdmissionPage = () => {
               isAdmin={isAdmin}
             />
             <PdfDownloader />
+            <UploadPdf />
           </div>
 
         </div>
@@ -176,3 +177,42 @@ const AdmissionPage = () => {
 }
 
 export default AdmissionPage
+
+
+
+const UploadPdf = () => {
+  const [file, setFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
+  const handleUpload = async () => {
+    if (!file) {
+      alert("Please select a file first!");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const response = await axios.post('http://localhost:5000/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      alert('File uploaded successfully!');
+    } catch (error) {
+      console.error('Error uploading file:', error);
+      alert('Failed to upload file.');
+    }
+  };
+  return (
+    <div className='flex justify-center mt-4 ' >
+      <h2>Upload PDF</h2>
+      <input type="file" accept=".pdf" onChange={handleFileChange} />
+      <button onClick={handleUpload}>Upload</button>
+    </div>
+  )
+}
