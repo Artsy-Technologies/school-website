@@ -22,7 +22,11 @@ axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
 
 import { DataProvider } from "./context/BannerContext";
+
+import FeeStructureDownload from "./components/pdfViewer/FeeStructureDownload";
+import AdminFeeStructure from "./components/admin/fees/AdminFeeStructure";
 import ProfilePage from "./pages/profilePage/ProfilePage";
+
 
 const App = () => {
   return (
@@ -39,6 +43,17 @@ const App = () => {
               <Route path="students" element={<StudentLifePage />} />
               <Route path="profile" element={<ProfilePage />} />
             </Route >
+
+              <Route
+                path="dashboard"
+                element={<ProtectedRoute element={<AdminPage/>} />}
+              >
+                <Route path="contact-forms" element={<ContactFormsListPage />} />
+                <Route path="admission-forms" element={<AdmissionListPage />} />
+                <Route path="image-gallery" element={<ImageGalleryListPage />} />
+                <Route path="pdf" element={<AdminFeeStructure/>}/>
+                {/* Add other admin-specific routes here */}
+              </Route>
 
 
 

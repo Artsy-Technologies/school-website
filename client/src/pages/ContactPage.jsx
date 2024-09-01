@@ -4,6 +4,7 @@ import ContactForm from '../components/contact-form/contact-form';
 import AdmissionForm from '../components/admission-form/admission-form';
 import { useData } from '../context/BannerContext';
 
+
 function ContactPage() {
   const { contactPage } = useData();
   const [showContactForm, setShowContactForm] = useState(true);
