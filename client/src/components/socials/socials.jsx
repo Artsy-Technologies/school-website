@@ -31,8 +31,8 @@ export const Socials = () =>{
         <p className="text-center lg:text-left mt-2 dark:text-white text-black">
           To finish celebrating Sport and Outdoor this week in our Highlights
           2023-24 series, read our latest blog post by SFC2 Evie. Evie shares the
-          three key things about exercise that are important to her - 'Balance',
-          'Social Element' and 'Understanding Myself'. Click the link in our bio
+          three key things about exercise that are important to her - &apos;Balance&apos;,
+          &apos;Social Element&apos;  and &apos;Understanding Myself&apos; . Click the link in our bio
           or head over to the Blogs and Interviews page on our website.
         </p>
         <div className="flex justify-center lg:justify-start mt-6">
@@ -61,8 +61,8 @@ export const Socials = () =>{
         <p className="text-center lg:text-left mt-2 dark:text-white text-black">
           To finish celebrating Sport and Outdoor this week in our Highlights
           2023-24 series, read our latest blog post by SFC2 Evie. Evie shares the
-          three key things about exercise that are important to her - 'Balance',
-          'Social Element' and 'Understanding Myself'. Click the link in our bio
+          three key things about exercise that are important to her - &apos; Balance&apos; ,
+          &apos; Social Element&apos;  and &apos; Understanding Myself&apos; . Click the link in our bio
           or head over to the Blogs and Interviews page on our website.
         </p>
         <div className="flex justify-center lg:justify-start mt-6">
@@ -91,8 +91,8 @@ export const Socials = () =>{
         <p className="text-center lg:text-left mt-2 dark:text-white text-black">
           To finish celebrating Sport and Outdoor this week in our Highlights
           2023-24 series, read our latest blog post by SFC2 Evie. Evie shares the
-          three key things about exercise that are important to her - 'Balance',
-          'Social Element' and 'Understanding Myself'. Click the link in our bio
+          three key things about exercise that are important to her - &apos; Balance&apos; ,
+          &apos; Social Element&apos;  and &apos; Understanding Myself&apos; . Click the link in our bio
           or head over to the Blogs and Interviews page on our website.
         </p>
         <div className="flex justify-center lg:justify-start mt-6">
@@ -121,8 +121,8 @@ export const Socials = () =>{
         <p className="text-center lg:text-left mt-2 dark:text-white text-black">
           To finish celebrating Sport and Outdoor this week in our Highlights
           2023-24 series, read our latest blog post by SFC2 Evie. Evie shares the
-          three key things about exercise that are important to her - 'Balance',
-          'Social Element' and 'Understanding Myself'. Click the link in our bio
+          three key things about exercise that are important to her - &apos; Balance&apos; ,
+          &apos; Social Element&apos;  and &apos; Understanding Myself&apos; . Click the link in our bio
           or head over to the Blogs and Interviews page on our website.
         </p>
         <div className="flex justify-center lg:justify-start mt-6">
