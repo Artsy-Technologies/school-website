@@ -28,7 +28,7 @@ const cardsData = [
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
   {
     icon: Icon22,
@@ -45,7 +45,7 @@ const cardsData = [
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
   {
     icon: Icon33,
@@ -63,7 +63,7 @@ const cardsData = [
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
   {
     icon: Icon44,
@@ -80,7 +80,7 @@ const cardsData = [
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
   {
     icon: Icon55,
@@ -97,7 +97,7 @@ const cardsData = [
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
   {
     icon: Icon66,
@@ -114,7 +114,7 @@ const cardsData = [
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
 ];
 

@@ -19,14 +19,14 @@ const SIDEBAR_LINKS = [
   { id: 9, path: "/dashboard/pdf", name: "Upload fees Strucutre", icon: FaFilePdf },
   { id: 3, path: "/dashboard/admission-forms", name: "Admission Forms", icon: IoDocumentAttachOutline },
   { id: 4, path: "/dashboard/contact-forms", name: "Contact Forms", icon: IoDocumentTextOutline },
-  { id: 5, path: "/dashboard/messages", name: "Messages", icon: LuMessageSquare },
-  { id: 6, path: "/dashboard/projects", name: "Projects", icon: FaSuitcase },
-  { id: 7, path: "/dashboard/clients", name: "Clients", icon: LuUser },
-  { id: 8, path: "/dashboard/work", name: "Work Plan", icon: LuCalendar },
-  
+  // { id: 5, path: "/dashboard/messages", name: "Messages", icon: LuMessageSquare },
+  // { id: 6, path: "/dashboard/projects", name: "Projects", icon: FaSuitcase },
+  // { id: 7, path: "/dashboard/clients", name: "Clients", icon: LuUser },
+  // { id: 8, path: "/dashboard/work", name: "Work Plan", icon: LuCalendar },
+
 ];
   return (
-    <div className="w-[20%] fixed left-0 top-0 z-10 h-screen border-r pt-8 px-4 bg-white">
+    <div className="w-[20%] fixed left-0 top-0 z-50 h-screen border-r pt-8 px-4 bg-white">
       {/* logo */}
       <div className="mb-8">
         <img src="/logo.svg" alt="logo" className="w-28 hidden md:flex" />
