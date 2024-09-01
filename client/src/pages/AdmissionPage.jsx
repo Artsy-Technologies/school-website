@@ -10,6 +10,7 @@ import axios from 'axios';
 const pdfUrl = new URL('../assets/pdf/SudarshanCV.pdf', import.meta.url).href;
 import AdmissionProcess from '../components/CardPages/AdmissionProcess';
 import FeeTableModel from '../components/customModels/FeeTableModel';
+import FeeStructureDownload from '../components/pdfViewer/FeeStructureDownload';
 
 // body data of 1st table
 
@@ -155,7 +156,9 @@ const AdmissionPage = () => {
               data={contactData}
               isAdmin={isAdmin}
             />
-            <PdfDownloader />
+            {/* <PdfDownloader /> */}
+            <FeeStructureDownload/>
+
           </div>
 
         </div>

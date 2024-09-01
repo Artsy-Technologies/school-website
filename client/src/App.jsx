@@ -22,6 +22,8 @@ axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
 
 import { DataProvider } from "./context/BannerContext";
+import FeeStructureDownload from "./components/pdfViewer/FeeStructureDownload";
+import AdminFeeStructure from "./components/admin/fees/AdminFeeStructure";
 
 const App = () => {
   return (
@@ -45,6 +47,7 @@ const App = () => {
                 <Route path="contact-forms" element={<ContactFormsListPage />} />
                 <Route path="admission-forms" element={<AdmissionListPage />} />
                 <Route path="image-gallery" element={<ImageGalleryListPage />} />
+                <Route path="pdf" element={<AdminFeeStructure/>}/>
                 {/* Add other admin-specific routes here */}
               </Route>
 

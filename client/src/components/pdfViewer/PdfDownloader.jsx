@@ -11,7 +11,7 @@ const PdfDownloader = () => {
   };
 
   return (
-    <div className="flex dark:bg-darkmode mt-10 justify-center items-center  ">
+    <div className="flex dark:bg-darkmode mt-10 justify-center items-center   ">
       <button
         onClick={downloadPdf}
         className="bg-orange-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200"
