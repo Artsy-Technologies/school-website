@@ -43,7 +43,7 @@ export default function Navbar() {
     }`}>
       {!isDashboard && (
         <h1 className="text-xl">
-          SRI MURUGHA RAJENDRASWAMY CBSE SCHOOL
+           J K MEMORIAL CENTRAL (CBSE) SCHOOL
         </h1>
       )}
 
