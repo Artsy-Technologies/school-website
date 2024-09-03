@@ -37,7 +37,7 @@ function Footer() {
             </div>
             <div className="flex items-center gap-1">
               <MapPin className="text-gray-600 dark:text-gray-300" />
-              <p>Kamenahalli, Koratagere ,Tumukuru district, Pincode : 572129.</p>
+              <p>Kamenahalli, Koratagere,Tumukuru district, Pincode : 572129.</p>
             </div>
           </div>
 
@@ -92,7 +92,7 @@ function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-5 text-center md:text-left">
             <p>Terms of Service | Privacy Policy | Cookie Policy</p>
             <p className="font-Outfit flex items-center gap-2">
-              <Copyright className="text-gray-600 dark:text-gray-300" /> {new Date().getFullYear()}  J K MEMORIAL CENTRAL(CBSE) SCHOOL. All rights reserved.
+              <Copyright className="text-gray-600 dark:text-gray-300" /> {new Date().getFullYear()} J K MEMORIAL CENTRAL(CBSE) SCHOOL. All rights reserved.
             </p>
           </div>
         </div>
