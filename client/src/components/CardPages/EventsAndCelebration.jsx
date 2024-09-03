@@ -23,13 +23,13 @@ const cardsData = [
         <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           Annual Sports Day
         </h1>
-        <p className="mr-5 font-outfit text-[15px] dark:text-gray-400 font-medium leading-[20px] text-center">
+        <p className="mr-10 font-outfit text-[15px] dark:text-gray-400 font-medium leading-[20px] text-center">
           A day filled with friendly competition, team spirit, and
           sportsmanship.
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
   {
     icon: Icon22,
@@ -41,13 +41,13 @@ const cardsData = [
         <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           Cultural Festivals
         </h1>
-        <p className="mr-5 font-outfit text-[15px] dark:text-gray-400 font-medium leading-[20px] text-center">
+        <p className="mr-10 font-outfit text-[15px] dark:text-gray-400 font-medium leading-[20px] text-center">
           Celebrations of diverse cultural festivals, promoting cultural
           exchange and appreciation.
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
   {
     icon: Icon33,
@@ -59,13 +59,13 @@ const cardsData = [
         <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           Art Exhibitions
         </h1>
-        <p className="mr-5 font-outfit text-[15px] dark:text-gray-400 font-medium leading-[20px] text-center">
+        <p className="mr-10 font-outfit text-[15px] dark:text-gray-400 font-medium leading-[20px] text-center">
           Showcasing our students artistic talents through exhibitions and
           displays.
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
   {
     icon: Icon44,
@@ -77,13 +77,13 @@ const cardsData = [
         <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           Science Fair
         </h1>
-        <p className="mr-5 font-outfit text-[15px] dark:text-gray-400 font-medium leading-[20px] text-center">
+        <p className="mr-10 font-outfit text-[15px] dark:text-gray-400 font-medium leading-[20px] text-center">
           A platform for budding scientists to present their innovative projects
           and experiments.
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
   {
     icon: Icon55,
@@ -95,13 +95,13 @@ const cardsData = [
         <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           International Day
         </h1>
-        <p className="mr-5 font-outfit text-[15px] dark:text-gray-400 font-medium leading-[20px] text-center">
+        <p className="mr-10 font-outfit text-[15px] dark:text-gray-400 font-medium leading-[20px] text-center">
           A vibrant celebration of our diverse community, embracing cultures
           from around the world.
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
   {
     icon: Icon66,
@@ -113,13 +113,13 @@ const cardsData = [
         <h1 className="mb-5 mt-5 text-purple-600  dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           Graduation Ceremony
         </h1>
-        <p className="mr-5 font-outfit text-[15px] font-medium leading-[20px] text-center dark:text-gray-400">
+        <p className="mr-10 font-outfit text-[15px] font-medium leading-[20px] text-center dark:text-gray-400">
           A significant milestone as our Kindergarten students prepare to embark
           on their academic journey.
         </p>
       </div>
     ),
-    cardHeight: "h-[400px]",
+    cardHeight: "h-[420px]",
   },
 ];
 
