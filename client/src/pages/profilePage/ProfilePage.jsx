@@ -12,6 +12,12 @@ const aboutData = [
 ];
 
 export default function ProfilePage() {
+    return (
+        <section className="bg-white w-screen h-screen  p-4 flex justify-around " >
+            <ProfileImg />
+            <ProfileDetails />
+        </section>
+    )
   return (
     <section className="bg-white w-full min-h-screen p-4 flex flex-col lg:flex-row justify-center items-start">
       <ProfileImg />
@@ -21,6 +27,13 @@ export default function ProfilePage() {
 }
 
 const ProfileImg = () => {
+    return (
+        <div className=" w-[12rem] h-[10rem]  " >
+            <img src="/profile.jpg" alt="" className="object-cover w-full h-full rounded-md " />
+        </div>
+    )
+}
+
   return (
     <div className="w-32 h-32 lg:w-48 lg:h-48 overflow-hidden rounded-full shadow-lg">
       <img
@@ -50,7 +63,33 @@ const ProfileDetails = () => {
     },
   };
 
-  // Function to switch tabs
+    return (
+        <div className="w-[60%] lg:w-[75%] ">
+            <div className="flex justify-between items-start">
+                <div className="text-sm font-medium">
+                    <p>Anisha Sharma</p>
+                    <span className="flex text-red-500">
+                        8, <p>Sec A</p>
+                    </span>
+                </div>
+                <button className="text-sm font-medium text-gray-500">EDIT PROFILE</button>
+            </div>
+            <div className="flex gap-x-5 border-b-[1px] border-gray-300 mt-8  cursor-pointer">
+                <p
+                    onClick={() => handleTabChange('About')}
+                    className={`cursor-pointer ${activeTab === 'About' ? 'border-b-2 border-[purple] ' : ''}  p-1 `}
+                >
+                    About
+                </p>
+                <p
+                    onClick={() => handleTabChange('Details')}
+                    className={`cursor-pointer ${activeTab === 'Details' ? 'border-b-2 border-[purple]' : ''} p-1 `}
+                >
+                    Details
+                </p>
+            </div>
+
+// Function to switch tabs
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
@@ -293,6 +332,16 @@ const StudentForm = () => {
           )}
         </div>
 
+                {/* Submit Button */}
+                <div className="col-span-1 md:col-span-2">
+                    <button
+                        type="submit"
+                        className="w-full bg-[#4c16c0] text-white py-2 px-4 rounded-md hover:bg-[#7342df] transition duration-200"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </form>
         {/* Submit Button */}
         <div className="col-span-2">
           <button

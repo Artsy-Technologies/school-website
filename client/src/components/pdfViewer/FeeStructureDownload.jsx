@@ -64,7 +64,7 @@ const FeeStructureDownload = () => {
   };
 
   return (
-    <div className="flex items-center justify-center p-24">
+    <div className="flex items-center justify-center md:p-24 mt-[2rem] ">
       <div className="w-full max-w-md bg-white shadow-md rounded-lg overflow-hidden border border-gray-300">
         <div className="p-6 bg-gray-100 text-gray-800 text-center">
           <h1 className="text-2xl font-semibold">Download Fee Structure</h1>
