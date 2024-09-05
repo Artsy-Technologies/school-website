@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
@@ -26,6 +27,7 @@ import { DataProvider } from "./context/BannerContext";
 import FeeStructureDownload from "./components/pdfViewer/FeeStructureDownload";
 import AdminFeeStructure from "./components/admin/fees/AdminFeeStructure";
 import ProfilePage from "./pages/profilePage/ProfilePage";
+import Fee from "./pages/dashboard/Fee";
 
 
 const App = () => {
@@ -52,6 +54,9 @@ const App = () => {
                 <Route path="admission-forms" element={<AdmissionListPage />} />
                 <Route path="image-gallery" element={<ImageGalleryListPage />} />
                 <Route path="pdf" element={<AdminFeeStructure/>}/>
+                <Route path="fee" element={<Fee/>}/>
+                <Route path="fee/:className" element={<Fee />} />
+
                 {/* Add other admin-specific routes here */}
               </Route>
 
