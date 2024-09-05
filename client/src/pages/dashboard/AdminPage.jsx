@@ -5,17 +5,18 @@ import DashboardSummary from "./DashboardSummary";
 
 function AdminPage() {
   const location = useLocation();
-
   const isDashboardRoute = location.pathname === "/dashboard";
 
   return (
-    <section className="overflow-y-hidden flex dark:bg-gray-800">
-      <div className="w-[20%] h-full">
+    <section className="flex h-screen dark:bg-gray-800">
+      <div className="w-1/5 h-full">
         <Sidebar />
       </div>
-      <div className="w-[80%] h-full border-2 z-50">
+
+      <div className="w-4/5 h-full overflow-y-auto">
         <Navbar />
-        <div className="p-4">
+
+        <div className="p-4 mt-20">
           {isDashboardRoute && <DashboardSummary />}
           <Outlet />
         </div>
