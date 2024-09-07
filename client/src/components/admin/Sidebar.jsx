@@ -3,7 +3,7 @@ import  { useState } from "react";
 
 // ICONS //
 import { LuBox, LuUser, LuMessageSquare, LuCalendar } from "react-icons/lu";
-import { FaSuitcase,FaFilePdf } from "react-icons/fa";
+import { FaSuitcase,FaFilePdf ,FaBeer} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { IoImages, IoDocumentTextOutline, IoDocumentAttachOutline } from "react-icons/io5";
 // ICONS //
@@ -20,9 +20,11 @@ const SIDEBAR_LINKS = [
   { id: 3, path: "/dashboard/admission-forms", name: "Admission Forms", icon: IoDocumentAttachOutline },
   { id: 4, path: "/dashboard/contact-forms", name: "Contact Forms", icon: IoDocumentTextOutline },
   { id: 5, path: "/dashboard/messages", name: "Messages", icon: LuMessageSquare },
+  { id: 10, path: "/dashboard/testimonials", name: "Testimonial", icon: LuMessageSquare },
+
   { id: 6, path: "/dashboard/projects", name: "Projects", icon: FaSuitcase },
   { id: 7, path: "/dashboard/clients", name: "Clients", icon: LuUser },
-  { id: 8, path: "/dashboard/work", name: "Work Plan", icon: LuCalendar },
+  { id: 8, path: "/dashboard/work", name: "Work Plan", icon: FaBeer },
   
 ];
   return (

@@ -24,7 +24,7 @@ axios.defaults.withCredentials = true;
 import { DataProvider } from "./context/BannerContext";
 import FeeStructureDownload from "./components/pdfViewer/FeeStructureDownload";
 import AdminFeeStructure from "./components/admin/fees/AdminFeeStructure";
-
+import AdminTestimonials from "./components/admin/testimonial/AdminTestimonials"
 const App = () => {
   return (
     <Router>
@@ -48,6 +48,8 @@ const App = () => {
                 <Route path="admission-forms" element={<AdmissionListPage />} />
                 <Route path="image-gallery" element={<ImageGalleryListPage />} />
                 <Route path="pdf" element={<AdminFeeStructure/>}/>
+                <Route path="testimonials" element={<AdminTestimonials/>}/>
+                
                 {/* Add other admin-specific routes here */}
               </Route>
 
