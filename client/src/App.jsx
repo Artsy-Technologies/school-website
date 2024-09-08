@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
@@ -15,16 +16,20 @@ import ContactFormsListPage from "./pages/dashboard/ContactFormsListPage";
 import AdmissionListPage from "./pages/dashboard/AdmissionListPage"
 import ImageGalleryListPage from "./pages/dashboard/ImageGalleryListPage"
 import NotFound from "./pages/PageNotFound"
-
+import AdminTestimonials from "./components/admin/testimonial/AdminTestimonials"
 
 axios.defaults.baseURL = "http://localhost:8000";
 // axios.defaults.baseURL = "https://school-website-backend-qeg6.onrender.com";
 axios.defaults.withCredentials = true;
 
 import { DataProvider } from "./context/BannerContext";
+
 import FeeStructureDownload from "./components/pdfViewer/FeeStructureDownload";
 import AdminFeeStructure from "./components/admin/fees/AdminFeeStructure";
-import AdminTestimonials from "./components/admin/testimonial/AdminTestimonials"
+import ProfilePage from "./pages/profilePage/ProfilePage";
+import Fee from "./pages/dashboard/Fee";
+
+
 const App = () => {
   return (
     <Router>
@@ -38,7 +43,8 @@ const App = () => {
               <Route path="academics" element={<AcademicsPage />} />
               <Route path="admission" element={<AdmissionPage />} />
               <Route path="students" element={<StudentLifePage />} />
-              </Route>
+              <Route path="profile" element={<ProfilePage />} />
+            </Route >
 
               <Route
                 path="dashboard"
@@ -48,14 +54,27 @@ const App = () => {
                 <Route path="admission-forms" element={<AdmissionListPage />} />
                 <Route path="image-gallery" element={<ImageGalleryListPage />} />
                 <Route path="pdf" element={<AdminFeeStructure/>}/>
+                <Route path="fee" element={<Fee/>}/>
+                <Route path="fee/:className" element={<Fee />} />
                 <Route path="testimonials" element={<AdminTestimonials/>}/>
-                
+
                 {/* Add other admin-specific routes here */}
               </Route>
 
-              <Route path="dashboard/auth" element={<AdminAuthPage />} />
 
-              <Route path="*" element={<NotFound/>}/>
+
+            <Route
+              path="dashboard"
+              element={<ProtectedRoute element={<AdminPage />} />}
+            >
+              <Route path="contact-forms" element={<ContactFormsListPage />} />
+              <Route path="admission-forms" element={<AdmissionListPage />} />
+              <Route path="image-gallery" element={<ImageGalleryListPage />} />
+            </Route>
+
+            <Route path="dashboard/auth" element={<AdminAuthPage />} />
+
+            <Route path="*" element={<NotFound />} />
 
 
           </Routes>

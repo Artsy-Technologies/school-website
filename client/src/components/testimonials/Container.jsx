@@ -10,7 +10,7 @@ const Testimonials = () => {
     useEffect(() => {
         const fetchTestimonials = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/testimonials');
+                const response = await axios.get('/api/testimonials');
                 const updatedTestimonials = response.data.map(testimonial => ({
                     ...testimonial,
                     imageSrc: testimonial.imageSrc.replace(/\\/g, '/')

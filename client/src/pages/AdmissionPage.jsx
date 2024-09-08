@@ -3,11 +3,10 @@ import Banner from '../components/banner/Banner'
 import TuitionTable from '../components/table/Table'
 import AdmissionForm from '../components/admission-form/admission-form';
 import { useData } from '../context/BannerContext'
-import {useAdmin} from '../hooks/AdminContext'
-// import PdfDownloader from '../components/pdfViewer/PdfDownloader'
+import { useAdmin } from '../hooks/AdminContext'
+import PdfDownloader from '../components/pdfViewer/PdfDownloader'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-// const pdfUrl = new URL('../assets/pdf/SudarshanCV.pdf', import.meta.url).href;
 import AdmissionProcess from '../components/CardPages/AdmissionProcess';
 import FeeTableModel from '../components/customModels/FeeTableModel';
 import FeeStructureDownload from '../components/pdfViewer/FeeStructureDownload';

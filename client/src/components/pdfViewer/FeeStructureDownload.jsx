@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Fetching grades from the API
@@ -64,7 +64,7 @@ const FeeStructureDownload = () => {
   };
 
   return (
-    <div className="flex items-center justify-center p-24">
+    <div className="flex items-center justify-center md:p-24 mt-[2rem] ">
       <div className="w-full max-w-md bg-white shadow-md rounded-lg overflow-hidden border border-gray-300">
         <div className="p-6 bg-gray-100 text-gray-800 text-center">
           <h1 className="text-2xl font-semibold">Download Fee Structure</h1>
@@ -80,7 +80,7 @@ const FeeStructureDownload = () => {
 
           <button
             onClick={() => setShowModal(true)}
-            className="w-full bg-gray-700 text-white py-3 px-4 rounded-lg shadow hover:bg-gray-800 transition duration-300"
+            className="w-full bg-purple-900 dark:bg-gray-700 text-white py-3 px-4 rounded-lg shadow dark:hover:bg-gray-800 hover:bg-purple-700 transition duration-300"
           >
             {isDownloading ? 'Downloading...' : 'Select Grade'}
           </button>
@@ -120,7 +120,7 @@ const FeeStructureDownload = () => {
                     setShowModal(false);
                     handleDownloadClick();
                   }}
-                  className="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition duration-300"
+                  className="px-4 py-2 bg-purple-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition duration-300"
                 >
                   Download
                 </button>

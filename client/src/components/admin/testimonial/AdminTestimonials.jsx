@@ -8,7 +8,7 @@ const AdminTestimonials = () => {
         // Fetch testimonials on component mount
         const fetchTestimonials = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/testimonials');
+                const response = await axios.get('/api/testimonials');
                 setTestimonials(response.data);
             } catch (error) {
                 console.error('Error fetching testimonials:', error);
@@ -20,7 +20,7 @@ const AdminTestimonials = () => {
 
     const handleAcceptReject = async (id, action) => {
         try {
-            const response = await axios.patch(`http://localhost:8000/api/testimonials/${id}/accept-reject`, { action });
+            const response = await axios.patch(`/api/testimonials/${id}/accept-reject`, { action });
             if (action === 'reject') {
                 setTestimonials(prev => prev.filter(testimonial => testimonial._id !== id));
             } else if (action === 'accept') {
