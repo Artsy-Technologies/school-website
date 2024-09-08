@@ -56,8 +56,9 @@ const App = () => {
                 <Route path="pdf" element={<AdminFeeStructure/>}/>
                 <Route path="fee" element={<Fee/>}/>
                 <Route path="fee/:className" element={<Fee />} />
-                <Route path="testimonials" element={<AdminTestimonials/>}/>
 
+                <Route path="testimonials" element={<AdminTestimonials/>}/>
+                
                 {/* Add other admin-specific routes here */}
               </Route>
 

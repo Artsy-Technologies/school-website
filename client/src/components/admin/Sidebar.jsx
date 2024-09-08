@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 // ICONS //
 import { LuBox, LuUser, LuMessageSquare, LuCalendar } from "react-icons/lu";
 import { FaSuitcase, FaFilePdf } from "react-icons/fa";
+import { FaSuitcase,FaFilePdf ,FaBeer} from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { IoImages, IoDocumentTextOutline, IoDocumentAttachOutline } from "react-icons/io5";
 
 const Sidebar = () => {
@@ -19,6 +21,7 @@ const Sidebar = () => {
   const handleSubLinkClick = (subIndex) => {
     setActiveSubLink(subIndex);
   };
+
 
   const SIDEBAR_LINKS = [
     { id: 1, path: "/dashboard", name: "Dashboard", icon: LuBox },
