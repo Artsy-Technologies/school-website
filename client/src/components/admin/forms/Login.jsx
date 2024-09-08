@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -17,17 +17,14 @@ const Login = () => {
         let res = await axios.post('/api/admin/signUp', data);
         if (res?.data?.status === 200) {
             toast.success(res?.data?.message);
-            
-        } else {    
+        } else {
             toast.error(res?.data?.message)
         }
-
     }
 
     const signIn = async (data) => {
         let res = await axios.post('/api/admin/signIn', data);
         console.log(res);
-        
         if (res?.data?.status === 200) {
             toast.success(res?.data?.message);
             setIsAdmin(true);

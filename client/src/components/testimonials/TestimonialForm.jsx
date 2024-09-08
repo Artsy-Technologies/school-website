@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Image from './leftImage.png'; 
+import Image from './leftImage.png';
 const TestimonialForm = () => {
   const {
     register,
@@ -52,7 +52,6 @@ const TestimonialForm = () => {
               <input
                 type="text"
                 id="name"
-              
                 {...register('name', {
                   required: 'Name is required',
                   pattern: {
