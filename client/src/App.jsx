@@ -16,7 +16,7 @@ import ContactFormsListPage from "./pages/dashboard/ContactFormsListPage";
 import AdmissionListPage from "./pages/dashboard/AdmissionListPage"
 import ImageGalleryListPage from "./pages/dashboard/ImageGalleryListPage"
 import NotFound from "./pages/PageNotFound"
-
+import AdminTestimonials from "./components/admin/testimonial/AdminTestimonials"
 
 axios.defaults.baseURL = "http://localhost:8000";
 // axios.defaults.baseURL = "https://school-website-backend-qeg6.onrender.com";
@@ -57,6 +57,8 @@ const App = () => {
                 <Route path="fee" element={<Fee/>}/>
                 <Route path="fee/:className" element={<Fee />} />
 
+                <Route path="testimonials" element={<AdminTestimonials/>}/>
+                
                 {/* Add other admin-specific routes here */}
               </Route>
 
