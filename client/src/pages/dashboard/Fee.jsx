@@ -5,8 +5,8 @@ const Fee = () => {
 
   // You can fetch the data based on the className or display relevant data
   return (
-    <section className="pt-[5rem] ">
-      <h1 className="text-2xl mb-4">Fee Structure for {className}</h1>
+    <section className="pt-[1rem] ">
+      <h1 className="text-2xl mb-4 text-purple-600 dark:text-purple-200 font-bold">Fee Structure for {className}</h1>
       <div className="overflow-y-auto h-[80vh] pb-[3rem]">
         <table className="min-w-full border-collapse">
           <thead className="sticky top-0 bg-white border border-white">
@@ -52,7 +52,7 @@ export default Fee;
 
 const TableBody = () => {
   return (
-    <tr>
+    <tr className="dark:text-white">
       <td className="border px-2 py-1 text-xs md:text-sm text-center">John Doe</td>
       <td className="border px-2 py-1 text-xs md:text-sm text-center">Class 10, Section A</td>
       <td className="border px-2 py-1 text-xs md:text-sm text-center">101</td>

@@ -3,10 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // ICONS //
-import { LuBox, LuUser, LuMessageSquare, LuCalendar } from "react-icons/lu";
+import { LuBox, LuMessageSquare } from "react-icons/lu";
 import { FaSuitcase, FaFilePdf } from "react-icons/fa";
-import { FaSuitcase,FaFilePdf ,FaBeer} from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { IoImages, IoDocumentTextOutline, IoDocumentAttachOutline } from "react-icons/io5";
 
 const Sidebar = () => {

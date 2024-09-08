@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import TestimonialCard from './TestimonialCard';
 import axios from 'axios';
 
@@ -32,7 +32,7 @@ const Testimonials = () => {
     const acceptedTestimonials = testimonials.filter(testimonial => testimonial.accepted);
 
     return (
-        <div className="bg-purple-300 py-16 dark:bg-darkmode">
+        <div className="py-16 dark:bg-darkmode">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-center text-3xl font-bold text-white mb-4">Our <span className="text-purple-600 dark:text-purple-200">Testimonials</span></h2>
                 <p className="text-center text-white max-w-xl mx-auto mb-12">

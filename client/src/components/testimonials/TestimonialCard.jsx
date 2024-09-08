@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/prop-types
 const TestimonialCard = ({ name, text, imageSrc, rating }) => {
     return (
         <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg relative hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
