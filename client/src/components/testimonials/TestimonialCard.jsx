@@ -1,6 +1,6 @@
 const TestimonialCard = ({ name, text, imageSrc, rating }) => {
     return (
-        <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg relative hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+        <div className="bg-white h-[350px] dark:bg-gray-700 rounded-lg p-6 shadow-lg relative hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
             <img
                 className="w-16 h-16 rounded-full mx-auto"
                 src={imageSrc}

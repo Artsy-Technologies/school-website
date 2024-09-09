@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 
 function AcademicContent({ content }) {
   return (
-    <div className="flex flex-col   w-full md:w-10/12 lg:p-20 p-10">
-      <p className="font-sans md:lg:text-2xl text-start dark:text-white text-zinc-800 md:mt-0">
+    <div className="w-full p-4 md:p-6 lg:p-10">
+      <p className="font-sans text-base md:text-lg lg:text-xl text-start dark:text-white text-zinc-800">
         {content}
       </p>
     </div>
