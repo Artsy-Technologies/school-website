@@ -29,11 +29,11 @@ function Footer() {
             </p>
             <div className="flex items-center gap-1">
               <Mail className="text-gray-600 dark:text-gray-300" />
-              <p>example.com</p>
+              <p>jkmcskrt@gmail.com</p>
             </div>
             <div className="flex items-center gap-1">
               <Phone className="text-gray-600 dark:text-gray-300" />
-              <p>+91 123456789</p>
+              <p>+91 8722971663</p>
             </div>
             <div className="flex items-center gap-1">
               <MapPin className="text-gray-600 dark:text-gray-300" />

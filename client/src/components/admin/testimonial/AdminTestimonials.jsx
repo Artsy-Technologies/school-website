@@ -35,9 +35,9 @@ const AdminTestimonials = () => {
     };
 
     return (
-        <div className="p-6 dark:bg-darkmode bg-gray-100 min-h-screen">
-            <h1 className="text-2xl font-bold text-gray-800 mb-6 dark:text-white">Manage Testimonials</h1>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <div className="p-6 dark:bg-darkmode min-h-screen">
+            <h1 className="text-2xl font-bold text-purple-800 mb-6 dark:text-white">Manage Testimonials</h1>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {testimonials.map(testimonial => (
                     <div key={testimonial._id} className="bg-white dark:bg-darkModeCard p-4 border border-gray-300 rounded-lg shadow-md flex flex-col items-center">
                         {testimonial.imageSrc && (
