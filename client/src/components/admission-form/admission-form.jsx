@@ -40,7 +40,7 @@ const AdmissionForm = () => {
               id="firstName"
               {...register("firstName", { required: "First name is required" })}
               placeholder="Enter First Name"
-              className="p-2 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="p-2 block w-full bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.firstName && (
               <p className="text-red-500 dark:text-orange-300">{errors.firstName.message}</p>
@@ -59,7 +59,7 @@ const AdmissionForm = () => {
               id="lastName"
               {...register("lastName", { required: "Last name is required" })}
               placeholder="Enter Last Name"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.lastName && (
               <p className="text-red-500 dark:text-orange-300">{errors.lastName.message}</p>
@@ -78,7 +78,7 @@ const AdmissionForm = () => {
               id="dob"
               placeholder="DOB"
               {...register("dob", { required: "Date of birth is required" })}
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.dob && <p className="text-red-500 dark:text-orange-300">{errors.dob.message}</p>}
           </div>
@@ -93,7 +93,7 @@ const AdmissionForm = () => {
             <select
               id="gender"
               {...register("gender", { required: "Gender is required" })}
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             >
               <option value="">Select Gender</option>
               <option value="Male">Male</option>
@@ -125,7 +125,7 @@ const AdmissionForm = () => {
               id="email"
               {...register("email", { required: "Email is required" })}
               placeholder="Enter Email Address"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.email && (
               <p className="text-red-500 dark:text-orange-300">{errors.email.message}</p>
@@ -150,7 +150,7 @@ const AdmissionForm = () => {
                 },
               })}
               placeholder="Enter Phone Number"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.phoneNumber && (
               <p className="text-red-500 dark:text-orange-300">{errors.phoneNumber.message}</p>
@@ -169,7 +169,7 @@ const AdmissionForm = () => {
               {...register("address", { required: "Address is required" })}
               rows="4"
               placeholder="Enter your Address"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             ></textarea>
             {errors.address && (
               <p className="text-red-500 dark:text-orange-300">{errors.address.message}</p>
@@ -194,7 +194,7 @@ const AdmissionForm = () => {
               })}
               rows="2"
               placeholder="Enter Previous School"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             ></textarea>
             {errors.previousSchool && (
               <p className="text-red-500 dark:text-orange-300">{errors.previousSchool.message}</p>
@@ -218,7 +218,7 @@ const AdmissionForm = () => {
                 },
               })}
               placeholder="Enter Grade"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
 
             {errors.grade && (
@@ -237,7 +237,7 @@ const AdmissionForm = () => {
               {...register("comments")}
               rows="4"
               placeholder="Enter any additional comments"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             ></textarea>
           </div>
           <div className="text-center col-span-2 mt-8">
