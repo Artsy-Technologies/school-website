@@ -14,7 +14,7 @@ const aboutData = [
 
 export default function ProfilePage() {
     return (
-        <section className="bg-white w-screen h-full p-4 flex justify-around " >
+        <section className="bg-white w-screen min-h-screen  p-4 flex justify-around " >
             <ProfileImg />
             <ProfileDetails />
         </section>
@@ -25,7 +25,7 @@ export default function ProfilePage() {
 const ProfileImg = () => {
     return (
         <div className=" w-[12rem] h-[10rem]  " >
-            <img src="/profile.jpg" alt="" className="object-cover w-full h-full" />
+            <img src="/profile.jpg" alt="" className="object-cover w-full h-full rounded-md " />
         </div>
     )
 }
@@ -55,7 +55,7 @@ const ProfileDetails = () => {
     };
 
     return (
-        <div className="w-[60%] lg:w-[75%]">
+        <div className="w-[60%] lg:w-[75%] ">
             <div className="flex justify-between items-start">
                 <div className="text-sm font-medium">
                     <p>Anisha Sharma</p>
@@ -266,7 +266,7 @@ const StudentForm = () => {
                 <div className="col-span-1 md:col-span-2">
                     <button
                         type="submit"
-                        className="w-full bg-[#C2A6FF] text-white py-2 px-4 rounded-md hover:bg-[#a379ff] transition duration-200"
+                        className="w-full bg-[#4c16c0] text-white py-2 px-4 rounded-md hover:bg-[#7342df] transition duration-200"
                     >
                         Submit
                     </button>
@@ -274,5 +274,4 @@ const StudentForm = () => {
             </form>
         </div>
     );
-};
-
+}

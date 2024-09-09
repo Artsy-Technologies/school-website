@@ -25,12 +25,13 @@ const AdmissionForm = () => {
         Admission Form
       </h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="md:grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {/* Form fields */}
-          <div>
+          
+          <div className="my-4 " >
             <label
               htmlFor="firstName"
-              className="block text-lg font-medium dark:text-white text-gray-700 mb-2"
+              className="block leading-3 text-lg font-medium dark:text-white text-gray-700 mb-2"
             >
               First Name
             </label>
@@ -39,16 +40,17 @@ const AdmissionForm = () => {
               id="firstName"
               {...register("firstName", { required: "First name is required" })}
               placeholder="Enter First Name"
-              className="p-2 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="p-2 block w-full bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.firstName && (
               <p className="text-red-500 dark:text-orange-300">{errors.firstName.message}</p>
             )}
           </div>
-          <div>
+
+          <div className="my-4 ">
             <label
               htmlFor="lastName"
-              className="block text-lg font-medium dark:text-white text-gray-700 mb-2"
+              className="block leading-3 text-lg font-medium dark:text-white text-gray-700 mb-2"
             >
               Last Name
             </label>
@@ -57,38 +59,41 @@ const AdmissionForm = () => {
               id="lastName"
               {...register("lastName", { required: "Last name is required" })}
               placeholder="Enter Last Name"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.lastName && (
               <p className="text-red-500 dark:text-orange-300">{errors.lastName.message}</p>
             )}
           </div>
-          <div>
+          
+          <div className="my-4 ">
             <label
               htmlFor="dob"
-              className="block text-lg font-medium dark:text-white text-gray-700 mb-2"
+              className="block leading-3 text-lg font-medium dark:text-white text-gray-700 mb-2"
             >
               Date of Birth
             </label>
             <input
               type="date"
               id="dob"
+              placeholder="DOB"
               {...register("dob", { required: "Date of birth is required" })}
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.dob && <p className="text-red-500 dark:text-orange-300">{errors.dob.message}</p>}
           </div>
-          <div>
+
+          <div className="my-4 ">
             <label
               htmlFor="gender"
-              className="block text-lg font-medium dark:text-white text-gray-700 mb-2"
+              className="block leading-3 text-lg font-medium dark:text-white text-gray-700 mb-2"
             >
               Gender
             </label>
             <select
               id="gender"
               {...register("gender", { required: "Gender is required" })}
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             >
               <option value="">Select Gender</option>
               <option value="Male">Male</option>
@@ -100,16 +105,18 @@ const AdmissionForm = () => {
               <p className="text-red-500 dark:text-orange-300">{errors.gender.message}</p>
             )}
           </div>
+
           {/* Other fields */}
           <div className="col-span-2 mt-6">
             <h2 className="text-orange-600 dark:text-orange-300 text-2xl font-semibold mb-4">
               Contact Details
             </h2>
           </div>
-          <div>
+
+          <div className="my-4 " >
             <label
               htmlFor="email"
-              className="block text-lg font-medium dark:text-white text-gray-700 mb-2"
+              className="block leading-3 text-lg font-medium dark:text-white text-gray-700 mb-2"
             >
               Email Address
             </label>
@@ -118,16 +125,17 @@ const AdmissionForm = () => {
               id="email"
               {...register("email", { required: "Email is required" })}
               placeholder="Enter Email Address"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.email && (
               <p className="text-red-500 dark:text-orange-300">{errors.email.message}</p>
             )}
           </div>
-          <div>
+
+          <div className="my-4 " >
             <label
               htmlFor="phoneNumber"
-              className="block text-lg font-medium dark:text-white text-gray-700 mb-2"
+              className="block leading-3 text-lg font-medium dark:text-white text-gray-700 mb-2"
             >
               Phone Number
             </label>
@@ -142,13 +150,14 @@ const AdmissionForm = () => {
                 },
               })}
               placeholder="Enter Phone Number"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
             {errors.phoneNumber && (
               <p className="text-red-500 dark:text-orange-300">{errors.phoneNumber.message}</p>
             )}
           </div>
-          <div className="mb-4 col-span-2">
+
+          <div className="mb-4 col-span-2 my-4 ">
             <label
               htmlFor="address"
               className="block text-lg font-medium dark:text-white text-gray-700 mb-2"
@@ -160,7 +169,7 @@ const AdmissionForm = () => {
               {...register("address", { required: "Address is required" })}
               rows="4"
               placeholder="Enter your Address"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             ></textarea>
             {errors.address && (
               <p className="text-red-500 dark:text-orange-300">{errors.address.message}</p>
@@ -185,7 +194,7 @@ const AdmissionForm = () => {
               })}
               rows="2"
               placeholder="Enter Previous School"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             ></textarea>
             {errors.previousSchool && (
               <p className="text-red-500 dark:text-orange-300">{errors.previousSchool.message}</p>
@@ -209,7 +218,7 @@ const AdmissionForm = () => {
                 },
               })}
               placeholder="Enter Grade"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             />
 
             {errors.grade && (
@@ -228,7 +237,7 @@ const AdmissionForm = () => {
               {...register("comments")}
               rows="4"
               placeholder="Enter any additional comments"
-              className="block w-full p-2 bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
+              className="block w-full p-2 bg-gray-100 placeholder-gray-400 dark:bg-gray-400 dark:placeholder-gray-600 border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
             ></textarea>
           </div>
           <div className="text-center col-span-2 mt-8">

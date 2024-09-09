@@ -20,24 +20,24 @@ function Footer() {
                 className="ml-0.5"
               />
               <h4 className="text-1xl text-orange-600 dark:text-orange-400">
-                SRI MURUGHA RAJENDRASWAMY CBSE SCHOOL
+                J K MEMORIAL CENTRAL(CBSE) SCHOOL
               </h4>
             </div>
-            <p className="font-Outfit">
-              We believe in the power of play to foster creativity,
-              problem-solving skills, and imagination.
+            <p className="font-Outfit ">
+              (Affiliated to CBSE New Dehli)
+              CBSE Aff.No : 830452, School Code : 45370.
             </p>
             <div className="flex items-center gap-1">
               <Mail className="text-gray-600 dark:text-gray-300" />
-              <p>example.com</p>
+              <p>jkmcskrt@gmail.com</p>
             </div>
             <div className="flex items-center gap-1">
               <Phone className="text-gray-600 dark:text-gray-300" />
-              <p>+91 123456789</p>
+              <p>+91 8722971663</p>
             </div>
             <div className="flex items-center gap-1">
               <MapPin className="text-gray-600 dark:text-gray-300" />
-              <p>Somewhere in the World</p>
+              <p>Kamenahalli, Koratagere,Tumukuru district, Pincode : 572129.</p>
             </div>
           </div>
 
@@ -92,8 +92,7 @@ function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-5 text-center md:text-left">
             <p>Terms of Service | Privacy Policy | Cookie Policy</p>
             <p className="font-Outfit flex items-center gap-2">
-              <Copyright className="text-gray-600 dark:text-gray-300" /> {new Date().getFullYear()} SRI MURUGHA RAJENDRASWAMY
-              CBSE SCHOOL. All rights reserved.
+              <Copyright className="text-gray-600 dark:text-gray-300" /> {new Date().getFullYear()} J K MEMORIAL CENTRAL(CBSE) SCHOOL. All rights reserved.
             </p>
           </div>
         </div>

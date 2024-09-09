@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEdit, FaTrash } from 'react-icons/fa'; // For icons
@@ -130,7 +130,7 @@ const GradeManager = () => {
         <div className="justify-center content-center flex">
         <button
           type="submit"
-          className="w-1/2  bg-indigo-600 text-white py-3 px-4 rounded-lg shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-1/2  bg-purple-600 text-white py-3 px-4 rounded-lg shadow-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         >
           {editId ? 'Update Grade' : 'Add Grade'}
         </button>

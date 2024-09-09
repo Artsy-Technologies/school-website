@@ -9,6 +9,7 @@ import connectDB from './libs/databaseConnection.js'
 import path from 'path';
 import url from 'url';
 import gradeRoutes from './routes/gradeRoutes.js'
+import testimonialRoutes from './routes/testimonialRoutes.js' 
 dotenv.config()
 
 const app = express()
@@ -25,7 +26,7 @@ app.use(
   cors({
     // origin: 'https://school-website-etuj.onrender.com', // allow this origin to access the server
     origin: "http://localhost:5173",
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], 
     credentials: true, // if your backend requires credentials
   })
 )
@@ -39,6 +40,7 @@ app.use('/api', imageRoutes)
 app.use('/api/admin', adminRouter)
 app.use('/api/students', studentsRoutes)
 app.use('/api/grades', gradeRoutes);
+app.use('/api/testimonials', testimonialRoutes);
 
 
 app.listen(port, async () => {

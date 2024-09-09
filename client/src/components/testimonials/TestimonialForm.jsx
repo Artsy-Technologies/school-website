@@ -16,7 +16,7 @@ const TestimonialForm = () => {
     formData.append('name', data.name);
     formData.append('text', data.text);
     formData.append('rating', data.rating);
-    formData.append('image', data.image[0]);
+    formData.append('imageSrc', data.image[0]);
 
     try {
       const response = await axios.post('/api/testimonials', formData, {
@@ -34,15 +34,12 @@ const TestimonialForm = () => {
 
   return (
     <div className="flex flex-col md:flex-row bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white rounded-lg shadow-xl p-8 mb-6 w-full max-w-4xl mx-auto border border-gray-200">
-      
-         
       <div className="md:w-1/2 flex flex-col items-center justify-center gap-6">
         <h2 className='text-3xl text-purple-700 dark:text-purple-300 font-bold'>Give us your feedback</h2>
         <p className='text-xl text-purple-700 dark:text-purple-300'>through this testimonials form</p>
         <img src={Image} alt="Testimonial" className="w-full h-auto object-cover rounded-lg shadow-lg" />
       </div>
       <div className="flex flex-col w-full md:w-1/2 p-6">
-        
         <form onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data">
           <div className="space-y-6">
             <div>
@@ -63,7 +60,7 @@ const TestimonialForm = () => {
                   },
                 })}
                 placeholder="Your Name"
-                className="p-3 block w-full bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-orange-500 transition duration-150 ease-in-out"
+                className="p-3 block w-full dark:text-gray-700 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-orange-500 transition duration-150 ease-in-out"
               />
               {errors.name && (
                 <p className="text-red-500 dark:text-orange-300 mt-1">{errors.name.message}</p>
@@ -80,7 +77,7 @@ const TestimonialForm = () => {
                 id="text"
                 {...register('text', { required: 'Testimonial text is required' })}
                 placeholder="Your testimonial here..."
-                className="p-3 block w-full bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-orange-500 transition duration-150 ease-in-out"
+                className="p-3 block w-full dark:text-gray-700 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-orange-500 transition duration-150 ease-in-out"
                 rows="4"
               />
               {errors.text && (
@@ -97,7 +94,7 @@ const TestimonialForm = () => {
               <select
                 id="rating"
                 {...register('rating', { required: 'Rating is required' })}
-                className="p-3 block w-full bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-orange-500 transition duration-150 ease-in-out"
+                className="p-3 block w-full dark:text-gray-700 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-orange-500 transition duration-150 ease-in-out"
               >
                 <option value="">Select Rating</option>
                 <option value="1">1 - Bad</option>
@@ -112,34 +109,31 @@ const TestimonialForm = () => {
             </div>
             <div>
               <label
-                htmlFor="image"
+                htmlFor="imageSrc"
                 className="block text-lg font-medium dark:text-gray-300 text-gray-700 mb-2"
               >
                 Upload Image
               </label>
               <input
                 type="file"
-                id="image"
+                id="imageSrc"
                 {...register('image', { required: 'Image is required' })}
-                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-white file:bg-orange-600 hover:file:bg-orange-700 transition duration-150 ease-in-out"
-                accept="image/*"
+                className="block w-full text-gray-700 border dark:text-gray-700 border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-orange-500 transition duration-150 ease-in-out"
               />
               {errors.image && (
-                <p className="text-red-500 dark:text-orange-300 mt-1">{errors.rating.message}</p>
+                <p className="text-red-500 dark:text-orange-300 mt-1">{errors.image.message}</p>
               )}
             </div>
-            <div className="flex justify-center">
-              <button
-                type="submit"
-                className="bg-gradient-to-r from-orange-500 text-white font-bold py-2 px-6 rounded-md hover:bg-gradient-to-r  to-yellow-600 focus:ring-4 focus:ring-orange-500 focus:ring-opacity-50 transition duration-150 ease-in-out"
-              >
-                Submit
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="w-full py-3 px-4 bg-orange-500 dark:text-gray-700 text-white rounded-md shadow-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-150 ease-in-out"
+            >
+              Submit
+            </button>
           </div>
         </form>
+        <ToastContainer />
       </div>
-      <ToastContainer />
     </div>
   );
 };
