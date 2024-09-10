@@ -1,25 +1,32 @@
-const PdfDownloader = () => {
-  const downloadPdf = () => {
-    const pdfUrl = '/assets/pdf/DummyFEE.pdf';
-
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = 'SMR_fee_Structure.pdf';
+import admissionForm from "./pdf/AdmissionForm.pdf"; 
+const PDFDownload = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = admissionForm; 
+    link.download = "AdmissionForm.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   return (
-    <div className="flex dark:bg-darkmode mt-10 justify-center items-center   ">
-      <button
-        onClick={downloadPdf}
-        className="bg-orange-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200"
-      >
-        Download PDF
-      </button>
+    <div className="flex  flex-col items-center justify-center p-4 ">
+      <div className="bg-white dark:bg-darkModeCard  shadow-lg rounded-lg p-8 max-w-md w-full">
+        <h1 className="text-2xl dark:text-white font-bold text-gray-800 text-center mb-4">
+          Download Admission Form
+        </h1>
+        <p className="text-gray-600  dark:text-white text-center mb-6">
+          If you're willing to visit, you can download the admission form here.
+        </p>
+        <button
+          onClick={handleDownload}
+          className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg w-full transition-all duration-300 ease-in-out"
+        >
+          Download PDF
+        </button>
+      </div>
     </div>
   );
 };
 
-export default PdfDownloader;
+export default PDFDownload;
