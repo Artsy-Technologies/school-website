@@ -1,4 +1,5 @@
 import Faq from "./Faq";
+
 const faqData = [
   {
     question: "How do I apply for admission?",
@@ -65,7 +66,7 @@ const FaqSection = () => {
       <p className="text-center text-white max-w-xl mx-auto mb-12">
         Find all the essential information you need in our FAQ section, designed
         to address the most frequently asked questions and help you make
-        informed decisions for your childs education.
+        informed decisions for your child&apos;s education.
       </p>
       <section className="flex gap-4 flex-col md:flex-row p-2">
         <div className="flex flex-col w-full md:w-1/2">
