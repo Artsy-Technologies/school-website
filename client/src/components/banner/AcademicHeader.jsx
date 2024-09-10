@@ -1,19 +1,14 @@
-
 import PropTypes from 'prop-types'
 
 function AcademicHeader({ main, buttonText }) {
   return (
-    <header className="relative   justify-center items-center text-center  flex flex-col w-full md:w-6/12 mb-5 md:mb-0">
-      <div className="flex  flex-col w-full md:w-4/5 md:pl-[15%] pt-28 md:pt-10">
-        <h1 className="text-3xl  md:text-3xl text-center  lg:text-3xl  font-bold text-darkpurple dark:text-purple-300">
-          {main}
-        </h1>
-        <div className="">
-          <button className="self-center md:self-start px-4 py-2 text-base font-medium leading-6 text-center whitespace-nowrap rounded-md border-2 border-solid border-neutral-800 text-white mt-10 bg-darkpurple ">
-            {buttonText}
-          </button>
-        </div>
-      </div>
+    <header className="flex flex-col items-center text-center w-full p-4 md:p-6 lg:p-10">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-darkpurple dark:text-purple-300 mb-4">
+        {main}
+      </h1>
+      <button className="px-4 py-2 text-base md:text-lg font-medium text-white bg-darkpurple border-2 border-darkpurple rounded-md hover:bg-darkpurple-light focus:outline-none focus:ring-2 focus:ring-darkpurple">
+        {buttonText}
+      </button>
     </header>
   )
 }
