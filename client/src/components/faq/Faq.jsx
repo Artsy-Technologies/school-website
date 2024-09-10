@@ -1,43 +1,41 @@
-import { useState } from 'react'
-import { BiMinus } from 'react-icons/bi'
-import { BsPlusLg } from 'react-icons/bs'
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
+import { BiMinus } from 'react-icons/bi';  // Minus icon for open state
+import { BsPlusLg } from 'react-icons/bs';  // Plus icon for closed state
+import { motion } from "framer-motion";
 
-// eslint-disable-next-line react/prop-types
 const Faq = ({ question, answer }) => {
-  const [showAnswer, setShowAnswer] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleFaq = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <div className="flex  bg-white flex-col border border-white rounded-lg overflow-hidden mb-4 w-full">
-      <article
-        className={`flex  items-center justify-between p-4 cursor-pointer ${
-          showAnswer ? 'bg-white text-gray-500' : 'bg-darkpurple text-white '
+    <div className="mb-4">
+      <button
+        className={`w-full flex justify-between items-center text-left text-xl font-semibold text-white bg-purple-600 dark:bg-purple-800 p-4 ${
+          isOpen ? "rounded-t-md" : "rounded-md"
         }`}
-        onClick={() => setShowAnswer(prev => !prev)}
+        onClick={toggleFaq}
       >
-        <h2
-          className={`${
-            showAnswer ? 'text-gray-700 pl-3 font-semibold' : 'font-semibold'
-          }`}
-        >
-          {question}
-        </h2>
-        {showAnswer ? (
-          <button className="border-2 border-black rounded">
-            {showAnswer ? <BiMinus /> : <BsPlusLg />}
-          </button>
-        ) : (
-          <button className="border-2 border-white  rounded">
-            {showAnswer ? <BiMinus /> : <BsPlusLg />}
-          </button>
-        )}
-      </article>
-      {showAnswer && (
-        <article className="border-t  ml-6 mr-6 text-left  text-gray-400  border-gray-400 p-4 ">
-          <p className=' '>{answer}</p>
-        </article>
-      )}
+        <span>{question}</span>
+        <span className="text-2xl">
+          {isOpen ? <BiMinus /> : <BsPlusLg />}
+        </span>
+      </button>
+      <motion.div
+        className="overflow-hidden"
+        initial={false}
+        animate={{ height: isOpen ? "auto" : 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
+        <p className="p-4 bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-white rounded-b-md">
+          {answer}
+        </p>
+      </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default Faq
+export default Faq;
