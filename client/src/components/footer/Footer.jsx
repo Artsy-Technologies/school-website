@@ -7,7 +7,7 @@ function Footer() {
   console.log(location.pathname);
 
   return location.pathname === "/dashboard" ? <></> :
-    <footer className="bg-gray-100 dark:border-t-white border dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-10">
+    <footer className="bg-gray-100 dark:border-t-white border dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-10 mt-6">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-10">
           <div className="flex flex-col gap-5 max-w-full">

@@ -56,7 +56,7 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <header className={`flex flex-col h-auto p-4 bg-purple-500 text-white drop-shadow-md z-40 fixed w-full ${isDashboard ? "md:w-[80%]" : "w-full"}`}>
+    <header className={`flex flex-col h-auto p-4 bg-purple-500 text-white drop-shadow-md z-40 fixed w-full ${isDashboard ? "md:w-[80%]" : "w-full"} justify-center items-center`}>
       <div className="flex justify-between items-center mb-4">
         {/* Logo Section */}
         {!isDashboard && (
@@ -65,7 +65,7 @@ export default function Navbar() {
           </h1>
         )}
         {/* Hamburger Menu Button */}
-        <button className="md:hidden text-3xl focus:outline-none" onClick={toggleMenu}>
+        <button className="ml-4 md:hidden text-3xl focus:outline-none" onClick={toggleMenu}>
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
