@@ -7,15 +7,18 @@ function StudentPage() {
     const { studentLifePage } = useData()
 
   return (
-    <div className='dark:bg-darkmode'>
+    <div className='dark:bg-darkmode w-full'>
       <Banner
         main={studentLifePage.title}
         content={studentLifePage.content}
         buttonText={studentLifePage.buttonText}
       />
+      <div className="max-w-full overflow-hidden">
       <ExtracurricularActivities/>
-      {/* Events & Celebrations */}
+      
       <EventAndCelebrations/>
+      </div>
+      
       <Socials />
 
     </div>

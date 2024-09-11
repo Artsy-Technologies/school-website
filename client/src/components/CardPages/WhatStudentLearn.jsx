@@ -19,7 +19,7 @@ const cardsData = [
       <img src={Icon1} width={250} height={250} className="ml-14 rounded-2xl" />
     ),
     paragraph: (
-      <div className="w-[398.67px] h-[116px] gap-[10px] ">
+      <div className="h-[116px] gap-[10px] ">
         <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           Language Atrs
         </h1>

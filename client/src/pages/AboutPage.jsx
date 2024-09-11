@@ -8,15 +8,17 @@ function AboutPage() {
   const { aboutPage } = useData();
 
   return (
-    <div className="flex flex-col gap-2 dark:bg-darkmode">
+    <div className="flex min-h-screen w-full flex-col gap-2 dark:bg-darkmode">
       <Banner
         main={aboutPage.title}
         content={aboutPage.content}
         buttonText={aboutPage.buttonText}
       />
       <Messages />
-      <VisionMissionCard />
-      <AwardsAndRecognition/>
+      <div className="max-w-full overflow-hidden">
+      <VisionMissionCard /> 
+       <AwardsAndRecognition/>
+</div>
       <History />
       
     </div>
