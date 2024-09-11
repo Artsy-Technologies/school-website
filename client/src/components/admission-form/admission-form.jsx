@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import PDFDownload from "../pdfViewer/PdfDownloader.jsx"
 
 const AdmissionForm = () => {
   const {
@@ -20,6 +21,7 @@ const AdmissionForm = () => {
   };
 
   return (
+    <>
     <div className="bg-white dark:bg-darkModeCard dark:border-white dark:text-white rounded-lg shadow-lg p-8 mb-6 w-full max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold text-center text-orange-600 dark:text-orange-300 mb-8">
         Admission Form
@@ -251,6 +253,8 @@ const AdmissionForm = () => {
         </div>
       </form>
     </div>
+    <PDFDownload/>
+  </>
   );
 };
 

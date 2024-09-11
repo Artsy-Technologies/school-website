@@ -5,7 +5,7 @@ const HeroSection = () => {
 const navigate = useNavigate();
 
   return (
-    <div className="container mx-auto p-8 h-92 mb-15 ">
+    <div className="container mx-auto p-8 h-92 mb-15 mt-8">
         <div className="p-6 rounded-lg shadow-lg flex flex-col gap-4 lg:flex-row items-center justify-between h-auto">
             <div className="lg:w-4/5 text-center lg:text-left">
                 <h1 className="text-white text-xl font-semibold">Welcome to <span className="text-orange-500 text-3xl"> J K MEMORIAL CENTRAL(CBSE) SCHOOL</span></h1>

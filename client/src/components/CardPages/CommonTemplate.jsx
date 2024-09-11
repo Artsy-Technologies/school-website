@@ -13,7 +13,7 @@ const Card = ({ icon, heading, paragraph, cardHeight }) => {
       </div>
 
       {/* Card Container */}
-      <div className="relative rounded-xl p-6 pt-12 shadow-2xl shadow-black bg-white dark:bg-gray-700 border border-black flex flex-col justify-between h-full">
+      <div className="relative rounded-xl p-6 pt-12 shadow-2xl bg-white dark:bg-gray-700 border flex flex-col justify-between h-full">
         <h3 className="text-xl font-bold mb-2 text-purple-600 dark:text-white">
           {heading}
         </h3>
