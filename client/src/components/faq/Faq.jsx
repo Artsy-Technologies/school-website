@@ -19,7 +19,7 @@ const Faq = ({ question, answer }) => {
         }`}
         onClick={toggleFaq}
       >
-        <span>{question}</span>
+        <span className='text-sm line-clamp-1 ' >{question}</span>
         <span className="text-2xl">
           {isOpen ? <BiMinus /> : <BsPlusLg />}
         </span>
@@ -30,7 +30,7 @@ const Faq = ({ question, answer }) => {
         animate={{ height: isOpen ? "auto" : 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <p className="p-4 bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-white rounded-b-md">
+        <p className="p-4 bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-white rounded-b-md text-sm ">
           {answer}
         </p>
       </motion.div>

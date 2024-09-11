@@ -4,7 +4,7 @@ export const History = () => {
   return (
     <div className=" flex flex-col items-center justify-center min-h-screen p-4 mb-10">
       <div className="flex flex-col items-center justify-center p-4 mb-6">
-        <button className="px-4 py-2 font-medium leading-6 whitespace-nowrap rounded-md border-2 border-solid border-neutral-800 text-white mt-10 bg-purple-700">
+        <button className="px-4 py-2 font-medium leading-6 whitespace-nowrap rounded-md   text-white mt-10 bg-purple-700">
           Our Progressive Journey
         </button>
         <h2 className="text-3xl text-white font-bold mt-6">Our History</h2>

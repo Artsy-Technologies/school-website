@@ -5,7 +5,8 @@ import image from './image.svg'
 // eslint-disable-next-line react/prop-types
 function Banner({ main, content, buttonText }) {
   return (
-    <section className="relative mt-16 m-10  dark:bg-darkModeCard dark:border-white bg-white rounded-xl border-2 border-solid shadow-sm border-neutral-800 p-4 md:p-6 lg:p-10">
+    <section className="relative mt-16 m-4
+     lg:m-10  dark:bg-darkModeCard dark:border-white bg-white rounded-xl border-2 border-solid shadow-sm  p-4 md:p-6 lg:p-10">
       <div className="absolute top-0 left-0 w-1/4 md:w-1/6 lg:w-1/4 p-2">
         <img
           loading="lazy"

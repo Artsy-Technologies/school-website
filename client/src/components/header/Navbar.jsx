@@ -92,18 +92,16 @@ export default function Navbar() {
         </li>
         <DarkModeToggle />
         {!isAdmin ? (
-          <li className="p-3 hover:bg-purple-600 rounded-md transition-all cursor-pointer border border-white">
-            <button onClick={handleLogin}>Admin Login</button>
-          </li>
+          <></>
         ) : (
           <>
-            <li className="p-1 hover:bg-purple-600 rounded-md transition-all cursor-pointer border border-white">
-              <button onClick={handleDash}>
+            <li className="p-1 rounded-md transition-all cursor-pointer ">
+              <button className="font-semibold text-sm "  onClick={handleDash}>
                 <User />
               </button>
             </li>
-            <li className="p-2 hover:bg-purple-600 rounded-md transition-all cursor-pointer border border-white">
-              <button onClick={handleLogout}>Logout</button>
+            <li className="p-2 rounded-md transition-all cursor-pointer">
+              <button className="font-semibold text-sm " onClick={handleLogout}>Logout</button>
             </li>
           </>
         )}

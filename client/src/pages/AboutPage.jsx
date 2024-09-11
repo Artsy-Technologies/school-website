@@ -16,11 +16,11 @@ function AboutPage() {
       />
       <Messages />
       <div className="max-w-full overflow-hidden">
-      <VisionMissionCard /> 
-       <AwardsAndRecognition/>
-</div>
+        <VisionMissionCard />
+        <AwardsAndRecognition />
+      </div>
       <History />
-      
+
     </div>
   );
 }

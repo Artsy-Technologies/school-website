@@ -6,7 +6,7 @@ function MainLayout() {
     return (
         <main className='dark:bg-darkmode  '>
             <Navbar />
-            <div className='pt-[5rem] ' >
+            <div className='pt-[7rem] ' >
                 <Outlet />
             </div>
             <Footer />

@@ -6,14 +6,14 @@ const Card = ({ icon, heading, paragraph, cardHeight }) => {
     <div className={`relative p-6 w-[450px] ${cardHeight}`}>
       {/* Icon Container */}
       <div
-        className="absolute -top-6 left-8 rounded-xl z-30 p-4 flex items-center justify-center shadow-lg"
+        className="absolute -top-0 left-8 rounded-xl z-30 p-2 flex items-center justify-center shadow-lg"
         style={{ backgroundColor: "#fb6c1c" }}
       >
         <img className="h-8 w-8" loading="lazy" alt="" src={icon} />
       </div>
 
       {/* Card Container */}
-      <div className="relative rounded-xl p-6 pt-12 shadow-2xl bg-white dark:bg-gray-700 border flex flex-col justify-between h-full">
+      <div className="relative rounded-xl p-3 pt-8 shadow-2xl bg-white dark:bg-gray-700 border flex flex-col justify-between h-full">
         <h3 className="text-xl font-bold mb-2 text-purple-600 dark:text-white">
           {heading}
         </h3>
