@@ -9,7 +9,7 @@ import axios from 'axios';
 import AdmissionProcess from '../components/CardPages/AdmissionProcess';
 import FeeTableModel from '../components/customModels/FeeTableModel';
 import FeeStructureDownload from '../components/pdfViewer/FeeStructureDownload';
-
+import AdmissionFormPDF from '../components/pdfViewer/PdfDownloader';
 // body data of 1st table
 
 const fee_data = [
@@ -168,8 +168,8 @@ const AdmissionPage = () => {
           <FeeTableModel showModel={showModel} />
         }
       </>
-
-
+        
+        <AdmissionFormPDF/>
     </div>
 
 
