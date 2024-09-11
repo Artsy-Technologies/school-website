@@ -8,10 +8,12 @@ import Testimonials from '../components/testimonials/Container'
 import TestimonialForm from '../components/testimonials/TestimonialForm'
 function HomePage() {
   return (
-    <div className='dark:bg-darkmode p-2 flex flex-col gap-10'>
+    <div className='dark:bg-darkmode  w-full p-2 flex flex-col gap-10'>
       <HeroSection />
       <CounterUpCard />
+      <div className="max-w-full overflow-hidden">
       <Benefits/>
+    </div>
       <Carousel images={Data} />
       <Testimonials />
       <TestimonialForm/>

@@ -8,13 +8,13 @@ function AcademicsPage() {
     const { academicsPage } = useData()
 
   return (
-    <div className='dark:bg-darkmode flex flex-col items-center justify-center'>
+    <div className='dark:bg-darkmode min-h-screen w-full flex flex-col items-center justify-center'>
       <Banner
         main={academicsPage.title}
         content={academicsPage.content}
         buttonText={academicsPage.buttonText}
     />
-    <div className='w-[100%] flex flex-col justify-center items-center gap-2'>
+    <div className='w-[100%] overflow-hidden flex flex-col justify-center items-center gap-2'>
       <Features/>
       <WhatStudentsLearn/>
       <RoomGalleryCard/>
