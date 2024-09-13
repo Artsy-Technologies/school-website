@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 import Student from "../libs/models/studentModel.js";
 import Admission from "../libs/models/admissionModel.js";
+dotenv.config()
 
 const adminEmail = "rahul956vishwakarma@gmail.com";
 
@@ -158,14 +159,14 @@ const sendmails = (adminEmail, userEmail, userName) => {
       service: "gmail",
       secure: true,
       auth: {
-        user: "rahul930vishwakarma@gmail.com",
-        pass: "bitp xdmz wxsq bgul",
+        user: env.process.GOOGLE_USER,
+        pass: env.process.GOOGLE_NODEMAILER_AUTH_PASSWORD ,
       },
     });
 
     // Mail options for the admin
     const adminMailOptions = {
-      from: "rahul930vishwakarma@gmail.com",
+      from: adminEmail,
       to: adminEmail,
       subject: "New Form Submission",
       text: `A new form has been submitted by ${userName}.`,

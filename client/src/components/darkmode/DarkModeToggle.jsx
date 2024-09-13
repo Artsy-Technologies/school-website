@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { IoMoon, IoSunny } from 'react-icons/io5';
 
