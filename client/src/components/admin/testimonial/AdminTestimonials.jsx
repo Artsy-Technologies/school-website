@@ -41,7 +41,7 @@ const AdminTestimonials = () => {
                 {testimonials.map(testimonial => (
                     <div key={testimonial._id} className="bg-white dark:bg-darkModeCard p-4 border border-gray-300 rounded-lg shadow-md flex flex-col items-center">
                         {testimonial.imageSrc && (
-                            <img src={`http://localhost:8000/${testimonial.imageSrc}`} alt={testimonial.name} className="w-32 h-32 object-cover rounded-full mb-4" />
+                            <img src={`${axios.defaults.baseURL}/${testimonial.imageSrc}`} alt={testimonial.name} className="w-32 h-32 object-cover rounded-full mb-4" />
                         )}
                         <h2 className="text-xl dark:text-white font-semibold text-gray-700">{testimonial.name}</h2>
                         <p className="mt-2 dark:text-white text-gray-600 text-center">{testimonial.text}</p>

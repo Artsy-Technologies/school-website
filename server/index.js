@@ -26,14 +26,13 @@ app.use(
   cors({
     // origin: 'https://school-website-etuj.onrender.com', // allow this origin to access the server
     origin: process.env.CLIENT_URL,
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], 
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     credentials: true, // if your backend requires credentials
   })
 )
+
+
 app.use('/uploads', express.static('uploads'));
-
-
-
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 app.use('/api', imageRoutes)

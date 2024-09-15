@@ -12,8 +12,6 @@ const Table = ({ getFeeData, data, showModel }) => {
   const { isAdmin } = useAdmin(); // Access the isAdmin state from context
   const [res, setResponse] = useState();
 
-  
-
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -28,11 +26,12 @@ const Table = ({ getFeeData, data, showModel }) => {
   // ---------------------------------- delete function ----------------------------
   const handleDelete = async (data) => {
     try {
-      const response = await axios.post('/api/admin/deleteFeeTable', data);
-      if (response?.data === 200) {
-        setResponse(response?.data);
-        toast.success(res.message);
-        window.location.href =  "/admission";
+      const response = await axios.delete('/api/admin/deleteFeeTable', {
+        params:{_id: data._id}
+      });
+      if (response?.status === 200) {
+        toast.success("Deleted Successfully!");
+        getFeeData();
       }
     } catch (error) {
       toast.success(res?.message)
