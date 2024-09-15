@@ -24,7 +24,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }))
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CLIENT_URL,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], 
     credentials: true, // if your backend requires credentials
   })
