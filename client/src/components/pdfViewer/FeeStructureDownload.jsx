@@ -4,7 +4,7 @@ import axios from 'axios';
 // Fetching grades from the API
 const fetchGrades = async () => {
   try {
-    const response = await axios.get('http://localhost:8000/api/grades');
+    const response = await axios.get('/api/grades');
     return response.data;
   } catch (error) {
     console.error('Error fetching grades:', error);
@@ -45,7 +45,7 @@ const FeeStructureDownload = () => {
       }
 
       const { pdfPath } = selectedGradeInfo;
-      const url = `http://localhost:8000/${pdfPath}`; // Construct the URL for the PDF
+      const url = `/${pdfPath}`; // Construct the URL for the PDF
 
       // Download the PDF
       const response = await axios.get(url, { responseType: 'blob' });

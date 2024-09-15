@@ -62,7 +62,7 @@ const Testimonials = () => {
                                 <TestimonialCard
                                     name={testimonial.name}
                                     text={testimonial.text}
-                                    imageSrc={`http://localhost:8000/${testimonial.imageSrc}`}
+                                    imageSrc={`${axios.defaults.baseURL}/${testimonial.imageSrc}`}
                                     rating={testimonial.rating}
                                 />
                             </div>

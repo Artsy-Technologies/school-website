@@ -172,7 +172,7 @@ const deleteFeeTable = async (req, res) => {
     
     if (req.isAdmin === false) throw new Error('Not authenticated')
  
-    const {_id} = req.body;
+    const {_id} = req.query;
 
     if (!_id) throw new Error('Program name is not found')
 

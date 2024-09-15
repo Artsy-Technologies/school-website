@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaEdit, FaTrash } from 'react-icons/fa'; // For icons
+import { FaEdit, FaTrash } from 'react-icons/fa';
 import axios from 'axios';
-
-// API endpoint
-const API_URL = 'http://localhost:8000/api/grades';
 
 const GradeManager = () => {
   const [grades, setGrades] = useState([]);
@@ -21,7 +18,7 @@ const GradeManager = () => {
   // Fetch all grades from the server
   const fetchGrades = async () => {
     try {
-      const response = await axios.get(API_URL);
+      const response = await axios.get('/api/grades');
       setGrades(response.data);
     } catch (error) {
       toast.error('Failed to fetch grades');
@@ -50,7 +47,7 @@ const GradeManager = () => {
     try {
       if (editId !== null) {
         // Update existing grade
-        await axios.put(`${API_URL}/update/${editId}`, formData, {
+        await axios.put(`api/grades/update/${editId}`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -59,7 +56,7 @@ const GradeManager = () => {
         setEditId(null);
       } else {
         // Add new grade
-        await axios.post(`${API_URL}/add`, formData, {
+        await axios.post('api/grades/add', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -78,7 +75,6 @@ const GradeManager = () => {
       }
     }
   };
-  
 
   const handleEdit = (id) => {
     const gradeToEdit = grades.find((g) => g._id === id);
@@ -89,7 +85,7 @@ const GradeManager = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${API_URL}/delete/${id}`);
+      await axios.delete(`/api/grades/delete/${id}`);
       toast.success('Grade deleted successfully');
       fetchGrades();
     } catch (error) {
@@ -135,7 +131,6 @@ const GradeManager = () => {
           {editId ? 'Update Grade' : 'Add Grade'}
         </button>
         </div>
-        
       </form>
       <div className="mt-8">
         <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Current Grades</h3>
