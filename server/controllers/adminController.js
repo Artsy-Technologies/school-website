@@ -2,7 +2,7 @@ import admin from '../libs/models/adminModel.js'
 import jwt from 'jsonwebtoken'
 import fee from '../libs/models/feeModel.js'
 
-const adminToken = 'admin0000'
+const adminToken = process.env.ADMIN_TOKEN;
 
 const signUp = async (req, res) => {
   try {

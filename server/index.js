@@ -24,7 +24,6 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }))
 
 app.use(
   cors({
-    // origin: 'https://school-website-etuj.onrender.com', // allow this origin to access the server
     origin: "http://localhost:5173",
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], 
     credentials: true, // if your backend requires credentials
