@@ -1,9 +1,10 @@
 import nodemailer from "nodemailer";
 import Student from "../libs/models/studentModel.js";
 import Admission from "../libs/models/admissionModel.js";
+import dotenv from 'dotenv';
 dotenv.config()
 
-const adminEmail = "rahul956vishwakarma@gmail.com";
+const adminEmail = process.env.EMAIL_ADMIN;
 
 export const contacts = async (req, res) => {
   try {
@@ -159,8 +160,8 @@ const sendmails = (adminEmail, userEmail, userName) => {
       service: "gmail",
       secure: true,
       auth: {
-        user: env.process.GOOGLE_USER,
-        pass: env.process.GOOGLE_NODEMAILER_AUTH_PASSWORD ,
+        user: process.env.GOOGLE_USER,
+        pass: process.env.GOOGLE_NODEMAILER_AUTH_PASSWORD ,
       },
     });
 
