@@ -20,18 +20,18 @@ export const Messages = () => {
             id="cards-container"
           >
             <h2 className="text-center text-purple-600 dark:text-purple-300 font-bold text-3xl mb-2 w-full lg:w-1/2">
-              President's Message
+              President&#39;s Message
             </h2>
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 w-full lg:w-3/4 relative transition transform hover:scale-105 duration-300 ease-in-out">
               <div className="lg:absolute lg:-left-36 lg:top-1/2 lg:transform lg:-translate-y-1/2 pb-3 lg:pb-0 lg:w-auto w-full flex flex-col justify-center items-center mb-4 lg:mb-0">
                 <img
-                  src=""
+                  src="./user.png"
                   alt="Avatar"
                   className=" shadow-lg border-4 border-white dark:border-gray-700"
                   style={{ width: "120px", height: "120px" }}
                 />
                 <p className="text-center text-orange-600 font-bold mt-2">
-                  President's Name
+                  President&#39;s Name
                   <br />
                   President
                 </p>
@@ -44,12 +44,12 @@ Our mission is to Provide English education with affordable fee structure in the
             </div>
 
             <h2 className="text-center text-purple-600 dark:text-purple-300 font-bold text-3xl mb-2 w-full lg:w-1/2 pl-4">
-              Principal's Message
+              Principal&#39;s Message
             </h2>
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 w-full lg:w-3/4 relative transition transform hover:scale-105 duration-300 ease-in-out">
               <div className="lg:absolute lg:-left-36 lg:top-1/2 lg:transform lg:-translate-y-1/2 pb-3 lg:pb-0 lg:w-auto w-full flex flex-col justify-center items-center mb-4 lg:mb-0">
                 <img
-                  src=""
+                  src="/user.png"
                   alt="Avatar"
                   className=" shadow-lg border-4 border-white dark:border-gray-700"
                   style={{ width: "120px", height: "120px" }}

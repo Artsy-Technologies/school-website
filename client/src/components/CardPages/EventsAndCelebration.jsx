@@ -16,10 +16,12 @@ const cardsData = [
   {
     icon: Icon11,
     heading: (
-      <img src={Icon1} width={250} height={250} className="ml-14 rounded-2xl" />
+      <div className="flex justify-center items-center">
+        <img src={Icon1} width={250} height={250} className="rounded-2xl" />
+      </div>
     ),
     paragraph: (
-      <div className="w-[398.67px] h-[116px] gap-[10px] ">
+      <div className="h-[116px] gap-[10px] ">
         <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           Annual Sports Day
         </h1>
@@ -34,10 +36,12 @@ const cardsData = [
   {
     icon: Icon22,
     heading: (
-      <img src={Icon2} width={250} height={250} className="ml-14 rounded-2xl" />
+      <div className="flex justify-center items-center">
+        <img src={Icon2} width={250} height={250} className="rounded-2xl" />
+      </div>
     ),
     paragraph: (
-      <div className="w-[398.67px] h-[116px] gap-[10px] ">
+      <div className="h-[116px] gap-[10px] ">
         <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           Cultural Festivals
         </h1>
@@ -52,10 +56,12 @@ const cardsData = [
   {
     icon: Icon33,
     heading: (
-      <img src={Icon3} width={250} height={250} className="ml-14 rounded-2xl" />
+      <div className="flex justify-center items-center">
+        <img src={Icon3} width={250} height={250} className="rounded-2xl" />
+      </div>
     ),
     paragraph: (
-      <div className="w-[398.67px] h-[116px] gap-[10px] ">
+      <div className="h-[116px] gap-[10px] ">
         <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           Art Exhibitions
         </h1>
@@ -70,10 +76,12 @@ const cardsData = [
   {
     icon: Icon44,
     heading: (
-      <img src={Icon4} width={250} height={250} className="ml-14 rounded-2xl" />
+      <div className="flex justify-center items-center">
+        <img src={Icon4} width={250} height={250} className="rounded-2xl" />
+      </div>
     ),
     paragraph: (
-      <div className="w-[398.67px] h-[116px] gap-[10px] ">
+      <div className="h-[116px] gap-[10px] ">
         <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           Science Fair
         </h1>
@@ -88,10 +96,12 @@ const cardsData = [
   {
     icon: Icon55,
     heading: (
-      <img src={Icon5} width={250} height={250} className="ml-14 rounded-2xl" />
+      <div className="flex justify-center items-center">
+        <img src={Icon5} width={250} height={250} className="rounded-2xl" />
+      </div>
     ),
     paragraph: (
-      <div className="w-[398.67px] h-[116px] gap-[10px] ">
+      <div className="h-[116px] gap-[10px] ">
         <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           International Day
         </h1>
@@ -106,11 +116,13 @@ const cardsData = [
   {
     icon: Icon66,
     heading: (
-      <img src={Icon6} width={250} height={250} className="ml-14 rounded-2xl" />
+      <div className="flex justify-center items-center">
+        <img src={Icon6} width={250} height={250} className="rounded-2xl" />
+      </div>
     ),
     paragraph: (
-      <div className="w-[398.67px] h-[116px] gap-[10px] ">
-        <h1 className="mb-5 mt-5 text-purple-600  dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
+      <div className="h-[116px] gap-[10px] ">
+        <h1 className="mb-5 mt-5 text-purple-600 dark:text-purple-200 font-raleway text-[20px] font-bold leading-[36.4px] text-center">
           Graduation Ceremony
         </h1>
         <p className="mr-5 font-outfit text-[15px] font-medium leading-[20px] text-center dark:text-gray-400">
