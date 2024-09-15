@@ -42,7 +42,7 @@ function ImageGallery() {
       const formData = new FormData();
       formData.append("title", editingImage.title);
       if (editingImage.file) {
-        formData.append("file", editingImage.file); // Match field name
+        formData.append("file", editingImage.file);
       }
   
       const response = await axios.put(
@@ -109,7 +109,7 @@ function ImageGallery() {
               className="relative rounded-lg border border-gray-300 shadow-lg overflow-hidden"
             >
               <img
-                src={`http://localhost:8000/${image.image}`}
+                src={`${axios.defaults.baseURL}/${image.image}`}
                 alt={image.title}
                 className="w-full h-64 object-cover"
               />

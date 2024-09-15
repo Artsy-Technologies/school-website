@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
 // Card Component
-const Card = ({ icon, heading, paragraph, cardHeight }) => {
+const Card = ({ icon, heading, paragraph }) => {
   return (
-    <div className={`relative p-6 w-[450px] ${cardHeight}`}>
+    <div className={`relative px-4 py-6 md:w-[350px]`}>
       {/* Icon Container */}
       <div
         className="absolute -top-0 left-8 rounded-xl z-30 p-2 flex items-center justify-center shadow-lg"

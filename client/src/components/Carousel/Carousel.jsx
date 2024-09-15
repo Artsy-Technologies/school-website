@@ -70,7 +70,7 @@ function Carousel() {
           >
             <img
               className="object-cover w-full h-full"
-              src={`http://localhost:8000/${image.image}`}
+              src={`${axios.defaults.baseURL}/${image.image}`}
               alt={image.title}
             />
             <div className="absolute inset-0 flex items-end p-10 bg-black bg-opacity-50">
